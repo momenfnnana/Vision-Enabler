@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-confirmation-code-field
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add react-native-svg@12.1.0
 
 PATH: 
   C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\pc\bin;C:\Python38\Scripts;C:\Python38;C:\Python27;C:\Python27\Scripts;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\ProgramData\chocolatey\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files (x86)\Yarn\bin;C:\Program Files\nodejs;C:\Users\pc\AppData\Local\Microsoft\WindowsApps;C:\Users\pc\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\pc\AppData\Local\GitHubDesktop\bin;C:\Users\pc\AppData\Local\Yarn\bin;C:\Users\pc\AppData\Roaming\npm;C:\Program Files\Android\Android Studio\jre\bin
@@ -14,7 +14,7 @@ Platform:
   win32 x64
 
 Trace: 
-  Error: EPERM: operation not permitted, unlink 'C:\Users\pc\Desktop\DitsCompany\Questionnaires\node_modules\file-uri-to-path\test'
+  Error: EPERM: operation not permitted, unlink 'C:\Users\pc\Desktop\DitsCompany\Questionnaires\node_modules\@babel\generator\node_modules\.bin'
 
 npm manifest: 
   {
@@ -32,6 +32,7 @@ npm manifest:
       "react": "~16.11.0",
       "react-dom": "~16.11.0",
       "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
+      "react-native-confirmation-code-field": "^6.5.0",
       "react-native-elements": "^2.0.4",
       "react-native-web": "~0.11.7"
     },
@@ -4586,6 +4587,11 @@ Lockfile:
       fbemitter "^2.1.1"
       invariant "^2.2.4"
       use-subscription "^1.0.0"
+  
+  react-native-confirmation-code-field@^6.5.0:
+    version "6.5.0"
+    resolved "https://registry.yarnpkg.com/react-native-confirmation-code-field/-/react-native-confirmation-code-field-6.5.0.tgz#f5579ee66b3f902724f5596a7ea3c87308c4d6d9"
+    integrity sha512-thOctQtpkx5bcXIj6+S+gIKw7Z/jMBFf9FtqkiRQaZI1+IoMoA+n5CK4aYoosPQW4oAPTivL1mxOyA8T1kqmtA==
   
   react-native-elements@^2.0.4:
     version "2.0.4"

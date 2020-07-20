@@ -34,7 +34,7 @@ const ResetPassword = () => {
                         <Text style={styles.SignupText}>Sign up</Text>
                     </TouchableOpacity>
                 </View>
-                <Image source={require('../../../assets/images/pups.png')} resizeMode="cover" style={{ marginTop: "80%", marginLeft: "-18%" }} />
+                <Image source={require('../../../../assets/images/pups.png')} resizeMode="cover" style={{ marginTop: "80%", marginLeft: "-18%" }} />
             </View>
         </View>
     )

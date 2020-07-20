@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import { View, Text, StyleSheet, Image, Dimensions, KeyboardAvoidingView } from 'react-native'
-import Form from '../../components/LoginForm/Login'
-import Footer from '../../components/loginFooter/Footer'
+import Form from '../../../components/LoginForm/Login'
+import Footer from '../../../components/loginFooter/Footer'
 const { width, height } = Dimensions.get("screen")
 
 const Login = () => {
     return (
         <View style={styles.container}>
             <View style={styles.head}>
-                <Image source={require('../../../assets/images/quarter-circle-left.png')} style={{ alignSelf: "flex-start" }} resizeMode="cover" />
-                <Image source={require('../../../assets/images/blue-logo.png')} resizeMode="cover" style={styles.logo} />
+                <Image source={require('../../../../assets/images/quarter-circle-left.png')} style={{ alignSelf: "flex-start" }} resizeMode="cover" />
+                <Image source={require('../../../../assets/images/blue-logo.png')} resizeMode="cover" style={styles.logo} />
             </View>
             <KeyboardAvoidingView
                 behavior='height'

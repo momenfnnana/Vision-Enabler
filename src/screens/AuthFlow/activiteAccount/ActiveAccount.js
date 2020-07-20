@@ -59,7 +59,7 @@ const ActiveAccount = () => {
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.SignupText}>Sign up</Text>
                 </TouchableOpacity>
-                <Image source={require('../../../assets/images/pups.png')} resizeMode="cover" style={{ marginTop: "80%", marginLeft: "-18%" }} />
+                <Image source={require('../../../../assets/images/pups.png')} resizeMode="cover" style={{ marginTop: "80%", marginLeft: "-18%" }} />
             </View>
         </View>
     )
