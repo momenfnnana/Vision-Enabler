@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { View, Text, Picker, StyleSheet, TouchableOpacity } from 'react-native'
 import { Input } from 'react-native-elements'
+import Color from '../../../assets/Constant'
 const Form = () => {
     const [selectedValue, setSelectedValue] = useState("+966");
 
@@ -22,7 +23,9 @@ const Form = () => {
                     <Picker
                         selectedValue={selectedValue}
                         style={{ height: 50, width: 100 }}
-                        onValueChange={(itemValue, itemIndex) => setSelectedValue(itemValue)}
+                        onValueChange={
+                            (itemValue, itemIndex) => setSelectedValue(itemValue)
+                        }
                     >
                         <Picker.Item label="+966" value="java" />
                         <Picker.Item label="+972" value="js" />
@@ -42,15 +45,15 @@ const Form = () => {
                 placeholder="Password"
             />
             <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", paddingLeft: "2%" }}>
-                <Text style={{ color: "#313BD0", fontSize: 13 }}>
+                <Text style={{ color: `${Color.primary}`, fontSize: 13 }}>
                     By creating account, you agree to Vision Enabler
             </Text>
                 <TouchableOpacity>
-                    <Text style={{ color: "#22E0D7" }}> Privacy Policy</Text>
+                    <Text style={{ color: `${Color.secondary}` }}> Privacy Policy</Text>
                 </TouchableOpacity>
-                <Text style={{ color: "#313BD0", fontSize: 13 }}>and</Text>
+                <Text style={{ color: `${Color.primary}`, fontSize: 13 }}>and</Text>
                 <TouchableOpacity>
-                    <Text style={{ color: "#22E0D7" }}>Terms of Use</Text>
+                    <Text style={{ color: `${Color.secondary}` }}>Terms of Use</Text>
                 </TouchableOpacity>
             </View>
             <TouchableOpacity style={styles.button}>
@@ -62,14 +65,14 @@ const Form = () => {
 const styles = StyleSheet.create({
     button: {
         borderRadius: 50,
-        backgroundColor: "#313BD0",
+        backgroundColor: `${Color.primary}`,
         justifyContent: "center",
         alignItems: "center",
         paddingVertical: 12,
         marginVertical: 22
     },
     SignupText: {
-        color: "#fff",
+        color: `${Color.white}`,
         fontSize: 16
     }
 })

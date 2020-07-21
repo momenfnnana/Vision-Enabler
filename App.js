@@ -10,13 +10,19 @@ import ResetPassword from './src/screens/AuthFlow/resetPassword/ResetPassword';
 import Splash from './src/screens/splash/splash'
 import Home from './src/screens/MainFlow/Home/Home';
 import Header from './src/components/Header/Header';
+import OurVision from './src/screens/MainFlow/OurVision/OurVision';
+import Diversity from './src/screens/MainFlow/Diversity/Diversity';
+import Help from './src/screens/MainFlow/Help/Help';
+import Clients from './src/screens/MainFlow/Clients/Clients';
+import AboutUs from './src/screens/MainFlow/AboutUs/AboutUs';
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {
     return Font.loadAsync({
       'Altissimo_bold': require('./assets/fonts/Altissimo_bold.ttf'),
       'Altissimo': require('./assets/fonts/Altissimo.ttf'),
-      'AbdoMasterNormal': require('./assets/fonts/AbdoMasterNormal.ttf')
+      'AbdoMasterNormal': require('./assets/fonts/AbdoMasterNormal.ttf'),
+      'DINNextLTProRegular': require('./assets/fonts/DINNextLTPro-Regular.ttf')
     });
   };
   if (!dataLoaded) {
@@ -35,8 +41,13 @@ export default function App() {
       {/* <SignUp /> */}
       {/* <ResetPassword /> */}
       {/* <ActiveAccount /> */}
-      <Home />
+      {/* <Home /> */}
       {/* <Header /> */}
+      {/* <OurVision /> */}
+      {/* <Diversity /> */}
+      {/* <Help /> */}
+      {/* <Clients /> */}
+      <AboutUs />
       <StatusBar style="auto" />
     </View>
   );

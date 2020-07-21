@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
 import {
     CodeField,
     Cursor,
     useBlurOnFulfill,
     useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
+import Color from '../../../../assets/Constant'
+import StackHeader from '../../../components/Header/StackHeader';
 const CELL_COUNT = 4;
 
 const ActiveAccount = () => {
@@ -18,22 +19,10 @@ const ActiveAccount = () => {
     });
     return (
         <View style={styles.container}>
-            <View style={{
-                alignItems: "flex-start",
-                height: "10%",
-                justifyContent: "flex-end",
-                paddingHorizontal: "5%"
-            }}>
-                <AntDesign name="arrowleft" size={24} color="#313BD0" />
-            </View>
-            <View style={{
-                flex: 1,
-                marginLeft: "10%",
-                marginRight: "10%",
-                marginTop: "5%"
-            }}>
-                <Text style={{ color: "#22E0D7", fontSize: 16, fontFamily: "Altissimo_bold", alignSelf: "flex-start" }}>{'Account'.toUpperCase()}</Text>
-                <Text style={{ color: "#313BD0", fontSize: 30, fontFamily: "Altissimo", fontWeight: "bold", alignSelf: "flex-start" }}>{'Sign up'.toUpperCase()}</Text>
+            <StackHeader color={Color.primary} />
+            <View style={styles.headSection}>
+                <Text style={styles.title1}>{'Account'.toUpperCase()}</Text>
+                <Text style={styles.title2}>{'Sign up'.toUpperCase()}</Text>
                 <CodeField
                     ref={ref}
                     {...props}
@@ -52,9 +41,9 @@ const ActiveAccount = () => {
                         </Text>
                     )}
                 />
-                <Text style={{ color: "#B3B5D7", textAlign: "center", fontSize: 24, marginTop: 30 }}>01:25</Text>
+                <Text style={styles.date}>01:25</Text>
                 <TouchableOpacity style={{ alignSelf: "center", marginTop: 10 }}>
-                    <Text style={{ fontSize: 14, color: "#313BD0" }}>Resend Code</Text>
+                    <Text style={{ fontSize: 14, color: `${Color.primary}` }}>Resend Code</Text>
                 </TouchableOpacity>
                 <TouchableOpacity style={styles.button}>
                     <Text style={styles.SignupText}>Sign up</Text>
@@ -78,23 +67,48 @@ const styles = StyleSheet.create({
         lineHeight: 38,
         fontSize: 24,
         borderBottomWidth: 2,
-        borderBottomColor: '#00000030',
+        borderBottomColor: `${Color.black}30`,
         textAlign: 'center',
     },
     focusCell: {
-        borderColor: '#000',
+        borderColor: `${Color.white}`,
     },
     button: {
         borderRadius: 50,
-        backgroundColor: "#313BD0",
+        backgroundColor: `${Color.primary}`,
         justifyContent: "center",
         alignItems: "center",
         paddingVertical: 12,
         marginVertical: 22
     },
     SignupText: {
-        color: "#fff",
+        color: `${Color.white}`,
         fontSize: 16
+    },
+    headSection: {
+        flex: 1,
+        marginLeft: "10%",
+        marginRight: "10%",
+        marginTop: "5%"
+    },
+    title1: {
+        color: `${Color.secondary}`,
+        fontSize: 16,
+        fontFamily: "Altissimo_bold",
+        alignSelf: "flex-start"
+    },
+    title2: {
+        color: `${Color.primary}`,
+        fontSize: 30,
+        fontFamily: "Altissimo",
+        fontWeight: "bold",
+        alignSelf: "flex-start"
+    },
+    date: {
+        color: `${Color.secondary}`,
+        textAlign: "center",
+        fontSize: 24,
+        marginTop: 30
     }
 })
 export default ActiveAccount

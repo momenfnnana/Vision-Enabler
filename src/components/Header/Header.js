@@ -1,11 +1,12 @@
 import React from 'react'
 import { View, Text, StyleSheet, Image } from 'react-native'
+import Color from '../../../assets/Constant'
 const Header = () => {
     return (
         <View style={styles.container}>
             <Image source={require('../../../assets/images/LeftIcon.png')} />
             <Image
-                style={{ justifyContent: "center", width: "100%", resizeMode: "contain", marginRight: "5%" }}
+                style={styles.logo}
                 source={require('../../../assets/images/AppLogo.png')} />
         </View>
     )
@@ -17,8 +18,14 @@ const styles = StyleSheet.create({
         paddingHorizontal: "7%",
         height: 80,
         alignItems: "center",
-        borderBottomColor: "#313BD020",
+        borderBottomColor: `${Color.primary}20`,
         borderBottomWidth: 1
+    },
+    logo: {
+        justifyContent: "center",
+        width: "100%",
+        resizeMode: "contain",
+        marginRight: "5%"
     }
 })
 export default Header
