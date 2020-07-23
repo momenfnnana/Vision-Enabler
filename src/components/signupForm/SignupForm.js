@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { View, Text, Picker, StyleSheet, TouchableOpacity } from 'react-native'
 import { Input } from 'react-native-elements'
 import Color from '../../../assets/Constant'
+import DropDownPicker from 'react-native-dropdown-picker';
+
 const Form = () => {
-    const [selectedValue, setSelectedValue] = useState("+966");
+    const [selectedValue, setSelectedValue] = useState("uk");
 
     return (
         <View style={{
@@ -20,20 +22,29 @@ const Form = () => {
             />
             <View style={{ flexDirection: "row", marginRight: "28%" }}>
                 <View>
-                    <Picker
-                        selectedValue={selectedValue}
-                        style={{ height: 50, width: 100 }}
-                        onValueChange={
-                            (itemValue, itemIndex) => setSelectedValue(itemValue)
-                        }
-                    >
-                        <Picker.Item label="+966" value="java" />
-                        <Picker.Item label="+972" value="js" />
-                        <Picker.Item label="+966" value="java" />
-                        <Picker.Item label="+972" value="js" />
-                        <Picker.Item label="+966" value="java" />
-                        <Picker.Item label="+972" value="js" />
-                    </Picker>
+                    <DropDownPicker
+                        items={[
+                            { label: 'UK', value: 'uk' },
+                            { label: 'France', value: 'france' },
+                        ]}
+                        defaultValue={selectedValue}
+                        containerStyle={{
+                            height: 40,
+                            width: 100
+                        }}
+                        style={{
+                            backgroundColor: '#fff',
+                            borderColor: "#fff",
+                            borderBottomColor: `${Color.black}70`,
+                        }}
+                        itemStyle={{
+                            justifyContent: 'flex-start',
+                        }}
+                        dropDownStyle={{
+                            backgroundColor: '#fafafa',
+                        }}
+                        onChangeItem={() => setSelectedValue}
+                    />
                 </View>
                 <Input
                     style={{ marginLeft: "100%" }}

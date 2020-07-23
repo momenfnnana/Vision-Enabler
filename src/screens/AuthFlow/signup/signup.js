@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image } from 'react-native';
-import Form from '../../../components/signupForm/SignupForm'
+import Form from '../../../components/signupForm/SignupForm';
 import StackHeader from '../../../components/Header/StackHeader';
-import Color from '../../../../assets/Constant'
+import Color from '../../../../assets/Constant';
 const SignUp = () => {
     return (
         <View style={styles.container}>

@@ -47,7 +47,7 @@ const Clients = () => {
                 renderItem={item => <Card data={item} />}
                 numColumns={2}
                 contentContainerStyle={{ margin: "5%" }}
-                style={{ marginTop: "10%" }}
+                style={{ marginTop: "5%" }}
             />
             <SectionTitle
                 title1="British"

@@ -5,7 +5,7 @@ import Color from '../../../assets/Constant'
 const PersonCard = () => {
     return (
         <ScrollView
-            style={{ marginTop: "10%" }}
+            style={{ marginTop: "5%", marginLeft: "5%" }}
             horizontal
         >
             {

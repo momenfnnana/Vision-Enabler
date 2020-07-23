@@ -15,6 +15,11 @@ import Diversity from './src/screens/MainFlow/Diversity/Diversity';
 import Help from './src/screens/MainFlow/Help/Help';
 import Clients from './src/screens/MainFlow/Clients/Clients';
 import AboutUs from './src/screens/MainFlow/AboutUs/AboutUs';
+import PersonalScreen from './src/screens/MainFlow/PersonalScreen/PersonalScreen';
+import Contact from './src/screens/MainFlow/Contact/Contact';
+import ContactForm from './src/screens/MainFlow/Contact/ContactForm';
+import Media from './src/screens/MainFlow/Media/Media';
+import UploadCV from './src/screens/MainFlow/UploadCV/UploadCV';
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {
@@ -47,7 +52,12 @@ export default function App() {
       {/* <Diversity /> */}
       {/* <Help /> */}
       {/* <Clients /> */}
-      <AboutUs />
+      {/* <AboutUs /> */}
+      {/* <PersonalScreen /> */}
+      {/* <Contact /> */}
+      {/* <ContactForm /> */}
+      <Media />
+      {/* <UploadCV /> */}
       <StatusBar style="auto" />
     </View>
   );
