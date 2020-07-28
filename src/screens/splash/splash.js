@@ -1,28 +1,28 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
-import Color from '../../../assets/Constant'
+import Color from '@Assets/Constant'
 import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
 const width = Dimensions.get("screen").width
 const height = Dimensions.get("screen").height
 const Splash = ({ navigation }) => {
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     navigation.navigate('Signup')
-  //   }, 3000);
-  // }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Login')
+    }, 3000);
+  }, []);
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
       <View>
         <Image
           style={{ alignSelf: "flex-end" }}
-          source={require('../../../assets/images/quarter-circle.png')} />
+          source={require('@Assets/images/quarter-circle.png')} />
         <Image
           style={styles.logo}
-          source={require('../../../assets/images/logo.png')} />
+          source={require('@Assets/images/logo.png')} />
         <Image
           style={styles.pups}
-          source={require('../../../assets/images/pups.png')} />
+          source={require('@Assets/images/pups.png')} />
       </View>
     </View>
   );

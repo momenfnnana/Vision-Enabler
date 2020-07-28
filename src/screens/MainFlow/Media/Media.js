@@ -1,17 +1,23 @@
-import React from 'react'
-import { View, Text, StyleSheet, Image } from 'react-native'
-import { Container, Tab, Tabs, Header } from 'native-base'
-import StackHeader from '../../../components/Header/StackHeader'
-import Color from '../../../../assets/Constant'
-import SectionTitle from '../../../components/SectionTitle/SectionTitle'
-import SectionDescription from '../../../components/SectionTitle/SectionDescription'
-import Photos from './Photos'
-import Videos from './Videos'
-const Media = () => {
+import React from 'react';
+import { ScrollView, Image } from 'react-native';
+import { Tab, Tabs } from 'native-base';
+import StackHeader from '@Components/Header/StackHeader/StackHeader';
+import Color from '@Assets/Constant';
+import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
+import SectionDescription from '@Components/SectionTitle/SectionDescription/SectionDescription';
+import Photos from './Photo/Photos';
+import Videos from './Video/Videos';
+import Links from './Links/Links';
+import styles from './Styles';
+const Media = ({ navigation }) => {
     return (
-        <View style={styles.container}>
-            <StackHeader color={Color.primary} />
-            <Image style={styles.image} source={require('../../../../assets/images/MediaHeadCorner.png')} />
+        <ScrollView style={styles.container}>
+            <StackHeader
+                goBack={() => navigation.goBack()}
+                color={Color.primary}
+                borderBottomWith={1}
+            />
+            <Image style={styles.image} source={require('@Assets/images/MediaHeadCorner.png')} />
             <SectionTitle
                 title1="Our"
                 title2="Media Center"
@@ -36,42 +42,30 @@ const Media = () => {
                     }}
                     heading="Photos"
                     textStyle={{ color: Color.secondary }}
-                    tabStyle={{ backgroundColor: "#fff" }}
+                    tabStyle={{ backgroundColor: Color.white }}
                 >
-                    <Photos />
+                    <Photos goToInterView={() => navigation.navigate('InterviewForm')} />
                 </Tab>
                 <Tab
                     activeTabStyle={{
                         backgroundColor: Color.white
                     }}
                     heading="Videos"
-                    tabStyle={{ backgroundColor: "#fff" }}
+                    tabStyle={{ backgroundColor: Color.white }}
                 >
-                    <Videos />
+                    <Videos goToInterView={() => navigation.navigate('InterviewForm')} />
                 </Tab>
                 <Tab
                     activeTabStyle={{
                         backgroundColor: Color.white
                     }}
                     heading="Links"
-                    tabStyle={{ backgroundColor: "#fff" }}
+                    tabStyle={{ backgroundColor: Color.white }}
                 >
-                    <Text>tab3 here</Text>
+                    <Links goToInterView={() => navigation.navigate('InterviewForm')} />
                 </Tab>
             </Tabs>
-        </View >
+        </ScrollView >
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%"
-    },
-    image: {
-        position: "absolute",
-        top: 0,
-        right: 0,
-        resizeMode: "contain"
-    }
-})
 export default Media

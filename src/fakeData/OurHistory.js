@@ -5,19 +5,19 @@ const OurHistory = [
         detail: [
             {
                 id: 1,
-                img: require('../../assets/images/Cup.png'),
+                img: require('@Assets/images/Cup.png'),
                 title: "Award Winner",
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                 id: 2,
-                img: require('../../assets/images/book.png'),
+                img: require('@Assets/images/book.png'),
                 title: "Writing a Book",
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                 id: 3,
-                img: require('../../assets/images/Speeker.png'),
+                img: require('@Assets/images/Speeker.png'),
                 title: "Guest Speaker",
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
@@ -29,13 +29,13 @@ const OurHistory = [
         detail: [
             {
                 id: 1,
-                img: require('../../assets/images/door.png'),
+                img: require('@Assets/images/door.png'),
                 title: "Diversity Club",
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             },
             {
                 id: 2,
-                img: require('../../assets/images/blackboard.png'),
+                img: require('@Assets/images/blackboard.png'),
                 title: "Teaching Adjunct",
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             }
@@ -47,7 +47,7 @@ const OurHistory = [
         detail: [
             {
                 id: 1,
-                img: require('../../assets/images/Busseiness.png'),
+                img: require('@Assets/images/Busseiness.png'),
                 title: "Business Consulting",
                 description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry."
             }

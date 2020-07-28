@@ -1,60 +1,75 @@
-import React from 'react'
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity, ImageBackground } from 'react-native'
-import StackHeader from '../../../components/Header/StackHeader'
-import Color from '../../../../assets/Constant'
-import SectionTitle from '../../../components/SectionTitle/SectionTitle'
-import SectionDescription from '../../../components/SectionTitle/SectionDescription'
-import PersonCard from '../../../components/card/PersonCard'
-import Card from '../../../components/card/HistoryList'
+import React from 'react';
+import {
+    View,
+    Text,
+    Image,
+    ScrollView,
+    TouchableOpacity
+} from 'react-native';
+import StackHeader from '@Components/Header/StackHeader/StackHeader';
+import Color from '@Assets/Constant';
+import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
+import SectionDescription from '@Components/SectionTitle/SectionDescription/SectionDescription';
+import PersonCard from '@Components/card/PersonCard/PersonCard';
+import Card from '@Components/card/HistoryList/HistoryList';
 import ReadMore from 'react-native-read-more-text';
-const AboutUs = () => {
+import styles from './Styles';
+const AboutUs = ({ navigation }) => {
     const renderTruncatedFooter = (handlePress) => {
         return (
-            <Text style={{ color: Color.secondary, marginTop: 5, fontWeight: "bold" }} onPress={handlePress}>
+            <Text
+                style={styles.handleReadMore}
+                onPress={handlePress}
+            >
                 Read more
             </Text>
         );
     }
     const renderRevealedFooter = (handlePress) => {
         return (
-            <Text style={{ color: Color.secondary, marginTop: 5, fontWeight: "bold" }} onPress={handlePress}>
+            <Text
+                style={styles.handleReadLess}
+                onPress={handlePress}
+            >
                 Show less
             </Text>
         );
     }
     return (
         <View style={styles.container}>
-            <StackHeader color={Color.primary} />
+            <StackHeader
+                goBack={() => navigation.goBack()}
+                color={Color.primary}
+                borderBottomWith={1}
+            />
             <ScrollView>
-                <View style={{ width: "100%", marginTop: "15%", flexDirection: "row", marginBottom: "3%" }}>
-                    <View style={{ width: "60%", justifyContent: "flex-end" }}>
-                        <View style={{ marginLeft: "3%" }}>
+                <View style={styles.headSection}>
+                    <View style={styles.titleContainer}>
+                        <View style={styles.sectionTitleContainer}>
                             <SectionTitle
                                 title1="Who"
                                 title2="We are"
                             />
                         </View>
                     </View>
-                    <View style={{ marginTop: "-18%" }}>
+                    <View style={styles.headImageContainer}>
                         <Image
-                            style={{
-                                marginLeft: "-29%"
-                            }}
-                            source={require('../../../../assets/images/who.png')}
+                            style={styles.who}
+                            source={require('@Assets/images/who.png')}
                         />
                         <Image
-                            style={{
-                                marginTop: "-21%",
-                                zIndex: -1
-                            }}
-                            source={require('../../../../assets/images/underWho.png')}
+                            style={styles.underWho}
+                            source={require('@Assets/images/underWho.png')}
                         />
                     </View>
                 </View>
                 <SectionDescription
                     text="At Vision Enabler we believe that diversity should be at the core of every forward thinking company’s management strategy. We see diversity as a source of improved performance that offers a decisive competitive advantage in a fast-moving, socially and culturally complex world."
                 />
-                <PersonCard />
+                <PersonCard
+                    openPersonalScreen={() =>
+                        navigation.navigate('PersonalScreen')}
+                />
                 <View style={{ backgroundColor: "#F9FAFE" }}>
                     <SectionTitle
                         title1="OUR"
@@ -65,130 +80,58 @@ const AboutUs = () => {
                     />
                     <Card />
                 </View>
-                <View style={{
-                    backgroundColor: `${Color.white}`,
-                    marginLeft: "7%",
-                    paddingVertical: "8%"
-                }}>
-                    <Text style={{
-                        fontFamily: "DINNextLTProRegular",
-                        fontSize: 16,
-                        color: `${Color.secondary}`
-                    }}>{'our'.toUpperCase()}</Text>
-                    <Text style={{
-                        fontFamily: "Altissimo_bold",
-                        fontWeight: "bold",
-                        fontSize: 30,
-                        color: `${Color.primary}`
-                    }}>{'AWARDs'.toUpperCase()}</Text>
+                <View style={styles.ourAwards}>
+                    <Text style={styles.our}>{'our'.toUpperCase()}</Text>
+                    <Text style={styles.awards}>{'AWARDs'.toUpperCase()}</Text>
                 </View>
                 <View
-                    style={{
-                        backgroundColor: `${Color.white}`,
-                        shadowColor: `${Color.black}`,
-                        shadowOffset: {
-                            width: 0,
-                            height: 4,
-                        },
-                        shadowOpacity: 0.30,
-                        shadowRadius: 4.65,
-                        elevation: 4,
-                        alignSelf: "center",
-                        borderRadius: 20,
-                        width: "90%",
-                        marginBottom: "10%"
-                    }}
+                    style={styles.FranceCard}
                 >
                     <Text
-                        style={{
-                            fontFamily: "Altissimo_bold",
-                            fontWeight: "bold",
-                            fontSize: 20,
-                            color: `${Color.primary}`,
-                            marginHorizontal: "8%",
-                            paddingTop: "8%"
-                        }}
+                        style={styles.cardTitle}
                     >FRANCE-MAGHREB AWARD</Text>
                     <Text
-                        style={{
-                            fontFamily: "Altissimo_bold",
-                            fontSize: 14,
-                            color: `${Color.secondary}`,
-                            marginHorizontal: "8%",
-                            marginVertical: "2%"
-                        }}
+                        style={styles.cardsubTitle}
                     >Cultural Diversity</Text>
                     <View
-                        style={{
-                            marginTop: "7%",
-                            marginHorizontal: "8%"
-                        }}>
+                        style={styles.readMoreView}>
                         <ReadMore
                             numberOfLines={3}
                             renderTruncatedFooter={renderTruncatedFooter}
                             renderRevealedFooter={renderRevealedFooter}
                         >
                             <Text
-                                style={{
-                                    color: `${Color.primary}`,
-                                    fontSize: 14,
-                                }}
+                                style={styles.readMoreText}
                             >In February 2007 Vision Enabler won the prestigious France-Maghreb award for cultural diversity (business category).
                                 The project, Recruiting Visible Minorities, involved eight global French organisations: Axa, BNP Paribas, Danone, Gas de France, L’Oréal, Schneider Electric, Société Générale and Total. The results of our work were presented to the United Nations.
                             The France-Maghreb Convention was set up in 2003 to facilitate business and social cooperation between France and North Africa. Previous recipients include Peugeot, L’Oréal and Veolia.</Text>
                         </ReadMore>
                     </View>
                     <Image
-                        style={{
-                            resizeMode: "cover",
-                            width: "100%",
-                            borderRadius: 20
-                        }}
-                        source={require('../../../../assets/images/Awards.png')}
+                        style={styles.cardImage}
+                        source={require('@Assets/images/Awards.png')}
                     />
                 </View>
                 <View
-                    style={{
-                        width: "100%",
-                        borderRadius: 20
-                    }}
+                    style={styles.mediaCenterCard}
                 >
                     <Image
-                        style={{
-                            width: "90%",
-                            height: 200,
-                            alignSelf: "center",
-                            justifyContent: "center",
-                            alignItems: "center",
-                            resizeMode: "cover",
-                            borderRadius: 20,
-                        }}
-                        source={require('../../../../assets/images/ourMediaCenter.png')}
+                        style={styles.mediaCenterImage}
+                        source={require('@Assets/images/ourMediaCenter.png')}
                     />
                     <View
-                        style={{
-                            position: 'absolute',
-                            left: "13%",
-                            top: "13%",
-                            right: 0
-                        }}
+                        style={styles.mediaCenterTextContainer}
                     >
                         <Text
-                            style={{
-                                color: `${Color.white}`,
-                                fontSize: 16,
-                                fontWeight: "bold"
-                            }}
+                            style={styles.mediaOur}
                         >{'our'.toUpperCase()}</Text>
                         <Text
-                            style={{
-                                color: `${Color.primary}`,
-                                fontSize: 30,
-                                fontWeight: "bold"
-                            }}
+                            style={styles.mediaCenter}
                         >{'media center'.toUpperCase()}</Text>
-                        <TouchableOpacity style={styles.button}>
-                            <Text style={styles.buttonText}>Log in</Text>
+                        <TouchableOpacity
+                            onPress={() => navigation.navigate('Media')}
+                            style={styles.button}>
+                            <Text style={styles.buttonText}>Get Started</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -196,25 +139,4 @@ const AboutUs = () => {
         </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%"
-    },
-    button: {
-        borderRadius: 50,
-        backgroundColor: `${Color.primary}`,
-        justifyContent: "center",
-        alignItems: "center",
-        paddingVertical: 12,
-        width: "80%",
-        marginLeft: "3%",
-        alignSelf: "flex-start",
-        marginTop: "5%"
-    },
-    buttonText: {
-        color: `${Color.white}`,
-        fontSize: 16
-    },
-})
 export default AboutUs

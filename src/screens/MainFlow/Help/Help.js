@@ -1,15 +1,23 @@
-import React from 'react'
-import { View, Text, StyleSheet, ScrollView } from 'react-native'
-import StackHeader from '../../../components/Header/StackHeader'
-import Color from '../../../../assets/Constant'
-import SectionTitle from '../../../components/SectionTitle/SectionTitle'
-import SectionDescription from '../../../components/SectionTitle/SectionDescription'
-import ApproachCard from '../../../components/card/ApprochCard'
-import ApprochStep from '../../../components/card/ApprochStep'
-const Help = () => {
+import React from 'react';
+import { View, ScrollView } from 'react-native';
+import StackHeader from '@Components/Header/StackHeader/StackHeader';
+import Color from '@Assets/Constant';
+import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
+import SectionDescription from '@Components/SectionTitle/SectionDescription/SectionDescription';
+import ApproachCard from '@Components/card/ApprochCard/ApprochCard';
+import ApprochStep from '@Components/card/ApprochStep/ApprochStep';
+import styles from './Styles';
+const Help = ({ navigation }) => {
     return (
-        <View>
-            <StackHeader color={Color.primary} />
+        <View
+            style={{
+                backgroundColor: Color.white
+            }}>
+            <StackHeader
+                goBack={() => navigation.goBack()}
+                color={Color.primary}
+                borderBottomWith={1}
+            />
             <ScrollView style={styles.container}>
                 <SectionTitle
                     title1="How"
@@ -48,42 +56,42 @@ const Help = () => {
                     />
                     <ApproachCard />
                 </View>
-                <SectionTitle
-                    title1="Our"
-                    title2="Methodology"
-                />
-                <SectionDescription
-                    text="We have developed an insightful frame of reference for all strategic and operational decisions to help our clients put their vision into action. These decisions form the basis of a plan of action - starting with your key stakeholders and ultimately impacting your entire organisation."
-                />
-                <SectionDescription
-                    text="Diversity is a tremendously complex issue and because all organisations have different needs, we help you to define your diversity themes and select processes relevant only to your organisation. This allows us to design tailored working programmes and offer bespoke, end-to-end business solutions."
-                />
-                <SectionTitle
-                    title1="3 Step"
-                    title2="Approach"
-                />
-                <SectionDescription
-                    text="Our three step process helps you:"
-                />
-                <ApprochStep />
-                <SectionTitle
-                    title1="The"
-                    title2="Diversity Matrix"
-                />
-                <SectionDescription
-                    text="The Diversity matrix is simple, yet immensely powerful. It will help you to define your business priorities by connecting the diversity themes - disability, gender, ethnicity, age, with your HR Process - recruitment, training, learning and development."
-                />
-                <SectionDescription
-                    text="Our tailor made matrix can be applied to any business theme or process, and is relevant to any organisation, anywhere in the world."
-                />
+                <View
+                    style={{ marginBottom: "20%" }}
+                >
+
+                    <SectionTitle
+                        title1="Our"
+                        title2="Methodology"
+                    />
+                    <SectionDescription
+                        text="We have developed an insightful frame of reference for all strategic and operational decisions to help our clients put their vision into action. These decisions form the basis of a plan of action - starting with your key stakeholders and ultimately impacting your entire organisation."
+                    />
+                    <SectionDescription
+                        text="Diversity is a tremendously complex issue and because all organisations have different needs, we help you to define your diversity themes and select processes relevant only to your organisation. This allows us to design tailored working programmes and offer bespoke, end-to-end business solutions."
+                    />
+                    <SectionTitle
+                        title1="3 Step"
+                        title2="Approach"
+                    />
+                    <SectionDescription
+                        text="Our three step process helps you:"
+                    />
+                    <ApprochStep />
+                    <SectionTitle
+                        title1="The"
+                        title2="Diversity Matrix"
+                    />
+                    <SectionDescription
+                        text="The Diversity matrix is simple, yet immensely powerful. It will help you to define your business priorities by connecting the diversity themes - disability, gender, ethnicity, age, with your HR Process - recruitment, training, learning and development."
+                    />
+                    <SectionDescription
+                        text="Our tailor made matrix can be applied to any business theme or process, and is relevant to any organisation, anywhere in the world."
+                    />
+                </View>
             </ScrollView>
         </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%"
-    }
-})
+
 export default Help

@@ -1,12 +1,23 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
-import Form from '../../../components/signupForm/SignupForm';
-import StackHeader from '../../../components/Header/StackHeader';
-import Color from '../../../../assets/Constant';
-const SignUp = () => {
+import React, { useContext } from 'react';
+import {
+    View,
+    Text,
+    Image
+} from 'react-native';
+import Form from '@Components/signupForm/SignupForm';
+import StackHeader from '@Components/Header/StackHeader/StackHeader';
+import Color from '@Assets/Constant';
+import { Context as AuthContext } from '../../../Context/AuthContext'
+import styles from './Styles'
+const SignUp = ({ navigation }) => {
+    const { login } = useContext(AuthContext)
+
     return (
         <View style={styles.container}>
-            <StackHeader color={Color.primary} />
+            <StackHeader
+                color={Color.primary}
+                goBack={() => navigation.goBack()}
+            />
             <View style={styles.headSection}>
                 <Text
                     style={styles.title1}
@@ -14,42 +25,13 @@ const SignUp = () => {
                 <Text
                     style={styles.title2}
                 >{'Sign up'.toUpperCase()}</Text>
-                <Form />
+                <Form SignUp={login} />
                 <Image
                     style={styles.footer}
-                    source={require('../../../../assets/images/pups.png')}
+                    source={require('@Assets/images/pups.png')}
                 />
             </View>
         </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%"
-    },
-    title1: {
-        color: `${Color.secondary}`,
-        fontSize: 16,
-        fontFamily: "Altissimo_bold",
-        alignSelf: "flex-start"
-    },
-    title2: {
-        color: `${Color.primary}`,
-        fontSize: 30,
-        fontFamily: "Altissimo",
-        fontWeight: "bold",
-        alignSelf: "flex-start"
-    },
-    headSection: {
-        flex: 1,
-        marginLeft: "10%",
-        marginTop: "5%"
-    },
-    footer: {
-        resizeMode: "contain",
-        marginTop: "20%",
-        marginLeft: "-15%"
-    }
-})
 export default SignUp

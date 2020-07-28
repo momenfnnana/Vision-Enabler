@@ -1,14 +1,32 @@
-import React from 'react'
-import { View, Text, StyleSheet, Image, ScrollView, TouchableOpacity } from 'react-native'
-import StackHeader from '../../../components/Header/StackHeader'
-import Color from '../../../../assets/Constant'
-import SectionTitle from '../../../components/SectionTitle/SectionTitle'
-import SectionDescription from '../../../components/SectionTitle/SectionDescription'
-const Diversity = () => {
+import React, { useState } from 'react';
+import {
+    View,
+    Text,
+    Image,
+    ScrollView,
+    TouchableOpacity,
+    Button
+} from 'react-native';
+import StackHeader from '@Components/Header/StackHeader/StackHeader';
+import Color from '@Assets/Constant';
+import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
+import SectionDescription from '@Components/SectionTitle/SectionDescription/SectionDescription';
+import styles from './Styles';
+import Modal from 'react-native-modal';
+
+const Diversity = ({ navigation }) => {
+    const [isModalVisible, setModalVisible] = useState(false);
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+    };
     return (
         <ScrollView style={styles.container}>
-            <StackHeader color={Color.primary} />
-            <Image style={styles.image} source={require('../../../../assets/images/DiversityHeaderCorner.png')} />
+            <StackHeader
+                goBack={() => navigation.goBack()}
+                color={Color.primary}
+                borderBottomWith={1}
+            />
+            <Image style={styles.image} source={require('@Assets/images/DiversityHeaderCorner.png')} />
             <View style={{ marginTop: "20%" }}>
                 <SectionTitle
                     title1="WHAT"
@@ -29,13 +47,23 @@ const Diversity = () => {
                 <SectionDescription
                     text="Unfortunately diversity is still seen by most as a threat. But it needn’t be. At Vision Enabler we see diversity and inclusion as a powerful opportunity, to be harnessed and maximised through an efficiently designed diversity strategy."
                 />
-                <TouchableOpacity>
-                    <Image source={require('../../../../assets/images/Diversity.png')} />
+                <TouchableOpacity
+                    onPress={() => {
+                        setModalVisible(true)
+                    }}
+                >
+                    <Image
+                        style={styles.imageButton}
+                        source={require('@Assets/images/Diversity.png')} />
                 </TouchableOpacity>
-                <SectionTitle
-                    title1="Diversity"
-                    title2="Strategy"
-                />
+                <View
+                    style={{ marginTop: "2%" }}
+                >
+                    <SectionTitle
+                        title1="Diversity"
+                        title2="Strategy"
+                    />
+                </View>
                 <SectionDescription
                     text="The power of a diversity and inclusion strategy."
                 />
@@ -52,19 +80,37 @@ const Diversity = () => {
                     text="A diverse workforce is just the first step, it has to be followed by the creation of an inclusive work environment."
                 />
             </View>
+            <Modal
+                isVisible={isModalVisible}
+                onBackdropPress={() => setModalVisible(false)}
+                onSwipeComplete={() => setModalVisible(false)}
+                swipeDirection="down"
+            >
+                <View style={{
+                    backgroundColor: "#fff",
+                    position: "absolute",
+                    bottom: "-3%",
+                    left: "-5%",
+                    right: "-5%",
+                    borderTopRightRadius: 20,
+                    borderTopLeftRadius: 20
+                }}>
+                    <Text
+                        style={styles.modalTitle}
+                    >Increase Organisational</Text>
+                    <Text
+                        style={styles.subTitle}
+                    >Increase organizational effectiveness with training and executive coaching.</Text>
+                    <Text
+                        style={styles.description}
+                    >There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.
+
+                        If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text.
+
+All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet.</Text>
+                </View>
+            </Modal>
         </ScrollView>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        width: "100%"
-    },
-    image: {
-        position: "absolute",
-        top: 0,
-        right: 0,
-        resizeMode: "contain"
-    }
-})
 export default Diversity

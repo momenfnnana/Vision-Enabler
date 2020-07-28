@@ -1,7 +1,7 @@
 const ContactData = [
     {
         id: 1,
-        img: require('../../assets/images/ukOffice.png'),
+        img: require('@Assets/images/ukOffice.png'),
         title: "UK OFFICE",
         desciption1: "Vision Enabler UK Ltd",
         desciption2: "Registered in England and Wales: No.",
@@ -9,7 +9,7 @@ const ContactData = [
     },
     {
         id: 2,
-        img: require('../../assets/images/AustraliaOffice.png'),
+        img: require('@Assets/images/AustraliaOffice.png'),
         title: "Australia OFFICE",
         desciption1: "Vision Enabler UK Ltd",
         desciption2: "Registered in England and Wales: No.",
