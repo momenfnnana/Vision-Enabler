@@ -8,7 +8,9 @@ const styles = {
         fontSize: 22,
         color: Color.primary,
         marginTop: "7%",
-        marginLeft: "7%"
+        marginBottom: "5%",
+        marginLeft: "7%",
+        textTransform: "uppercase"
     },
     screenTitle2: {
         color: Color.secondary

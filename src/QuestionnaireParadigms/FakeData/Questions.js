@@ -1,27 +1,27 @@
 const Questions = [
     {
         id: 1,
-        tex: "People & Behaviors Perception"
+        text: "People & Behaviors Perception"
     },
     {
         id: 2,
-        tex: "People & Behaviors Compliance"
+        text: "People & Behaviors Compliance"
     },
     {
         id: 3,
-        tex: "Systems & Processes Perception"
+        text: "Systems & Processes Perception"
     },
     {
         id: 4,
-        tex: "Brand & Consumer Reality"
+        text: "Brand & Consumer Reality"
     },
     {
         id: 5,
-        tex: "Brand & Consumer Perception"
+        text: "Brand & Consumer Perception"
     },
     {
         id: 6,
-        tex: "Systems & Processes Reality"
+        text: "Systems & Processes Reality"
     },
 ]
 export default Questions

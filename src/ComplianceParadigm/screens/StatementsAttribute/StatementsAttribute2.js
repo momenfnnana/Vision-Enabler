@@ -4,6 +4,7 @@ import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
 import Color from '@Assets/Constant';
 import List from './List2';
 import styles from './StatementsAttribute.style';
+import Footer from '@ParadigmComponents/Footer/Footer';
 const StatementsAttribute2 = () => {
     return (
         <View
@@ -23,6 +24,7 @@ const StatementsAttribute2 = () => {
                 </Text>
                 </Text>
                 <List />
+                <Footer />
             </ScrollView>
         </View>
     )

@@ -13,6 +13,9 @@ import QuestionnaireSignUp from './src/QuestionnaireParadigms/screens/AuthFlow/S
 import QuestionnaireActiveAccount from './src/QuestionnaireParadigms/screens/AuthFlow/AccountActivation/AccountActivation';
 import QuestionnaireResetPassword from './src/QuestionnaireParadigms/screens/AuthFlow/ForgotPassword/ResetPassword';
 import PerceptionReport from './src/ComplianceParadigm/screens/PerceptionReport/PerceptionReport';
+import DiversityMatrix from './src/ComplianceParadigm/screens/DiversityMatrix/DiversityMatrix';
+import Questionnaire from './src/ComplianceParadigm/screens/Questionnaire/Questionnaire';
+import InclusionOmeter from './src/ComplianceParadigm/screens/InclusionOmeter/InclusionOmeter';
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {
@@ -45,6 +48,9 @@ export default function App() {
       {/* <QuestionnaireActiveAccount /> */}
       {/* <QuestionnaireResetPassword /> */}
       <PerceptionReport />
+      {/* <DiversityMatrix /> */}
+      {/* <Questionnaire /> */}
+      {/* <InclusionOmeter /> */}
     </AuthProvider>
   );
 }
