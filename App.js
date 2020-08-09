@@ -10,10 +10,13 @@ import StatementsAttribute2 from './src/ComplianceParadigm/screens/StatementsAtt
 import Blug from './src/screens/MainFlow/Blug/Blug';
 import ChooseQuestionnaire from './src/QuestionnaireParadigms/screens/ChooseQuestionnaire/ChooseQuestionnaire';
 import QuestionnaireLogin from './src/QuestionnaireParadigms/screens/AuthFlow/login/login';
+import DiversityInvoiceScreen from './src/ComplianceParadigm/screens/DiversityInvoice/DiversityInvoiceScreen';
+import AddPromoCodeScreen from './src/ComplianceParadigm/screens/AddPromoCode/AddPromoCodeScreen';
+import PerceptionReport from './src/ComplianceParadigm/screens/PerceptionReport/PerceptionReport';
 import QuestionnaireSignUp from './src/QuestionnaireParadigms/screens/AuthFlow/SignUp/SignUp';
 import QuestionnaireActiveAccount from './src/QuestionnaireParadigms/screens/AuthFlow/AccountActivation/AccountActivation';
 import QuestionnaireResetPassword from './src/QuestionnaireParadigms/screens/AuthFlow/ForgotPassword/ResetPassword';
-import PerceptionReport from './src/ComplianceParadigm/screens/PerceptionReport/PerceptionReport';
+import PerceptionReportFormScreen from './src/ComplianceParadigm/screens/PerceptionReportForm/PerceptionReportFormScreen';
 import DiversityMatrix from './src/ComplianceParadigm/screens/DiversityMatrix/DiversityMatrix';
 import Questionnaire from './src/ComplianceParadigm/screens/Questionnaire/Questionnaire';
 import InclusionOmeter from './src/ComplianceParadigm/screens/InclusionOmeter/InclusionOmeter';
@@ -42,7 +45,7 @@ export default function App() {
   }
   return (
     <AuthProvider>
-      {/* <Navigator /> */}
+      <Navigator />
       {/* <Welcome /> */}
       {/* <StatementsAttribute /> */}
       {/* <StatementsAttribute2 /> */}
@@ -59,7 +62,10 @@ export default function App() {
       {/* <Questions /> */}
       {/* <Profile /> */}
       {/* <Setting /> */}
-      <EditProfile />
+      {/* <EditProfile /> */}
+      {/* <DiversityInvoiceScreen /> */}
+      {/* <AddPromoCodeScreen /> */}
+      {/* <PerceptionReportFormScreen /> */}
     </AuthProvider>
   );
 }

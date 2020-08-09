@@ -8,7 +8,7 @@ import subQuestions from '@ParadigmFakeData/subQuestions';
 import styles from './Questionnaire.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
 import SwipeUpDown from 'react-native-swipe-up-down';
-
+import Questions from '@ComplianceParadigmScreens/Questions/Questions'
 const Questionnaire = ({ navigation }) => {
     const [isVisible, setIsVisible] = useState(true)
     const [isVisible2, setIsVisible2] = useState(true)
@@ -31,66 +31,69 @@ const Questionnaire = ({ navigation }) => {
     }
     const ItemFull = () => {
         return (
-            <ScrollView
-                style={
-                    {
-                        position: "absolute",
-                        top: 0,
-                        right: 0,
-                        left: 0,
-                        backgroundColor: Color.white,
-                        borderTopRightRadius: 50,
-                        borderTopLeftRadius: 50,
-                    }
-                }
-            >
-                {
-                    subQuestions.map(i => {
-                        return (
-                            <View
-                                style={styles.questionsScroll}
-                                key={i.id}
-                            >
-                                <Text
-                                    style={styles.title}
-                                >{i.title}</Text>
-                                <Text style={styles.subTitle}>{i.subTitle}</Text>
-                                {
-                                    i.questions.map(items => {
-                                        return (
-                                            <View
-                                                key={items.id}
-                                                style={{
-                                                    flexDirection: "row",
-                                                    width: "80%",
-                                                    alignSelf: "center",
-                                                    marginTop: "5%",
-                                                    shadowColor: "#000",
-                                                    shadowOffset: {
-                                                        width: 0,
-                                                        height: 4,
-                                                    },
-                                                    shadowOpacity: 0.30,
-                                                    shadowRadius: 4.65,
-                                                    elevation: 4,
-                                                    backgroundColor: "#fff",
-                                                }}
-                                            >
-                                                <CheckBox
-                                                    disabled={false}
-                                                    value={toggleCheckBox}
-                                                    onValueChange={(newValue) => setToggleCheckBox(newValue)}
-                                                />
-                                                <Text>{items.question}</Text>
-                                            </View>
-                                        )
-                                    })
-                                }
-                            </View>
-                        )
-                    })
-                }
-            </ScrollView>
+            <View>
+                <Questions />
+            </View>
+            // <ScrollView
+            //     style={
+            //         {
+            //             position: "absolute",
+            //             top: 0,
+            //             right: 0,
+            //             left: 0,
+            //             backgroundColor: Color.white,
+            //             borderTopRightRadius: 50,
+            //             borderTopLeftRadius: 50,
+            //         }
+            //     }
+            // >
+            //     {
+            //         subQuestions.map(i => {
+            //             return (
+            //                 <View
+            //                     style={styles.questionsScroll}
+            //                     key={i.id}
+            //                 >
+            //                     <Text
+            //                         style={styles.title}
+            //                     >{i.title}</Text>
+            //                     <Text style={styles.subTitle}>{i.subTitle}</Text>
+            //                     {
+            //                         i.questions.map(items => {
+            //                             return (
+            //                                 <View
+            //                                     key={items.id}
+            //                                     style={{
+            //                                         flexDirection: "row",
+            //                                         width: "80%",
+            //                                         alignSelf: "center",
+            //                                         marginTop: "5%",
+            //                                         shadowColor: "#000",
+            //                                         shadowOffset: {
+            //                                             width: 0,
+            //                                             height: 4,
+            //                                         },
+            //                                         shadowOpacity: 0.30,
+            //                                         shadowRadius: 4.65,
+            //                                         elevation: 4,
+            //                                         backgroundColor: "#fff",
+            //                                     }}
+            //                                 >
+            //                                     <CheckBox
+            //                                         disabled={false}
+            //                                         value={toggleCheckBox}
+            //                                         onValueChange={(newValue) => setToggleCheckBox(newValue)}
+            //                                     />
+            //                                     <Text>{items.question}</Text>
+            //                                 </View>
+            //                             )
+            //                         })
+            //                     }
+            //                 </View>
+            //             )
+            //         })
+            //     }
+            // </ScrollView>
         )
     }
     return (
