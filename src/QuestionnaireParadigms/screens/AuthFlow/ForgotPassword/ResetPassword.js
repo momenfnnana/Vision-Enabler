@@ -29,7 +29,7 @@ const QuestionnaireResetPassword = ({ navigation }) => {
                     />
                     <TouchableOpacity
                         style={styles.button}
-                        onPress={() => navigation.navigate('ActiveAccount')}
+                        onPress={() => navigation.navigate('QuestionnaireActiveAccount')}
                     >
                         <Text style={styles.SignupText}>Send</Text>
                     </TouchableOpacity>

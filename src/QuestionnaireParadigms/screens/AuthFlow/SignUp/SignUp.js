@@ -7,8 +7,8 @@ import {
 import Form from '@Components/signupForm/SignupForm';
 import StackHeader from '@Components/Header/StackHeader/StackHeader';
 import Color from '@Assets/Constant';
-import { Context as AuthContext } from '@Context/AuthContext'
-import styles from './SignUp.style'
+import { Context as AuthContext } from '@Context/AuthContext';
+import styles from './SignUp.style';
 const QuestionnaireSignUp = ({ navigation }) => {
     const { login } = useContext(AuthContext)
 

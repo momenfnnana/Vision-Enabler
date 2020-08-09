@@ -35,8 +35,10 @@
     "react-native-safe-area-context": "~3.0.7",
     "react-native-screens": "~2.9.0",
     "react-native-shared-element": "^0.7.0",
+    "react-native-snap-carousel": "^4.0.0-beta.5",
     "react-native-speedometer": "^1.0.3",
     "react-native-svg": "12.1.0",
+    "react-native-swipe-up-down": "^1.0.7",
     "react-native-swiper": "^1.6.0",
     "react-native-web": "~0.11.7",
     "react-navigation-shared-element": "^2.3.1"

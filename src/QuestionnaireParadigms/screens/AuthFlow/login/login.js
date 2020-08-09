@@ -33,8 +33,8 @@ const QuestionnaireLogin = ({ navigation }) => {
                         >Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
                         <Form
                             Login={login}
-                            SignUp={() => navigation.navigate('SignUp')}
-                            ForgotPassword={() => navigation.navigate('ResetPassword')}
+                            SignUp={() => navigation.navigate('QuestionnaireSignUp')}
+                            ForgotPassword={() => navigation.navigate('QuestionnaireResetPassword')}
                         />
                     </View>
                 </KeyboardAvoidingView>

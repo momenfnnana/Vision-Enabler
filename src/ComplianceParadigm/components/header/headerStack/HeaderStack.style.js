@@ -8,7 +8,7 @@ const styles = {
         paddingBottom: "5%",
         borderBottomColor: `${Color.primary}20`,
         alignItems: "center",
-        paddingTop: "7%"
+        paddingTop: "7%",
     },
 }
 export default styles

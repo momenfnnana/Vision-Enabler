@@ -1,14 +1,13 @@
 import Color from '@Assets/Constant';
 import { StyleSheet } from 'react-native'
 const styles = StyleSheet.create({
-    container: {
+    contianer: {
         flexDirection: "row",
         justifyContent: "space-around",
-        marginTop: "5%",
         backgroundColor: Color.white,
         borderTopRightRadius: 45,
         borderTopLeftRadius: 45,
-        paddingVertical: "3%"
+        paddingVertical: "3%",
     },
     goback: {
         backgroundColor: Color.white,
@@ -24,16 +23,6 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     screenButton: {
-        width: 10,
-        height: 10,
-        backgroundColor: Color.secondary,
-        borderRadius: 20,
-        margin: 5
-    },
-    screenSelectedButton: {
-        width: 15,
-        height: 15,
-        backgroundColor: Color.primary,
         borderRadius: 20,
         margin: 5
     },

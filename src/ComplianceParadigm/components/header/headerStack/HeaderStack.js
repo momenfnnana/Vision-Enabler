@@ -13,7 +13,7 @@ const HeaderStack = ({ borderBottomWith, goBack, color, backgroundColor }) => {
                 styles.container,
                 {
                     borderBottomWidth: borderBottomWith,
-                    backgroundColor: backgroundColor
+                    backgroundColor: backgroundColor,
                 }
             ]}>
             <TouchableOpacity onPress={goBack}>

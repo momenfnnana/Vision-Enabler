@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     },
     modalContainer: {
         flex: 1,
-        marginTop: "10%"
     },
     questionsNumber: {
         flexDirection: "row",
@@ -52,6 +51,23 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         borderWidth: 1,
         borderColor: `${Color.secondary}50`,
+    },
+    questionsScroll: {
+        padding: "8%"
+    },
+    title: {
+        fontSize: 16,
+        color: Color.primary
+    },
+    subTitle: {
+        fontSize: 14,
+        color: `${Color.black}80`
+    },
+    slider: {
+        width: "90%",
+        height: 40,
+        alignSelf: "center",
+        marginTop: "3%",
     }
 })
 export default styles

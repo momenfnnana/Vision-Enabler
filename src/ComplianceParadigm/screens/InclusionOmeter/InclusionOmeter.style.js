@@ -13,8 +13,8 @@ const styles = StyleSheet.create({
     },
     head: {
         flexDirection: "row",
-        justifyContent: "space-around",
-        paddingTop: "5%"
+        justifyContent: "space-between",
+        paddingTop: "5%",
     },
     headTitle: {
         color: Color.white,
@@ -26,13 +26,15 @@ const styles = StyleSheet.create({
     },
     View: {
         borderRadius: 20,
-        width: "25%",
-        margin: 10
+        paddingHorizontal: 25,
+        margin: 10,
+        paddingVertical: 20,
+        justifyContent: "center"
     },
     line: {
         borderBottomColor: `${Color.white}50`,
         borderBottomWidth: 1,
-        width: "80%",
+        width: "90%",
         alignSelf: "center",
         paddingTop: "5%"
     },
@@ -42,7 +44,29 @@ const styles = StyleSheet.create({
     description: {
         fontSize: 16,
         color: Color.white,
-        paddingHorizontal: "8%",
+    },
+    slide1: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#9DD6EB'
+    },
+    slide2: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#97CAE5'
+    },
+    slide3: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#92BBD9'
+    },
+    text: {
+        color: '#fff',
+        fontSize: 30,
+        fontWeight: 'bold'
     }
 })
 export default styles;

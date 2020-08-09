@@ -1,7 +1,8 @@
 const subQuestions = [
     {
         id: 1,
-        questionType: "Vision",
+        title: "Vision",
+        subTitle: "Foreseen & desired by leaders who are",
         questions: [
             {
                 id: 1,
@@ -11,7 +12,8 @@ const subQuestions = [
     },
     {
         id: 2,
-        questionType: "Enablers",
+        title: "Enablers",
+        subTitle: "Embedded throughout the organisation",
         questions: [
             {
                 id: 1,
@@ -41,7 +43,8 @@ const subQuestions = [
     },
     {
         id: 3,
-        questionType: "Tools",
+        title: "Tools",
+        subTitle: "In place",
         questions: [
             {
                 id: 1,
