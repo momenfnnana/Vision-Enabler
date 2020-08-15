@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import {
     View,
     Text,
-    ScrollView
+    ScrollView,
+    Dimensions,
+    TouchableOpacity
 } from 'react-native';
 import Color from '@Assets/Constant';
 import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack'
@@ -10,8 +12,33 @@ import styles from './InclusionOmeter.style'
 import RNSpeedometer from 'react-native-speedometer';
 import InclusionOmeterData from '@ParadigmFakeData/InclusionOmeter.Data'
 import Footer from '@ParadigmComponents/Footer/Footer'
-import Carousel from 'react-native-snap-carousel';
+import Carousel from 'react-native-anchor-carousel';
+
 const InclusionOmeter = ({ navigation }) => {
+    const width = Dimensions.get('window').width
+    const carouselRef = useRef(null);
+    const renderItem = ({ item, index }) => {
+        const { id, title, from, to, description, completeDescription, backgroundColor } = item;
+        return (
+            <TouchableOpacity
+                style={[
+                    styles.View,
+                    { backgroundColor: backgroundColor }
+                ]}
+                key={id}
+                onPress={() => { carouselRef.current.scrollToIndex(index); }}>
+                <View style={styles.head}>
+                    <Text style={styles.headTitle}>{title}</Text>
+                    <Text style={styles.headRange}>{from}% - {to}%</Text>
+                </View>
+                <View style={styles.line} />
+                <View style={styles.descriptionContainer}>
+                    <Text style={styles.description}>{description}</Text>
+                    <Text style={styles.description}>{completeDescription}</Text>
+                </View>
+            </TouchableOpacity>
+        )
+    };
     const RenderItem = ({ i }) => {
         console.log(i);
         return (
@@ -42,6 +69,7 @@ const InclusionOmeter = ({ navigation }) => {
                 color={Color.primary}
                 borderBottomWith={1}
                 backgroundColor={Color.white}
+                goBack={() => navigation.goBack()}
             />
             <Text style={styles.title}>Inclusion <Text style={styles.completeTitle}>ometer</Text></Text>
             <RNSpeedometer
@@ -68,48 +96,16 @@ const InclusionOmeter = ({ navigation }) => {
                 }}
                 easeDuration={500}
             />
-            <ScrollView showsHorizontalScrollIndicator={false} horizontal style={{ height: "23%", marginTop: "20%" }}>
-                {
-                    InclusionOmeterData.map(i => {
-                        return (
-                            <View key={i.id}>
-                                {/* <Swiper autoplay={true} key={i.id} showsButtons={true}>
-                                    <View style={styles.slide3}>
-                                        <Text style={styles.text}>And simple</Text>
-                                    </View>
-                                    <View style={styles.slide1}>
-                                        <Text style={styles.text}>Hello Swiper</Text>
-                                    </View>
-                                    <View style={styles.slide2}>
-                                        <Text style={styles.text}>Beautiful</Text>
-                                    </View> */}
-                                {/* <Carousel
-                    data={InclusionOmeterData}
-                    renderItem={(data) => <RenderItem i={data} />}
-                    sliderWidth={100}
-                    itemWidth={100}
-                /> */}
-                                <View key={i.id} style={[
-                                    styles.View,
-                                    { backgroundColor: i.backgroundColor }
-                                ]}>
-                                    <View style={styles.head}>
-                                        <Text style={styles.headTitle}>{i.title}</Text>
-                                        <Text style={styles.headRange}>{i.from}% - {i.to}%</Text>
-                                    </View>
-                                    <View style={styles.line} />
-                                    <View style={styles.descriptionContainer}>
-                                        <Text style={styles.description}>{i.description}</Text>
-                                        <Text style={styles.description}>{i.completeDescription}</Text>
-                                    </View>
-                                </View>
-                                {/* </Swiper> */}
-                            </View>
-                        )
-                    })
-                }
-            </ScrollView>
+            <Carousel
+                data={InclusionOmeterData}
+                renderItem={renderItem}
+                itemWidth={width - 120}
+                containerWidth={width}
+                separatorWidth={-20}
+                ref={carouselRef}
+            />
             <Footer
+                next={() => navigation.navigate("PerceptionReportFormScreen")}
                 goBack={() => navigation.goBack()}
                 backgroundColor1={Color.secondary}
                 backgroundColor2={Color.secondary}
@@ -136,4 +132,4 @@ const InclusionOmeter = ({ navigation }) => {
         </View>
     )
 }
-export default InclusionOmeter
+export default InclusionOmeter;

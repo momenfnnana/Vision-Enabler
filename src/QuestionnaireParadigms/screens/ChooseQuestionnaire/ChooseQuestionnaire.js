@@ -5,7 +5,13 @@ import Color from '@Assets/Constant';
 import styles from './ChooseQuestionnaire.style';
 import Questions from '@QuestionnaireFakeData/Questions';
 import Card from './Card';
+import { Context as AuthContext } from '@Context/AuthContext';
+
 const ChooseQuestionnaire = ({ navigation }) => {
+    const toggleFlow = () => {
+        navigation.navigate('Welcome')
+    }
+
     return (
         <ScrollView style={{ backgroundColor: Color.white }}>
             <HeaderStack borderBottomWith={1} color={Color.primary} onPress={() => navigation.openDrawer()} />
@@ -24,7 +30,7 @@ const ChooseQuestionnaire = ({ navigation }) => {
                         <Card
                             key={data.id}
                             data={data}
-                            onPress={() => navigation.navigate('Welcome')}
+                            onPress={toggleFlow}
                         />
                     )
                 })

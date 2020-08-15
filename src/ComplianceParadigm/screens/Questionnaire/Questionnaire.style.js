@@ -68,6 +68,105 @@ const styles = StyleSheet.create({
         height: 40,
         alignSelf: "center",
         marginTop: "3%",
+    },
+    itemMiniTitle: {
+        fontSize: 16,
+        color: Color.primary
+    },
+    itemMiniDescription: {
+        fontSize: 14,
+        color: `${Color.black}95`,
+    },
+    mainTitle: {
+        fontSize: 20,
+        fontFamily: "Altissimo",
+        color: Color.primary,
+        marginTop: "5%",
+        marginLeft: "5%",
+        width: "80%"
+    },
+    progressBarContainer: {
+        width: "90%",
+        alignSelf: "center",
+        marginTop: "10%"
+    },
+    firstModal: {
+        flex: 1,
+        marginTop: "5%",
+        marginBottom: 0,
+        marginLeft: 0,
+        marginRight: 0,
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        left: 0,
+    },
+    firstModalContainer: {
+        height: "70%",
+        backgroundColor: Color.primary,
+        borderTopRightRadius: 50,
+        borderTopLeftRadius: 50,
+    },
+    Question1Container: {
+        backgroundColor: Color.white,
+        width: "25%",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingVertical: "3%",
+        borderRadius: 10,
+        marginLeft: "8%",
+        marginTop: "8%",
+    },
+    modalQuestionNumber: {
+        color: Color.primary,
+        fontSize: 12,
+        textTransform: "uppercase"
+    },
+    questionTitle: {
+        color: Color.white,
+        fontSize: 16,
+        marginTop: "5%",
+        marginLeft: "8%",
+    },
+    questionDescription: {
+        fontSize: 16,
+        color: Color.white,
+        marginLeft: "8%",
+        marginTop: "2%"
+    },
+    subQuestionsContainer: {
+        backgroundColor: Color.white,
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        paddingTop: "4%",
+    },
+    imagesAndSliderContainer: {
+        height: "100%",
+        justifyContent: "flex-end"
+    },
+    configuration: {
+        backgroundColor: Color.secondary,
+        borderTopRightRadius: 50,
+        borderTopLeftRadius: 50,
+    },
+    imagesContainer: {
+        flexDirection: "row",
+        justifyContent: "space-around",
+        alignItems: "flex-end",
+        marginTop: "4%",
+    },
+    firstStep: {
+        fontSize: 18,
+        color: Color.white,
+        fontFamily: "Altissimo"
+    },
+    footerContainer: {
+        position: "absolute",
+        bottom: 0,
+        right: 0,
+        left: 0,
+        borderTopRightRadius: 50,
+        borderTopLeftRadius: 50
     }
 })
 export default styles

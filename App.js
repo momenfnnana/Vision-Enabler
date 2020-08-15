@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
-// import Navigator from './src/Navigation/Navigation';
-import Navigator from './src/Navigation/Questionaier/Navigation';
-import { Provider as AuthProvider } from './src/Context/AuthContext'
+import Navigator from './src/Navigation/Navigation';
+// import Navigator from './src/Navigation/Questionaier/Navigation';
+import { Provider as AuthProvider } from './src/Context/AuthContext';
 import Welcome from './src/ComplianceParadigm/screens/Welcome/Welcome';
 import StatementsAttribute from './src/ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute1';
 import StatementsAttribute2 from './src/ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute2';
@@ -24,6 +24,10 @@ import Questions from './src/ComplianceParadigm/screens/Questions/Questions';
 import Profile from './src/QuestionnaireParadigms/screens/Profile/Profile';
 import Setting from './src/QuestionnaireParadigms/screens/Setting/Setting';
 import EditProfile from './src/QuestionnaireParadigms/screens/EditProfile/EditProfile';
+import PaymentFor from './src/ComplianceParadigm/screens/PaymentFor/PaymentFor';
+import PerceptionQuestionnaire from './src/ComplianceParadigm/screens/PerceptionQuestionnaire/PerceptionQuestionnaire';
+// import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
+
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {
@@ -66,6 +70,8 @@ export default function App() {
       {/* <DiversityInvoiceScreen /> */}
       {/* <AddPromoCodeScreen /> */}
       {/* <PerceptionReportFormScreen /> */}
+      {/* <PaymentFor /> */}
+      {/* <PerceptionQuestionnaire /> */}
     </AuthProvider>
   );
 }

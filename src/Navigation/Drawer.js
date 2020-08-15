@@ -18,6 +18,7 @@ import UploadCV from '@MainFlow/UploadCV/UploadCV';
 import PersonalScreen from '@MainFlow/PersonalScreen/PersonalScreen';
 import Media from '@MainFlow/Media/Media';
 import InterviewForm from '@MainFlow/InterviewForm/InterviewForm';
+import ChooseQuestionnaire from '@QuestionsAuthFlow/ChooseQuestionnaire/ChooseQuestionnaire';
 import Blug from '@MainFlow/Blug/Blug';
 import Color from '@Assets/Constant';
 import Animated from 'react-native-reanimated';
@@ -32,6 +33,7 @@ const Screens = ({ style }) => {
                 }}
             >
                 <Stack.Screen name="Home" component={Home} />
+                <Stack.Screen name="ChooseQuestionnaire" component={ChooseQuestionnaire} />
                 <Stack.Screen name="Diversity" component={Diversity} />
                 <Stack.Screen name="OurVision" component={OurVision} />
                 <Stack.Screen name="Help" component={Help} />
@@ -74,6 +76,15 @@ const CustomDrawerContent = (props) => {
                     }}
                     label="Home"
                     onPress={() => props.navigation.navigate("Home")}
+                />
+                <DrawerItem
+                    labelStyle={{
+                        fontSize: 16,
+                        fontFamily: "Altissimo_bold",
+                        color: Color.white
+                    }}
+                    label="ChooseQuestionnaire"
+                    onPress={() => props.navigation.navigate("ChooseQuestionnaire")}
                 />
                 <DrawerItem
                     labelStyle={{

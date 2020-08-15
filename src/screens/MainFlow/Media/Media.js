@@ -15,7 +15,6 @@ const Media = ({ navigation }) => {
             <StackHeader
                 goBack={() => navigation.goBack()}
                 color={Color.primary}
-                borderBottomWith={1}
             />
             <Image style={styles.image} source={require('@Assets/images/MediaHeadCorner.png')} />
             <SectionTitle

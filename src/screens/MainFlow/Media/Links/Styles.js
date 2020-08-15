@@ -5,8 +5,8 @@ const styles = {
         flexDirection: "row",
         justifyContent: "flex-start",
         alignItems: "center",
-        marginVertical: "3%",
-        width: "80%",
+        marginVertical: "2%",
+        width: "90%",
         backgroundColor: Color.white,
         shadowColor: "#000",
         shadowOffset: {

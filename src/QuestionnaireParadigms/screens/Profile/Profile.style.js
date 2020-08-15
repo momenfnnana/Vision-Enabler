@@ -6,57 +6,56 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: Color.white
     },
-    header: {
-        height: 300,
-        width: "100%",
-        backgroundColor: Color.primary,
-    },
-    Profile: {
+    screenTitle: {
         color: Color.white,
+        fontSize: 16,
         alignSelf: "center",
-        marginTop: "9%",
-        fontSize: 16
+        marginTop: "20%",
     },
-    setting: {
-        position: "absolute",
-        right: "7%",
-        top: "12%"
+    ProfileImage: {
+        height: 100,
+        width: 100,
+        borderRadius: 50,
+        alignSelf: "center",
+        marginTop: "8%"
     },
-    pups: {
-        position: "absolute",
-        top: "10%"
-    },
-    profileImageContainer: {
-        height: 120,
-        width: 120,
-        borderRadius: 60,
+    personalName: {
+        fontSize: 22,
+        color: Color.white,
+        fontFamily: "Altissimo_bold",
         alignSelf: "center",
         marginTop: "5%"
     },
-    name: {
-        color: Color.white,
-        fontSize: 25,
-        alignSelf: "center",
-        marginTop: "3%"
-    },
     job: {
-        color: Color.white,
-        fontSize: 11,
+        color: Color.secondary,
         alignSelf: "center",
-        marginTop: "2%"
+        marginTop: "2%",
+        marginBottom: "28%"
     },
-    matrixContainer: {
-        margin: "5%",
+    firstCardContainer: {
+        flexDirection: "row",
+        alignSelf: "center",
+        marginVertical: "5%",
+        padding: "5%",
+        borderRadius: 10,
+        backgroundColor: Color.white,
+        shadowColor: Color.primary,
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 8,
+        width: "90%",
+        justifyContent: 'space-around'
     },
-    title: {
-        color: Color.primary,
-        fontSize: 17,
-        margin: "1%"
+    firstCard: {
+        color: Color.primary
     },
-    qestionaerNumber: {
-        color: Color.black + 95,
-        marginBottom: "7%",
-        fontSize: 15
+    number: {
+        color: Color.black + 90,
+        marginLeft: "3%"
     }
 })
 export default styles;

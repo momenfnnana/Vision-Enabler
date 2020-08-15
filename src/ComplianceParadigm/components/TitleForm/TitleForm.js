@@ -7,7 +7,7 @@ const TitleForm = (props) => {
       {...props}
       style={[
         props.style,
-        { fontFamily: "Altissimo_bold", fontSize: 20, color: "#313BD0",marginVertical:5 },
+        { fontFamily: "Altissimo_bold", fontSize: 20, color: "#313BD0", marginVertical: 5, textTransform: "uppercase" },
       ]}
     >
       {props.children}

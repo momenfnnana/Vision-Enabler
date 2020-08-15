@@ -14,12 +14,7 @@ const Navigator = () => {
         <NavigationContainer>
             {
                 state.token === false ? (
-                    <Stack.Navigator
-                        screenOptions={{
-                            headerShown: false
-                        }}
-                        initialRouteName="QuestionnaireLogin"
-                    >
+                    <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="QuestionnaireLogin">
                         <Stack.Screen name="QuestionnaireSignUp" component={QuestionnaireSignUp} />
                         <Stack.Screen name="QuestionnaireLogin" component={QuestionnaireLogin} />
                         <Stack.Screen name="QuestionnaireResetPassword" component={QuestionnaireResetPassword} />

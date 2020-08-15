@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import {
     View,
     Text,
@@ -8,7 +8,8 @@ import Form from '@Components/signupForm/SignupForm';
 import StackHeader from '@Components/Header/StackHeader/StackHeader';
 import Color from '@Assets/Constant';
 import { Context as AuthContext } from '../../../Context/AuthContext'
-import styles from './Styles'
+import styles from './Styles';
+
 const SignUp = ({ navigation }) => {
     const { login } = useContext(AuthContext)
 
@@ -34,4 +35,4 @@ const SignUp = ({ navigation }) => {
         </View>
     )
 }
-export default SignUp
+export default SignUp;

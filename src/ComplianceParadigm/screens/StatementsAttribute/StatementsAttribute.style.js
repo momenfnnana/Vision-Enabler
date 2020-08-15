@@ -21,7 +21,7 @@ const styles = {
     },
     cardContainer: {
         flexDirection: "row",
-        marginVertical: "3%"
+        marginVertical: "3%",
     },
     percentage2: {
         alignSelf: "center",
@@ -29,7 +29,8 @@ const styles = {
     },
     description: {
         marginTop: "3%",
-        color: Color.primary
+        color: Color.primary,
+        width: "90%"
     },
     imgContainer: {
         backgroundColor: Color.secondary,

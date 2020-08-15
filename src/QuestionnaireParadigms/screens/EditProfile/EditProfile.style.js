@@ -20,12 +20,5 @@ const styles = StyleSheet.create({
         alignSelf: "center",
         marginTop: "5%"
     },
-    inputTitle: {
-        textTransform: "uppercase",
-        color: Color.black + 90,
-        marginLeft: "10%",
-        marginTop: "5%",
-        marginBottom: "2%"
-    }
 })
 export default styles

@@ -1,6 +1,13 @@
 import Color from '@Assets/Constant';
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
+    container: {
+        backgroundColor: `${Color.black}05`,
+        marginTop: "2%",
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        alignSelf: "center",
+    },
     headerTitle: {
         fontSize: 16,
         color: Color.primary,
@@ -13,7 +20,7 @@ const styles = StyleSheet.create({
     line: {
         borderColor: Color.primary,
         borderWidth: 1,
-        width: "10%",
+        width: 30,
         borderRadius: 50,
         height: "0%",
         alignSelf: "center",

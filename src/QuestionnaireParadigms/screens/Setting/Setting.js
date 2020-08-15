@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Image, FlatList } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
 import StackHeader from '@Components/Header/StackHeader/StackHeader';
 import Color from '@Assets/Constant';
 import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
@@ -38,9 +38,9 @@ const Setting = () => {
                         <Text style={styles.job}>Partner and Co-founder</Text>
                     </View>
                 </View>
-                <View style={styles.editProfile}>
+                <TouchableOpacity style={styles.editProfile}>
                     <Image source={require("@Assets/images/editProfile.png")} />
-                </View>
+                </TouchableOpacity>
             </View>
             <FlatList
                 data={SettingData}

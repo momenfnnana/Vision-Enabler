@@ -46,7 +46,7 @@ const styles = {
         top: 0,
         zIndex: -1,
         borderTopRightRadius: 20,
-        borderBottomRightRadius: 25,
+        borderBottomRightRadius: 20,
     },
     cardData: {
         fontSize: 18,

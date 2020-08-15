@@ -1,27 +1,31 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
 import Color from '@Assets/Constant';
 import List from './List2';
 import styles from './StatementsAttribute.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
+import { Context as AuthContext } from '@Context/AuthContext'
 const StatementsAttribute2 = ({ navigation }) => {
+    const { state } = useContext(AuthContext)
+    const toggleNextScreen = () => {
+        if (state.QuestionsFlow === 4) {
+            navigation.navigate("PaymentFor")
+        } else if (state.QuestionsFlow === 5) {
+            navigation.navigate("PerceptionQuestionnaire")
+        } else {
+            navigation.navigate("DiversityMatrix")
+        }
+    }
     return (
-        <View
-            style={[
-                styles.container,
-                { backgroundColor: Color.white }
-            ]}
-        >
+        <View style={[styles.container, { backgroundColor: Color.white }]}>
             <HeaderStack
                 borderBottomWith={1}
                 color={Color.primary}
                 goBack={() => navigation.goBack()}
             />
             <ScrollView>
-                <Text
-                    style={styles.screenTitle}
-                >
+                <Text style={styles.screenTitle}>
                     Statements <Text style={styles.screenTitle2}>
                         Attributes
                 </Text>
@@ -30,7 +34,7 @@ const StatementsAttribute2 = ({ navigation }) => {
             </ScrollView>
             <Footer
                 goBack={() => navigation.goBack()}
-                next={() => navigation.navigate("DiversityMatrix")}
+                next={toggleNextScreen}
                 backgroundColor1={Color.secondary}
                 backgroundColor2={Color.primary}
                 backgroundColor3={Color.secondary}

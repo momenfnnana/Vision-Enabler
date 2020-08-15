@@ -11,7 +11,8 @@ const styles = {
     },
     Text: {
         color: Color.white,
-        fontSize: 16
+        fontSize: 16,
+        alignSelf: 'center',
     }
 }
 export default styles;

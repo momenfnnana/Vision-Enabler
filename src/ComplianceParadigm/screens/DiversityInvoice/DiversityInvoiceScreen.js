@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { View, Text, ScrollView, TouchableOpacity } from "react-native";
 import Input from "../../components/Input/Input";
 import TitleForm from "../../components/TitleForm/TitleForm";
@@ -7,7 +7,10 @@ import Constants from "expo-constants";
 import { Fontisto, FontAwesome } from "@expo/vector-icons";
 import { PaymentsStripe as Stripe } from "expo-payments-stripe";
 import styles from "../FormsScreenStyles/FormsScreenStyles";
-
+import Color from '@Assets/Constant';
+import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
+import Footer from '@ParadigmComponents/Footer/Footer';
+import { Context as AuthContext } from '@Context/AuthContext';
 const params = {
   number: "4242424242424242",
   expMonth: 11,
@@ -15,14 +18,14 @@ const params = {
   cvc: "123",
 };
 
-const DiversityInvoiceScreen = () => {
+const DiversityInvoiceScreen = ({ navigation }) => {
+  const { state } = useContext(AuthContext);
   //   useEffect(() => {
   //     Stripe.setOptionsAsync({
   //       publishableKey:
   //         "pk_test_51HDp26JID4QxPn5UMrgPU0b2pYzjomTNRlX8kr1Uy10GPnlmy1Fi3u3UIg6Pp3Sh6HwmxTDizyXkEoT9fIDMYuzg00502EBT7j", // Your key
   //     });
   //   }, []);
-
   const [data, setData] = useState({
     num: "",
     expMonth: 0,
@@ -40,18 +43,32 @@ const DiversityInvoiceScreen = () => {
     // console.log("token: ", token);
   };
 
+  const toggleNextScreen = () => {
+    if (state.PaymentFlow === 1) {
+      navigation.navigate("Questionnaire")
+    } else if (state.PaymentFlow === 2) {
+      navigation.navigate("DiversityMatrix")
+    } else {
+      navigation.navigate("DiversityMatrix")
+    }
+  }
   const creditHandel = () => setData({ ...data, isFocused: "Credit" });
   const payPalHandel = () => setData({ ...data, isFocused: "payPal" });
 
   return (
     <View
       style={{
-        paddingHorizontal: "5%",
-        paddingTop: Constants.statusBarHeight,
+        flex: 1,
+        backgroundColor: Color.white
       }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
-        <TitleForm>Invoice Details</TitleForm>
+      <HeaderStack
+        borderBottomWith={1}
+        color={Color.primary}
+        goBack={() => navigation.goBack()}
+      />
+      <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: "5%" }}>
+        <TitleForm style={{ marginTop: "7%" }}>Invoice Details</TitleForm>
         <Text style={[styles.subTitle, styles.text]}>
           This survey is required pyment to access.
         </Text>
@@ -245,10 +262,35 @@ const DiversityInvoiceScreen = () => {
           <Text style={[styles.text, styles.label]}>Total billed</Text>
           <Text style={[styles.text, styles.billedText]}>$00.00</Text>
         </View>
-        <TouchableOpacity onPress={handelSubmit} style={styles.checkoutBtn}>
-          <Text style={styles.checkoutText}>Checkout</Text>
+        <TouchableOpacity onPress={handelSubmit} style={styles.submitBtn}>
+          <Text style={styles.submitText}>Checkout</Text>
         </TouchableOpacity>
       </ScrollView>
+      <Footer
+        goBack={() => { navigation.goBack() }}
+        next={toggleNextScreen}
+        backgroundColor1={Color.secondary}
+        backgroundColor2={Color.secondary}
+        backgroundColor3={Color.secondary}
+        backgroundColor4={Color.primary}
+        backgroundColor5={Color.secondary}
+        backgroundColor6={Color.secondary}
+        backgroundColor7={Color.secondary}
+        height1={5}
+        width1={5}
+        height2={5}
+        width2={5}
+        height3={5}
+        width3={5}
+        height4={10}
+        width4={10}
+        height5={5}
+        width5={5}
+        height6={5}
+        width6={5}
+        height7={5}
+        width7={5}
+      />
     </View>
   );
 };

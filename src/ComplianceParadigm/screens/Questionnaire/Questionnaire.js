@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image, TouchableOpacity, CheckBox, Slider, ScrollView } from 'react-native';
+import { View, Text, Image, TouchableOpacity, Easing, Slider, ScrollView } from 'react-native';
 import HeaderStack from '../../components/header/headerStack/HeaderStack';
 import Color from '@Assets/Constant';
 import { ProgressBar } from 'react-native-paper';
@@ -10,92 +10,21 @@ import Footer from '@ParadigmComponents/Footer/Footer';
 import SwipeUpDown from 'react-native-swipe-up-down';
 import Questions from '@ComplianceParadigmScreens/Questions/Questions'
 const Questionnaire = ({ navigation }) => {
-    const [isVisible, setIsVisible] = useState(true)
     const [isVisible2, setIsVisible2] = useState(true)
-    const [isVisible3, setIsVisible3] = useState(false)
-    const [toggleCheckBox, setToggleCheckBox] = useState(false)
     const [height, setHeight] = useState("100")
     const [sliderHeight, setSliderHeight] = useState("80")
     const [swiperHeight, setSwiperHeight] = useState("65")
+    const [marginBottom, setMarginBottom] = useState("20")
+    const [paddingLeft, setPaddingLeft] = useState("8")
     const [justifyContent, setJustifyContent] = useState("flex-end")
     useEffect(() => {
         isVisible2 === true && setIsVisible2(true)
     }, []);
-    const ItemMini = () => {
-        return (
-            <View>
-                <Text style={{ fontSize: 16, color: Color.primary }}>Vision</Text>
-                <Text style={{ fontSize: 14, color: `${Color.black}95` }}>Foreseen & desired by leaders who are</Text>
-            </View>
-        )
-    }
-    const ItemFull = () => {
-        return (
-            <View>
-                <Questions />
-            </View>
-            // <ScrollView
-            //     style={
-            //         {
-            //             position: "absolute",
-            //             top: 0,
-            //             right: 0,
-            //             left: 0,
-            //             backgroundColor: Color.white,
-            //             borderTopRightRadius: 50,
-            //             borderTopLeftRadius: 50,
-            //         }
-            //     }
-            // >
-            //     {
-            //         subQuestions.map(i => {
-            //             return (
-            //                 <View
-            //                     style={styles.questionsScroll}
-            //                     key={i.id}
-            //                 >
-            //                     <Text
-            //                         style={styles.title}
-            //                     >{i.title}</Text>
-            //                     <Text style={styles.subTitle}>{i.subTitle}</Text>
-            //                     {
-            //                         i.questions.map(items => {
-            //                             return (
-            //                                 <View
-            //                                     key={items.id}
-            //                                     style={{
-            //                                         flexDirection: "row",
-            //                                         width: "80%",
-            //                                         alignSelf: "center",
-            //                                         marginTop: "5%",
-            //                                         shadowColor: "#000",
-            //                                         shadowOffset: {
-            //                                             width: 0,
-            //                                             height: 4,
-            //                                         },
-            //                                         shadowOpacity: 0.30,
-            //                                         shadowRadius: 4.65,
-            //                                         elevation: 4,
-            //                                         backgroundColor: "#fff",
-            //                                     }}
-            //                                 >
-            //                                     <CheckBox
-            //                                         disabled={false}
-            //                                         value={toggleCheckBox}
-            //                                         onValueChange={(newValue) => setToggleCheckBox(newValue)}
-            //                                     />
-            //                                     <Text>{items.question}</Text>
-            //                                 </View>
-            //                             )
-            //                         })
-            //                     }
-            //                 </View>
-            //             )
-            //         })
-            //     }
-            // </ScrollView>
-        )
-    }
+    const ItemMini = () => <View>
+        <Text style={styles.itemMiniTitle}>Vision</Text>
+        <Text style={styles.itemMiniDescription}>Foreseen & desired by leaders who are</Text>
+    </View>
+    const ItemFull = () => <Questions />
     return (
         <View style={[styles.container, { backgroundColor: Color.white }]}>
             <HeaderStack
@@ -117,134 +46,54 @@ const Questionnaire = ({ navigation }) => {
                     <View style={styles.secondaryQuestionsContainer}><Text>3</Text></View>
                     <View style={styles.secondaryQuestionsContainer} ><Text>4</Text></View>
                 </View>
-                <Text
-                    style={{
-                        fontSize: 20,
-                        fontFamily: "Altissimo",
-                        color: Color.primary,
-                        marginTop: "5%",
-                        marginLeft: "5%",
-                        width: "80%"
-                    }}
-                >Do you personally believe that your working environment is?</Text>
-                <View
-                    style={{
-                        width: "90%",
-                        alignSelf: "center",
-                        marginTop: "10%"
-                    }}
-                >
+                <Text style={styles.mainTitle}>
+                    Do you personally believe that your working environment is?
+                </Text>
+                <View style={styles.progressBarContainer}>
                     <ProgressBar progress={0.25} color={Color.secondary} style={{ width: "100%" }} />
                 </View>
                 <View
-                    style={{
-                        flex: 1,
-                        marginTop: "5%",
-                        marginBottom: 0,
-                        marginLeft: 0,
-                        marginRight: 0,
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                        left: 0,
+                    style={[styles.firstModal, {
                         height: `${height}%`,
                         justifyContent: justifyContent
-                    }}
+                    }]}
                 >
-                    <View
-                        style={{
-                            height: "70%",
-                            backgroundColor: Color.primary,
-                            borderTopRightRadius: 50,
-                            borderTopLeftRadius: 50,
-                        }}
-                    >
-                        <View
-                            style={{
-                                backgroundColor: Color.white,
-                                width: "25%",
-                                justifyContent: "center",
-                                alignItems: "center",
-                                paddingVertical: "3%",
-                                borderRadius: 10,
-                                marginLeft: "8%",
-                                marginTop: "8%",
-                            }}
-                        >
-                            <Text
-                                style={{
-                                    color: Color.primary,
-                                    fontSize: 12,
-                                    textTransform: "uppercase"
-                                }}
-                            >
-                                Questions 1
-                                </Text>
+                    <View style={styles.firstModalContainer}>
+                        <View style={styles.Question1Container}>
+                            <Text style={styles.modalQuestionNumber}>Questions 1</Text>
                         </View>
-                        <Text
-                            style={{
-                                color: Color.white,
-                                fontSize: 16,
-                                marginTop: "5%",
-                                marginLeft: "8%",
-                            }}
-                        >Supportive and harmonious</Text>
-                        <Text
-                            style={{
-                                fontSize: 16,
-                                color: Color.white,
-                                marginLeft: "8%",
-                                marginTop: "2%"
-                            }}
-                        >Supportive and harmonious (with respect to diversity, promoting equality of opportunity to all people)?</Text>
+                        <Text style={styles.questionTitle}>Supportive and harmonious</Text>
+                        <Text style={styles.questionDescription}>Supportive and harmonious (with respect to diversity, promoting equality of opportunity to all people)?</Text>
                         <SwipeUpDown
-                            itemMini={<ItemMini />} // Pass props component when collapsed
-                            itemFull={<ItemFull />} // Pass props component when show full
+                            itemMini={<ItemMini />}
+                            itemFull={<ItemFull />}
                             onShowMini={() => {
                                 setHeight("100")
                                 setJustifyContent("flex-end")
                                 setSliderHeight("85")
+                                setMarginBottom("50")
                             }}
                             onShowFull={() => {
                                 setHeight("100")
                                 setJustifyContent("flex-start")
                                 setSliderHeight("37")
+                                setPaddingLeft("2")
                             }}
                             swipeHeight={500}
                             onMoveDown={() => console.log('down')}
                             onMoveUp={() => { }}
-                            disablePressToShow={false} // Press item mini to show full
-                            style={{ backgroundColor: Color.white, height: `${swiperHeight}%`, borderTopLeftRadius: 50, borderTopRightRadius: 50, paddingLeft: "8%", paddingTop: "4%" }} // style for swipe
+                            disablePressToShow={false}
+                            style={[styles.subQuestionsContainer, {
+                                height: `${swiperHeight}%`,
+                                paddingLeft: `${paddingLeft}%`,
+                            }]}
+                            swipeHeight={600}
+                            animation={Easing.linear}
                         />
-                        <View
-                            style={{
-                                height: "100%",
-                                justifyContent: "flex-end"
-                            }}
-                        >
-                            <View
-                                style={{
-                                    height: `${sliderHeight}%`,
-                                    backgroundColor: Color.secondary,
-                                    borderTopRightRadius: 50,
-                                    borderTopLeftRadius: 50,
-                                }}
-                            >
-                                <View
-                                    style={{
-                                        flexDirection: "row",
-                                        justifyContent: "space-around",
-                                        alignItems: "flex-end",
-                                        marginTop: "4%",
-                                    }}
-                                >
-                                    <Text
-                                        style={{
-                                            fontSize: 18,
-                                            color: Color.white,
-                                            fontFamily: "Altissimo"
-                                        }}
-                                    >N/A</Text>
+                        <View style={styles.imagesAndSliderContainer}>
+                            <View style={[styles.configuration, { height: `${sliderHeight}%`, }]}>
+                                <View style={styles.imagesContainer}>
+                                    <Text style={styles.firstStep}>N/A</Text>
                                     <Image source={require('@Assets/images/0%.png')} />
                                     <Image source={require('@Assets/images/25%.png')} />
                                     <Image source={require('@Assets/images/50%.png')} />
@@ -265,14 +114,7 @@ const Questionnaire = ({ navigation }) => {
                             </View>
                         </View>
                     </View>
-                    <View style={{
-                        position: "absolute",
-                        bottom: 0,
-                        right: 0,
-                        left: 0,
-                        borderTopRightRadius: 50,
-                        borderTopLeftRadius: 50
-                    }}>
+                    <View style={styles.footerContainer}>
                         <Footer
                             goBack={() => {
                                 setIsVisible2(false)

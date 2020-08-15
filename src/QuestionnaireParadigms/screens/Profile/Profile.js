@@ -1,26 +1,37 @@
 import React from 'react';
-import { View, Text, ScrollView, Image } from 'react-native';
+import { View, Text, ScrollView, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import Color from '@Assets/Constant';
 import styles from './Profile.style';
 import Table from '@ParadigmComponents/Table/Table'
 const Profile = () => {
     return (
         <ScrollView style={styles.container}>
-            <View style={styles.header}>
-                <Text style={styles.Profile}>Profile</Text>
-                <Image style={styles.setting} source={require("@Assets/images/settings.png")} />
-                <Image style={styles.pups} source={require("@Assets/images/profilePups.png")} />
-                <Image style={styles.profileImageContainer} source={require("@Assets/images/ProfileImage.png")} />
-                <Text style={styles.name}>Brad meyer</Text>
+            <ImageBackground style={{ width: "100%", marginTop: "-10%" }} source={require('@Assets/images/ContactFormHeader.png')}>
+                <TouchableOpacity style={{ position: "absolute", right: "5%", top: "20%" }}>
+                    <Image source={require('@Assets/images/settingsWhite.png')} />
+                </TouchableOpacity>
+                <Text style={styles.screenTitle}>Profile</Text>
+                <Image style={styles.ProfileImage} source={require('@Assets/images/ProfileImage.png')} />
+                <Text style={styles.personalName}>Brad Meyer</Text>
                 <Text style={styles.job}>Partner and Co-founder</Text>
+            </ImageBackground>
+            <View style={styles.firstCardContainer}>
+                <Text style={styles.firstCard}>Number of questionnaire you answered</Text>
+                <Text style={styles.number}>15</Text>
             </View>
-            <View style={styles.matrixContainer}>
-                <Text style={styles.title}>Number of questioners you answered</Text>
-                <Text style={styles.qestionaerNumber}>15 questioners</Text>
-                <Text style={styles.title}>Compliance Matrix ®</Text>
-            </View>
-            <Table />
+            <TouchableOpacity style={styles.firstCardContainer}>
+                <Text style={styles.firstCard}>A questionnaire Result Files</Text>
+                <Image source={require('@Assets/images/download.png')} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.firstCardContainer}>
+                <Text style={styles.firstCard}>The Matrix result PDF File</Text>
+                <Image source={require('@Assets/images/download.png')} />
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.firstCardContainer}>
+                <Text style={styles.firstCard}>Payments History File</Text>
+                <Image source={require('@Assets/images/download.png')} />
+            </TouchableOpacity>
         </ScrollView>
     )
 }
-export default Profile
+export default Profile;

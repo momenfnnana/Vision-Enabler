@@ -1,7 +1,10 @@
 import Color from '@Assets/Constant';
 import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
-    leftColumn: { marginTop: 120 },
+    leftColumn: {
+        alignSelf: "flex-start",
+        marginTop: 120,
+    },
     rowNumCol1: {
         marginVertical: 12,
         backgroundColor: Color.primary,
@@ -66,7 +69,6 @@ const styles = StyleSheet.create({
         alignItems: "center"
     },
     subCircle: {
-        backgroundColor: "#44DD7F",
         height: 15,
         width: 15,
         borderRadius: 10,

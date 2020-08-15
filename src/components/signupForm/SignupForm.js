@@ -7,9 +7,17 @@ import {
 import { Input } from 'react-native-elements';
 import DropDownPicker from 'react-native-dropdown-picker';
 import styles from './Styles';
+import Select2 from "react-native-select-two";
+import CompaniesData from '@FakeData/Companies';
+import Color from '@Assets/Constant';
+
 const Form = ({ SignUp }) => {
     const [selectedValue, setSelectedValue] = useState("+966");
-
+    const [data, setData] = useState(CompaniesData);
+    console.log(data[0].name);
+    const selectItem = (data, i) => {
+        setData(data[i] = data)
+    }
     return (
         <View style={styles.container}>
             <Input
@@ -33,11 +41,26 @@ const Form = ({ SignUp }) => {
                     dropDownStyle={styles.dropDownStyle}
                     onChangeItem={() => setSelectedValue}
                 />
-                <Input
-                    style={styles.PickerInput}
+                <Input style={styles.PickerInput}
                     placeholder="0599 000 000"
                 />
             </View>
+            <Text style={{
+                color: Color.secondary,
+                fontSize: 16,
+                marginLeft: "2%",
+                marginBottom: "-1%"
+            }}>Your Company</Text>
+            <Select2
+                isSelectSingle
+                style={{ borderColor: Color.white, borderBottomColor: Color.secondary, width: "97%", alignSelf: "center", marginBottom: "5%" }}
+                colorTheme="blue"
+                popupTitle="Select item"
+                title="Select item"
+                data={data}
+                onSelect={selectItem}
+                onRemoveItem={selectItem}
+            />
             <Input
                 placeholder="Password"
                 secureTextEntry

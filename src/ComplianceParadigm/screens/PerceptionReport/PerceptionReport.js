@@ -13,13 +13,56 @@ import styles from './PerceptionReport.style'
 import { AntDesign } from '@expo/vector-icons';
 import BarChartShape from '../../components/BarChart/BarChart';
 import Footer from '@ParadigmComponents/Footer/Footer';
+import { BarChart, Grid } from 'react-native-svg-charts';
+import { Defs, LinearGradient, Stop } from 'react-native-svg';
 const PerceptionReport = ({ navigation }) => {
+    const data = [
+        {
+            value: 32,
+            svg: {
+                fill: "#FA475F"
+            }
+        },
+        {
+            value: 10,
+            svg: {
+                fill: '#44DD7F',
+            },
+        },
+        {
+            value: 40,
+            svg: {
+                stroke: 'purple',
+                fill: '#44DD7F',
+            },
+        },
+        {
+            value: 95,
+            svg: {
+                fill: '#F77700',
+            },
+        },
+        {
+            value: 100,
+            svg: {
+                fill: '#F77700',
+            },
+        },
+    ]
+    const Gradient = () => (
+        <Defs key={'gradient'}>
+            <LinearGradient id={'gradient'} x1={'0'} y={'0%'} x2={'100%'} y2={'0%'}>
+                <Stop offset={'0%'} stopColor={'rgb(134, 65, 244)'} />
+                <Stop offset={'100%'} stopColor={'rgb(66, 194, 244)'} />
+            </LinearGradient>
+        </Defs>
+    )
     return (
-        <View style={{ flex: 1 }}>
+        <View style={{ flex: 1, backgroundColor: Color.primary }}>
             <ScrollView style={styles.container}>
                 <SafeAreaView>
                     <View style={styles.header}>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={() => navigation.goBack()}>
                             <AntDesign name="arrowleft" size={24} color={Color.white} />
                         </TouchableOpacity>
                         <Image source={require('@Assets/images/PersonRightIconWhite.png')} />
@@ -28,6 +71,7 @@ const PerceptionReport = ({ navigation }) => {
                     <Text style={styles.Overall}>Overall Inclusive Leadership score : 5 out of 10</Text>
                     <Text style={styles.avarageNum}>Average <Text style={styles.number}>5</Text></Text>
                     <BarChartShape />
+                    {/* <BarChart /> */}
                 </SafeAreaView>
             </ScrollView>
             <Footer

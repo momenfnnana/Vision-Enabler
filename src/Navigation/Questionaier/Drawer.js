@@ -27,6 +27,11 @@ import DiversityMatrix from '@ComplianceParadigmScreens/DiversityMatrix/Diversit
 import Questionnaire from '@ComplianceParadigmScreens/Questionnaire/Questionnaire'
 import PerceptionReport from '@ComplianceParadigmScreens/PerceptionReport/PerceptionReport'
 import InclusionOmeter from '@ComplianceParadigmScreens/InclusionOmeter/InclusionOmeter';
+import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
+import DiversityInvoiceScreen from '@ComplianceParadigmScreens/DiversityInvoice/DiversityInvoiceScreen';
+import PaymentFor from '@ComplianceParadigmScreens/PaymentFor/PaymentFor';
+import PerceptionQuestionnaire from '@ComplianceParadigmScreens/PerceptionQuestionnaire/PerceptionQuestionnaire';
+
 import Color from '@Assets/Constant';
 import Animated from 'react-native-reanimated';
 const Drawer = createDrawerNavigator();
@@ -164,6 +169,62 @@ const Screens = ({ style }) => {
                     component={InclusionOmeter}
                     animation="fade"
                 />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PerceptionReportFormScreen"
+                    component={PerceptionReportFormScreen}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="DiversityInvoiceScreen"
+                    component={DiversityInvoiceScreen}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PaymentFor"
+                    component={PaymentFor}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PerceptionQuestionnaire"
+                    component={PerceptionQuestionnaire}
+                    animation="fade"
+                />
                 <Stack.Screen name="Home" component={Home} />
                 <Stack.Screen name="Diversity" component={Diversity} />
                 <Stack.Screen name="OurVision" component={OurVision} />
@@ -177,7 +238,6 @@ const Screens = ({ style }) => {
                 <Stack.Screen name="Media" component={Media} />
                 <Stack.Screen name="InterviewForm" component={InterviewForm} />
                 <Stack.Screen name="Blug" component={Blug} />
-                {/* <Stack.Screen name="ChooseQuestionnaire" component={ChooseQuestionnaire} /> */}
             </Stack.Navigator>
         </Animated.View>
     )
@@ -208,6 +268,15 @@ const CustomDrawerContent = (props) => {
                     }}
                     label="Home"
                     onPress={() => props.navigation.navigate("Home")}
+                />
+                <DrawerItem
+                    labelStyle={{
+                        fontSize: 16,
+                        fontFamily: "Altissimo_bold",
+                        color: Color.white
+                    }}
+                    label="Questionnaire"
+                    onPress={() => props.navigation.navigate("ChooseQuestionnaire")}
                 />
                 <DrawerItem
                     labelStyle={{

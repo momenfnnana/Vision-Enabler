@@ -59,16 +59,11 @@ const ActiveAccount = ({ navigation }) => {
                     )}
                 />
                 <Text style={styles.date}>01:25</Text>
-                <TouchableOpacity
-                    style={styles.resendCode}
-                >
-                    <Text
-                        style={styles.resendCodeText}
-                    >Resend Code</Text>
+                <TouchableOpacity style={styles.resendCode}>
+                    <Text style={styles.resendCodeText}>Resend Code</Text>
                 </TouchableOpacity>
-                <TouchableOpacity
+                <TouchableOpacity style={styles.button}
                     onPress={login}
-                    style={styles.button}
                 >
                     <Text style={styles.SignupText}>Activate</Text>
                 </TouchableOpacity>
@@ -77,4 +72,4 @@ const ActiveAccount = ({ navigation }) => {
         </View>
     )
 }
-export default ActiveAccount
+export default ActiveAccount;

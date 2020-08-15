@@ -1,9 +1,9 @@
 import React from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import styles from './Setting.style';
 const Card = ({ img, title, description, backgroundColor }) => {
     return (
-        <>
+        <TouchableOpacity>
             <View style={{ flexDirection: "row" }}>
                 <View style={styles.cardContainer}>
                     <Image source={img} />
@@ -14,7 +14,7 @@ const Card = ({ img, title, description, backgroundColor }) => {
                 </View>
             </View>
             <View style={[styles.line, { backgroundColor: backgroundColor + 50, }]} />
-        </>
+        </TouchableOpacity>
     )
 }
 export default Card;

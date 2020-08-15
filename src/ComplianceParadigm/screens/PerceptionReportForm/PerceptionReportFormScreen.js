@@ -6,8 +6,10 @@ import DropDownList from "../../components/DropDownList/DropDownList";
 import Constants from "expo-constants";
 import DropDownPicker from "react-native-dropdown-picker";
 import styles from "../FormsScreenStyles/FormsScreenStyles";
+import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
+import Color from '@Assets/Constant';
 
-const PerceptionReportFormScreen = () => {
+const PerceptionReportFormScreen = ({ navigation }) => {
   const [data, setData] = useState({
     FullName: "",
     gender: "M",
@@ -26,11 +28,19 @@ const PerceptionReportFormScreen = () => {
   return (
     <View
       style={{
-        paddingHorizontal: "5%",
-        paddingTop: Constants.statusBarHeight,
+        flex: 1,
+        backgroundColor: Color.white,
       }}
     >
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <HeaderStack
+        color={Color.primary}
+        goBack={() => navigation.goBack()}
+        backgroundColor={Color.white}
+      />
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ paddingHorizontal: "5%" }}
+      >
         <Text style={[styles.text, styles.upperTitle]}>My Personal</Text>
         <TitleForm>Perception Report</TitleForm>
         <Text style={[styles.lowerTitle, styles.text]}>

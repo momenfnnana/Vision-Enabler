@@ -7,11 +7,10 @@ import styles from './Questions.style';
 import CheckBoxs from '../../components/CheckBox/CheckBox';
 
 const Questions = () => {
-    const [isSelected, setSelection] = useState(false);
     return (
-        <View style={{ backgroundColor: `${Color.black}05`, marginTop: "2%", borderTopLeftRadius: 50, borderTopRightRadius: 50 }}>
+        <View style={styles.container}>
             <View style={styles.line} />
-            <ScrollView>
+            <ScrollView style={{ width: "100%" }}>
                 <View style={styles.questionsScroll}>
                     {
                         subQuestions.map(i => {
