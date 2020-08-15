@@ -38,6 +38,7 @@ export default function App() {
       'DINNextLTProRegular': require('@Assets/fonts/DINNextLTPro-Regular.ttf')
     });
   };
+  // 
   if (!dataLoaded) {
     return (
       <AppLoading
