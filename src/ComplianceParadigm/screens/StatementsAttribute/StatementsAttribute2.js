@@ -1,3 +1,4 @@
+// 
 import React, { useContext } from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';

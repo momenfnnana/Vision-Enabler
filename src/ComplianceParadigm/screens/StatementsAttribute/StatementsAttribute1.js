@@ -1,3 +1,4 @@
+// 
 import React from 'react';
 import Color from '@Assets/Constant';
 import { View, Text, ScrollView } from 'react-native';

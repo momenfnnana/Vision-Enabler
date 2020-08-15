@@ -1,3 +1,4 @@
+// 
 import React, { useState, useContext } from 'react';
 import { View, TouchableOpacity, Image, Text } from 'react-native';
 import styles from './PaymentFor.style';

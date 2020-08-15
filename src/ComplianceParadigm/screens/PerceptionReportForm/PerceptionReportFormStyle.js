@@ -1,3 +1,4 @@
+// 
 import { StyleSheet, Platform } from "react-native";
 
 const styles = StyleSheet.create({
@@ -11,7 +12,7 @@ const styles = StyleSheet.create({
     color: "#313BD0",
     lineHeight: 20,
     marginTop: "2.5%",
-    marginBottom:'3%'
+    marginBottom: '3%'
   },
   text: {
     fontFamily: "Altissimo",
@@ -31,11 +32,11 @@ const styles = StyleSheet.create({
     flex: 0.47,
   },
   activeMethodBtn: {
-    backgroundColor:'#313BD0'
+    backgroundColor: '#313BD0'
   },
-  disableMethodBtn:{
-    borderWidth:1,
-    borderColor: "#E3E4F6", 
+  disableMethodBtn: {
+    borderWidth: 1,
+    borderColor: "#E3E4F6",
   },
   paymentMethodText: {
     fontSize: 18,

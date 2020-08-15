@@ -1,3 +1,4 @@
+// 
 import React, { useState, useEffect } from 'react';
 import { View, Text, Image, TouchableOpacity, Easing, Slider, ScrollView } from 'react-native';
 import HeaderStack from '../../components/header/headerStack/HeaderStack';

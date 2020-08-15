@@ -1,3 +1,4 @@
+// 
 import Color from '@Assets/Constant';
 
 const styles = {
