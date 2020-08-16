@@ -1,14 +1,20 @@
 import React from 'react';
-import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
+import { View, Text, Image, FlatList, TouchableOpacity, ScrollView } from 'react-native';
 import StackHeader from '@Components/Header/StackHeader/StackHeader';
 import Color from '@Assets/Constant';
 import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
 import Card from './Card';
 import styles from './Setting.style';
 import SettingData from '@QuestionnaireFakeData/SettingData';
-const Setting = () => {
+const Setting = ({ navigation }) => {
+    const toggleEditProfile = () => {
+        navigation.navigate('EditProfile')
+    }
+    const toggleEditPassword = () => {
+        navigation.navigate('EditPassword')
+    }
     return (
-        <View>
+        <ScrollView style={{ backgroundColor: Color.white }}>
             <View style={{
                 shadowColor: "#000",
                 shadowOffset: {
@@ -24,7 +30,6 @@ const Setting = () => {
                 <StackHeader
                     goBack={() => navigation.goBack()}
                     color={Color.primary}
-                // borderBottomWith={1}
                 />
                 <Image style={styles.image} source={require('@Assets/images/MediaHeadCorner.png')} />
                 <SectionTitle
@@ -38,10 +43,34 @@ const Setting = () => {
                         <Text style={styles.job}>Partner and Co-founder</Text>
                     </View>
                 </View>
-                <TouchableOpacity style={styles.editProfile}>
+                <TouchableOpacity onPress={() => navigation.navigate('EditProfile')} style={styles.editProfile}>
                     <Image source={require("@Assets/images/editProfile.png")} />
                 </TouchableOpacity>
             </View>
+            <TouchableOpacity style={{ marginTop: "8%" }} onPress={toggleEditProfile}>
+                <View style={{ flexDirection: "row" }}>
+                    <View style={styles.cardContainer}>
+                        <Image source={require('@Assets/images/editProfile.png')} />
+                    </View>
+                    <View style={{ justifyContent: "center", width: "70%" }}>
+                        <Text style={styles.title}>Edit Personal Information</Text>
+                        <Text style={styles.description}>update your name, personal image, email and bio</Text>
+                    </View>
+                </View>
+                <View style={[styles.line, { backgroundColor: Color.secondary + 50, }]} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={toggleEditPassword}>
+                <View style={{ flexDirection: "row" }}>
+                    <View style={styles.cardContainer}>
+                        <Image source={require('@Assets/images/lock.png')} />
+                    </View>
+                    <View style={{ justifyContent: "center", width: "70%" }}>
+                        <Text style={styles.title}>Edit Password</Text>
+                        <Text style={styles.description}>update your account password</Text>
+                    </View>
+                </View>
+                <View style={[styles.line, { backgroundColor: Color.secondary + 50, }]} />
+            </TouchableOpacity>
             <FlatList
                 data={SettingData}
                 keyExtractor={i => i.id.toString()}
@@ -55,11 +84,8 @@ const Setting = () => {
                         />
                     )
                 }}
-                style={{
-                    marginTop: "8%"
-                }}
             />
-        </View>
+        </ScrollView>
     )
 }
 export default Setting;

@@ -8,7 +8,6 @@ import Splash from '../screens/splash/splash';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Context as AuthContext } from "../Context/AuthContext";
-// import { createSharedElementStackNavigator } from 'react-navigation-shared-element'
 import Drawer from './Drawer';
 const Stack = createStackNavigator();
 const Navigator = () => {
@@ -37,4 +36,4 @@ const Navigator = () => {
         </NavigationContainer>
     )
 }
-export default Navigator
+export default Navigator;

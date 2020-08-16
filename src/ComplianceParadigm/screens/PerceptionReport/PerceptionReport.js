@@ -16,6 +16,7 @@ import BarChartShape from '../../components/BarChart/BarChart';
 import Footer from '@ParadigmComponents/Footer/Footer';
 import { BarChart, Grid } from 'react-native-svg-charts';
 import { Defs, LinearGradient, Stop } from 'react-native-svg';
+
 const PerceptionReport = ({ navigation }) => {
     const data = [
         {

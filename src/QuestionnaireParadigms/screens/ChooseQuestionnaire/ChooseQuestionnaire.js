@@ -14,7 +14,12 @@ const ChooseQuestionnaire = ({ navigation }) => {
 
     return (
         <ScrollView style={{ backgroundColor: Color.white }}>
-            <HeaderStack borderBottomWith={1} color={Color.primary} onPress={() => navigation.openDrawer()} />
+            <HeaderStack
+                borderBottomWith={1}
+                color={Color.primary}
+                onPress={() => navigation.openDrawer()}
+                onPress2={() => navigation.navigate('Profile')}
+            />
             <View style={{ marginTop: "10%" }}>
                 <Text style={styles.welcome}>{'Welcome to '.toUpperCase()}</Text>
                 <Text style={styles.visionEnabler}>{'Vision Enabler'.toUpperCase()}</Text>

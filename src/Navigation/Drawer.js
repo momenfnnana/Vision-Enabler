@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { View, Image } from 'react-native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { View, Image, Easing } from 'react-native';
+import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import {
     createDrawerNavigator,
     DrawerContentScrollView,
-    DrawerItem,
+    DrawerItem
 } from '@react-navigation/drawer';
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
 import Home from '@MainFlow/Home/Home';
 import Diversity from '@MainFlow/Diversity/Diversity';
 import OurVision from '@MainFlow/OurVision/OurVision';
@@ -19,33 +21,248 @@ import PersonalScreen from '@MainFlow/PersonalScreen/PersonalScreen';
 import Media from '@MainFlow/Media/Media';
 import InterviewForm from '@MainFlow/InterviewForm/InterviewForm';
 import ChooseQuestionnaire from '@QuestionsAuthFlow/ChooseQuestionnaire/ChooseQuestionnaire';
+import Welcome from '@ComplianceParadigmScreens/Welcome/Welcome'
 import Blug from '@MainFlow/Blug/Blug';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
+
+import StatementsAttribute from '@ComplianceParadigmScreens/StatementsAttribute/StatementsAttribute1';
+import StatementsAttribute2 from '@ComplianceParadigmScreens/StatementsAttribute/StatementsAttribute2';
+import DiversityMatrix from '@ComplianceParadigmScreens/DiversityMatrix/DiversityMatrix'
+import Questionnaire from '@ComplianceParadigmScreens/Questionnaire/Questionnaire'
+import PerceptionReport from '@ComplianceParadigmScreens/PerceptionReport/PerceptionReport'
+import InclusionOmeter from '@ComplianceParadigmScreens/InclusionOmeter/InclusionOmeter';
+import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
+import DiversityInvoiceScreen from '@ComplianceParadigmScreens/DiversityInvoice/DiversityInvoiceScreen';
+import PaymentFor from '@ComplianceParadigmScreens/PaymentFor/PaymentFor';
+import PerceptionQuestionnaire from '@ComplianceParadigmScreens/PerceptionQuestionnaire/PerceptionQuestionnaire';
+import Setting from '@QuestionsAuthFlow/Setting/Setting';
+import EditProfile from '@QuestionsAuthFlow/EditProfile/EditProfile';
+import EditPassword from '@QuestionsAuthFlow/EditPassword/EditPassword';
+import Profile from '@QuestionsAuthFlow/Profile/Profile';
+import PaymentHistory from '@QuestionsAuthFlow/PaymentHistory/PaymentHistory';
+import BottomIcon from './BottomIcon';
 import Color from '@Assets/Constant';
 import Animated from 'react-native-reanimated';
+import BottomHome from './BottomHome.js'
+import BottomDiversity from './BottomDiversity.js'
+import BottomOurVision from './BottomOurVision.js'
+import BottomHelp from './BottomHelp.js'
+import BottomClients from './BottomClients.js'
+import BottomAboutUs from './BottomAboutUs.js'
+import BottomContact from './BottomContact.js'
+import BottomMedia from './BottomMedia.js'
+import BottomBlug from './BottomBlug.js'
+import BottomChooseQuestionnaire from './BottomChooseQuestionnaire.js'
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
+const Tab = createMaterialBottomTabNavigator();
+
 const Screens = ({ style }) => {
+    const openConfig = {
+        animation: 'spring',
+        config: {
+            stiffness: 1000,
+            damping: 50,
+            mass: 3,
+            overshootClamping: false,
+            restDisplacementThreshold: 0.01,
+            restSpeedThreshold: 0.01,
+        }
+    }
+    const closeConfig = {
+        animation: 'timing',
+        config: {
+            duration: 500,
+            easing: Easing.linear
+        },
+    };
     return (
         <Animated.View style={[{ flex: 1, overflow: "hidden" }, style]}>
-            <Stack.Navigator
-                screenOptions={{
-                    headerShown: false
-                }}
-            >
-                <Stack.Screen name="Home" component={Home} />
-                <Stack.Screen name="ChooseQuestionnaire" component={ChooseQuestionnaire} />
-                <Stack.Screen name="Diversity" component={Diversity} />
-                <Stack.Screen name="OurVision" component={OurVision} />
-                <Stack.Screen name="Help" component={Help} />
-                <Stack.Screen name="Clients" component={Clients} />
-                <Stack.Screen name="AboutUs" component={AboutUs} />
+            <Stack.Navigator screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="Home" component={BottomHome} />
+                <Stack.Screen name="Diversity" component={BottomDiversity} />
+                <Stack.Screen name="OurVision" component={BottomOurVision} />
+                <Stack.Screen name="Help" component={BottomHelp} />
+                <Stack.Screen name="Clients" component={BottomClients} />
+                <Stack.Screen name="AboutUs" component={BottomAboutUs} />
                 <Stack.Screen name="PersonalScreen" component={PersonalScreen} />
-                <Stack.Screen name="Contact" component={Contact} />
+                <Stack.Screen name="Contact" component={BottomContact} />
                 <Stack.Screen name="ContactForm" component={ContactForm} />
                 <Stack.Screen name="UploadCV" component={UploadCV} />
-                <Stack.Screen name="Media" component={Media} />
+                <Stack.Screen name="Media" component={BottomMedia} />
                 <Stack.Screen name="InterviewForm" component={InterviewForm} />
-                <Stack.Screen name="Blug" component={Blug} />
+                <Stack.Screen name="Blug" component={BottomBlug} />
+                <Stack.Screen name="EditProfile" component={EditProfile} />
+                <Stack.Screen name="EditPassword" component={EditPassword} />
+                <Stack.Screen name="Profile" component={Profile} />
+                <Stack.Screen name="PaymentHistory" component={PaymentHistory} />
+                <Stack.Screen
+                    name="ChooseQuestionnaire"
+                    component={BottomChooseQuestionnaire}
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    animation="fade"
+                />
+                <Stack.Screen options={{
+                    gestureEnabled: true,
+                    gestureDirection: "horizontal",
+                    ...TransitionPresets.SlideFromRightIOS,
+                    transitionSpec: {
+                        open: openConfig,
+                        close: closeConfig,
+                    },
+                }}
+                    name="Welcome"
+                    component={Welcome}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="StatementsAttribute"
+                    component={StatementsAttribute}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="StatementsAttribute2"
+                    component={StatementsAttribute2}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="DiversityMatrix"
+                    component={DiversityMatrix}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="Questionnaire"
+                    component={Questionnaire}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PerceptionReport"
+                    component={PerceptionReport}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="InclusionOmeter"
+                    component={InclusionOmeter}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PerceptionReportFormScreen"
+                    component={PerceptionReportFormScreen}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="DiversityInvoiceScreen"
+                    component={DiversityInvoiceScreen}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PaymentFor"
+                    component={PaymentFor}
+                    animation="fade"
+                />
+                <Stack.Screen
+                    options={{
+                        gestureEnabled: true,
+                        gestureDirection: "horizontal",
+                        ...TransitionPresets.SlideFromRightIOS,
+                        transitionSpec: {
+                            open: openConfig,
+                            close: closeConfig,
+                        },
+                    }}
+                    name="PerceptionQuestionnaire"
+                    component={PerceptionQuestionnaire}
+                    animation="fade"
+                />
             </Stack.Navigator>
         </Animated.View>
     )
@@ -55,11 +272,7 @@ const CustomDrawerContent = (props) => {
         <DrawerContentScrollView
             scrollEnabled={false}
             {...props}>
-            <View
-                style={{
-                    backgroundColor: Color.primary,
-                }}
-            >
+            <View style={{ backgroundColor: Color.primary }}>
                 <Image
                     style={{
                         marginTop: "15%",
@@ -83,7 +296,7 @@ const CustomDrawerContent = (props) => {
                         fontFamily: "Altissimo_bold",
                         color: Color.white
                     }}
-                    label="ChooseQuestionnaire"
+                    label="Choose Questionnaire"
                     onPress={() => props.navigation.navigate("ChooseQuestionnaire")}
                 />
                 <DrawerItem
@@ -195,7 +408,7 @@ export default () => {
                 }}
                 sceneContainerStyle={{ backgroundColor: "transparent" }}
             >
-                <Drawer.Screen name="Screens">
+                <Drawer.Screen name="BottomTabs">
                     {props => <Screens {...props} style={screenStyles} />}
                 </Drawer.Screen>
             </Drawer.Navigator>

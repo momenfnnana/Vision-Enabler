@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.30,
         shadowRadius: 4.65,
-        elevation: 8,
+        elevation: 4,
         width: "90%",
         justifyContent: 'space-around'
     },
@@ -56,6 +56,41 @@ const styles = StyleSheet.create({
     number: {
         color: Color.black + 90,
         marginLeft: "3%"
+    },
+    forthCardContainer: {
+        alignSelf: "center",
+        marginVertical: "5%",
+        padding: "5%",
+        borderRadius: 10,
+        backgroundColor: Color.white,
+        shadowColor: Color.primary,
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 4,
+        width: "90%",
+        justifyContent: 'space-around',
+        alignItems: "center"
+    },
+    lastPayment: {
+        fontSize: 12,
+        color: Color.black + 90
+    },
+    SeeAll: {
+        color: Color.primary
+    },
+    listContainer: {
+        backgroundColor: Color.primary,
+        height: 30,
+        width: 30,
+        borderRadius: 50,
+        justifyContent: "center",
+        alignItems: "center",
+        marginVertical: "2%",
+        marginLeft: "5%"
     }
 })
 export default styles;

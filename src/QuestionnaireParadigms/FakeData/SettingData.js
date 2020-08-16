@@ -2,20 +2,6 @@ import Color from '@Assets/Constant';
 
 const SettingData = [
     {
-        id: 1,
-        title: "Edit Personal Information",
-        description: "update your name, personal image, email and bio",
-        img: require('@Assets/images/editProfile.png'),
-        backgroundColor: Color.secondary
-    },
-    {
-        id: 2,
-        title: "Edit Password",
-        description: "update your account password",
-        img: require('@Assets/images/lock.png'),
-        backgroundColor: Color.secondary
-    },
-    {
         id: 3,
         title: "Privacy Policy",
         description: "update your account password",

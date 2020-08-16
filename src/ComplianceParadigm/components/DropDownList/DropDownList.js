@@ -1,33 +1,40 @@
 import React, { useState } from "react";
 import { StyleSheet, Platform } from "react-native";
 import DropDownPicker from "react-native-dropdown-picker";
-const DropDownList = ({
-  data,
-  defaultVal,
-  onChangeItem,
-  placeholder,
-  paddingVertical,
-  containerStyle
-}) => {
+// {
+//   data,
+//     defaultVal,
+//     onChangeItem,
+//     placeholder,
+//     dropDownStyle,
+//     containerStyle
+// }
+const DropDownList = (props) => {
   const [isFocused, setFocused] = useState(false);
   const onFocusTrue = () => setFocused(true);
   const onFocusFalse = () => setFocused(false);
   return (
     <DropDownPicker
-      placeholder={placeholder}
-      items={data}
-      defaultValue={defaultVal}
-      containerStyle={containerStyle}
+      placeholder={props.placeholder}
+      items={props.data}
+      defaultValue={props.defaultVal}
+      containerStyle={props.containerStyle}
       itemStyle={styles.itemDropdown}
-      dropDownStyle={[styles.dropDownList,isFocused?{borderColor: "#22E0D7"}:{borderColor: "#E3E4F6"}]}
-      onChangeItem={onChangeItem}
-      style={[styles.inputDropDown, { paddingVertical: paddingVertical },isFocused?{borderColor: "#22E0D7"}:{borderColor: "#E3E4F6"}]}
+      dropDownStyle={[styles.dropDownList, isFocused ? { borderColor: "#22E0D7" } : { borderColor: "#E3E4F6" }]}
+      onChangeItem={props.onChangeItem}
+      style={[styles.inputDropDown, isFocused ? { borderColor: "#22E0D7" } : (
+        {
+          borderColor: "#E3E4F6",
+        }
+      ),
+      props.dropDownStyle
+      ]}
       placeholderStyle={styles.dropDownPlaceholder}
       arrowColor="#38465F"
       onOpen={onFocusTrue}
       onClose={onFocusFalse}
-      activeLabelStyle={{color:'#313BD0'}}
-      labelStyle={{color:'#38465F'}}
+      activeLabelStyle={{ color: '#313BD0' }}
+      labelStyle={{ color: '#38465F' }}
     />
   );
 };
@@ -59,8 +66,8 @@ const styles = StyleSheet.create({
   dropDownPlaceholder: {
     color: "#B3B5D7",
   },
-  ActiveItem:{
-      color:'red'
+  ActiveItem: {
+    color: 'red'
   }
 });
 

@@ -26,6 +26,7 @@ import Setting from './src/QuestionnaireParadigms/screens/Setting/Setting';
 import EditProfile from './src/QuestionnaireParadigms/screens/EditProfile/EditProfile';
 import PaymentFor from './src/ComplianceParadigm/screens/PaymentFor/PaymentFor';
 import PerceptionQuestionnaire from './src/ComplianceParadigm/screens/PerceptionQuestionnaire/PerceptionQuestionnaire';
+import EditPassword from './src/QuestionnaireParadigms/screens/EditPassword/EditPassword';
 // import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
 
 export default function App() {
@@ -73,6 +74,7 @@ export default function App() {
       {/* <PerceptionReportFormScreen /> */}
       {/* <PaymentFor /> */}
       {/* <PerceptionQuestionnaire /> */}
+      {/* <EditPassword /> */}
     </AuthProvider>
   );
 }

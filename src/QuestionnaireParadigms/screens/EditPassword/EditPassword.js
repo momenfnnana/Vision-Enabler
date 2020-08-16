@@ -1,14 +1,15 @@
 import React from 'react';
-import { View, Text, Image, TextInput, ScrollView } from 'react-native';
+import { View, Image } from 'react-native';
 import StackHeader from '@Components/Header/StackHeader/StackHeader';
 import Color from '@Assets/Constant';
 import SectionTitle from '@Components/SectionTitle/SectionTitle/SectionTitle';
-import styles from './EditProfile.style';
 import Input from '../../components/Input/Input';
+import styles from './EditPassword.style';
 import Button from '@ParadigmComponents/button/Button';
-const EditProfile = ({ navigation }) => {
+
+const EditPassword = ({ navigation }) => {
     return (
-        <ScrollView style={{ backgroundColor: Color.white }}>
+        <View style={{ flex: 1, backgroundColor: Color.white }}>
             <StackHeader
                 goBack={() => navigation.goBack()}
                 color={Color.primary}
@@ -16,17 +17,17 @@ const EditProfile = ({ navigation }) => {
             <Image style={styles.image} source={require('@Assets/images/MediaHeadCorner.png')} />
             <SectionTitle
                 title1="Edit"
-                title2="Profile"
+                title2="Password"
             />
-            <Image style={styles.profileImage} source={require('@Assets/images/ProfileImage.png')} />
-            <Text style={styles.changePic}>Change Profile Picture</Text>
-            <Input label="Your name" placeholder="Enter your Name" />
-            <Input label="Your Carrier" placeholder="Enter your carrier" />
-            <Input label="Your Email" placeholder="Enter your email" />
+            <View style={{ marginTop: "10%" }}>
+                <Input label="current password" placeholder="Enter current password" />
+                <Input label="new password" placeholder="Enter new password" />
+                <Input label="confirm new password" placeholder="Enter confirm new password" />
+            </View>
             <View style={{ width: "80%", alignSelf: "center", marginTop: "5%" }}>
                 <Button title="Save" />
             </View>
-        </ScrollView>
+        </View>
     )
 }
-export default EditProfile
+export default EditPassword;

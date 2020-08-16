@@ -47,5 +47,11 @@ const styles = StyleSheet.create({
         marginVertical: 50,
         marginHorizontal: 20,
     },
+
+    chart: {
+        width: 200,
+        height: 200,
+    },
+
 });
 export default styles

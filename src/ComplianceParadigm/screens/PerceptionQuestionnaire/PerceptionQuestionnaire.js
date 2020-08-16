@@ -7,7 +7,7 @@ import styles from './PerceptionQuestionnaire.style';
 import { Collapse, CollapseHeader, CollapseBody } from "accordion-collapse-react-native";
 import Footer from '@ParadigmComponents/Footer/Footer';
 import { Ionicons } from '@expo/vector-icons';
-const PerceptionQuestionnaire = () => {
+const PerceptionQuestionnaire = ({ navigation }) => {
     return (
         <View style={{ flex: 1, backgroundColor: Color.white }}>
             <HeaderStack

@@ -209,7 +209,7 @@ const DiversityInvoiceScreen = ({ navigation }) => {
               ]}
               defaultVal={data.month}
               onChangeItem={(item) => setData({ ...data, month: item.value })}
-              paddingVertical={"5.5%"}
+              dropDownStyle={{ paddingVertical: "5.5%" }}
               containerStyle={{ flex: 0.48 }}
             />
             <DropDownList
@@ -254,7 +254,7 @@ const DiversityInvoiceScreen = ({ navigation }) => {
               ]}
               defaultVal={data.year}
               onChangeItem={(item) => setData({ ...data, year: item.value })}
-              paddingVertical={"5.5%"}
+              dropDownStyle={{ paddingVertical: "5.5%" }}
               containerStyle={{ flex: 0.48 }}
             />
           </View>

@@ -10,8 +10,9 @@
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",
     "@react-native-community/slider": "3.0.0",
-    "@react-navigation/bottom-tabs": "^5.7.2",
+    "@react-navigation/bottom-tabs": "^5.8.0",
     "@react-navigation/drawer": "^5.8.6",
+    "@react-navigation/material-bottom-tabs": "^5.2.16",
     "@react-navigation/native": "^5.7.1",
     "@react-navigation/stack": "^5.7.1",
     "accordion-collapse-react-native": "^0.3.2",
@@ -26,6 +27,7 @@
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
     "react-native-anchor-carousel": "^3.1.2",
+    "react-native-chart": "^1.0.8-beta",
     "react-native-chart-kit": "^6.4.1",
     "react-native-collapsible": "^1.5.3",
     "react-native-confirmation-code-field": "^6.5.0",
