@@ -9,7 +9,7 @@ import subQuestions from '@ParadigmFakeData/subQuestions';
 import styles from './Questionnaire.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
 import SwipeUpDown from 'react-native-swipe-up-down';
-import Questions from '@ComplianceParadigmScreens/Questions/Questions'
+import Questions from '../Questions/Questions'
 const Questionnaire = ({ navigation }) => {
     const [isVisible2, setIsVisible2] = useState(true)
     const [height, setHeight] = useState("100")

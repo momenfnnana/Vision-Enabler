@@ -1,24 +1,37 @@
 {
+  "name": "Vesion Enabler",
+  "displayName": "Vesion Enabler",
   "expo": {
-    "name": "Questionnaires",
+    "name": "Vesion Enabler",
     "slug": "Questionnaires",
     "version": "1.0.0",
+    "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "scheme": "vesionenabler",
     "updates": {
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
     ],
-    "ios": {
-      "supportsTablet": true
-    },
     "web": {
       "favicon": "./assets/favicon.png"
     },
+    "ios": {
+      "supportsTablet": true,
+      "buildNumber": "1",
+      "bundleIdentifier": "io.dits.VesionEnabler",
+      "infoPlist": {
+        "UIBackgroundModes": [
+          "fetch"
+        ]
+      }
+    },
     "android": {
-      "package": "com.momenfnnana.Questionnaires"
-    }
+      "package": "io.dits.VesionEnabler",
+      "versionCode": 1
+    },
+    "description": ""
   }
 }

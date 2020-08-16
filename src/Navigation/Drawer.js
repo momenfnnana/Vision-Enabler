@@ -21,20 +21,20 @@ import PersonalScreen from '@MainFlow/PersonalScreen/PersonalScreen';
 import Media from '@MainFlow/Media/Media';
 import InterviewForm from '@MainFlow/InterviewForm/InterviewForm';
 import ChooseQuestionnaire from '@QuestionsAuthFlow/ChooseQuestionnaire/ChooseQuestionnaire';
-import Welcome from '@ComplianceParadigmScreens/Welcome/Welcome'
+import Welcome from '../ComplianceParadigm/screens/Welcome/Welcome'
 import Blug from '@MainFlow/Blug/Blug';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
-import StatementsAttribute from '@ComplianceParadigmScreens/StatementsAttribute/StatementsAttribute1';
-import StatementsAttribute2 from '@ComplianceParadigmScreens/StatementsAttribute/StatementsAttribute2';
-import DiversityMatrix from '@ComplianceParadigmScreens/DiversityMatrix/DiversityMatrix'
-import Questionnaire from '@ComplianceParadigmScreens/Questionnaire/Questionnaire'
-import PerceptionReport from '@ComplianceParadigmScreens/PerceptionReport/PerceptionReport'
-import InclusionOmeter from '@ComplianceParadigmScreens/InclusionOmeter/InclusionOmeter';
-import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
-import DiversityInvoiceScreen from '@ComplianceParadigmScreens/DiversityInvoice/DiversityInvoiceScreen';
-import PaymentFor from '@ComplianceParadigmScreens/PaymentFor/PaymentFor';
-import PerceptionQuestionnaire from '@ComplianceParadigmScreens/PerceptionQuestionnaire/PerceptionQuestionnaire';
+import StatementsAttribute from '../ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute1';
+import StatementsAttribute2 from '../ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute2';
+import DiversityMatrix from '../ComplianceParadigm/screens/DiversityMatrix/DiversityMatrix'
+import Questionnaire from '../ComplianceParadigm/screens/Questionnaire/Questionnaire'
+import PerceptionReport from '../ComplianceParadigm/screens/PerceptionReport/PerceptionReport'
+import InclusionOmeter from '../ComplianceParadigm/screens/InclusionOmeter/InclusionOmeter';
+import PerceptionReportFormScreen from '../ComplianceParadigm/screens/PerceptionReportForm/PerceptionReportFormScreen'
+import DiversityInvoiceScreen from '../ComplianceParadigm/screens/DiversityInvoice/DiversityInvoiceScreen';
+import PaymentFor from '../ComplianceParadigm/screens/PaymentFor/PaymentFor';
+import PerceptionQuestionnaire from '../ComplianceParadigm/screens/PerceptionQuestionnaire/PerceptionQuestionnaire';
 import Setting from '@QuestionsAuthFlow/Setting/Setting';
 import EditProfile from '@QuestionsAuthFlow/EditProfile/EditProfile';
 import EditPassword from '@QuestionsAuthFlow/EditPassword/EditPassword';
