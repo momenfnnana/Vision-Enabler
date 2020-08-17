@@ -35,7 +35,7 @@ const Profile = ({ navigation }) => {
             <View style={styles.forthCardContainer}>
                 <View style={{ flexDirection: "row", justifyContent: "space-between", width: "100%", }}>
                     <View>
-                        <Text style={styles.firstCard}>Payments History File</Text>
+                        <Text style={styles.firstCard}>Payments History</Text>
                         <Text style={styles.lastPayment}>Last 3 payment transactions</Text>
                     </View>
                     <TouchableOpacity onPress={() => navigation.navigate('PaymentHistory')}>

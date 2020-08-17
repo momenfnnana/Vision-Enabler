@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     firstCardContainer: {
         flexDirection: "row",
         alignSelf: "center",
-        marginVertical: "5%",
+        marginVertical: "3%",
         padding: "5%",
         borderRadius: 10,
         backgroundColor: Color.white,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
             width: 0,
             height: 4,
         },
-        shadowOpacity: 0.30,
+        shadowOpacity: 0.20,
         shadowRadius: 4.65,
         elevation: 4,
         width: "90%",
