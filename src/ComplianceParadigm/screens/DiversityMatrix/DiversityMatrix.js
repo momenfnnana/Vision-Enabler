@@ -560,260 +560,397 @@ const DiversityMatrix = ({ navigation }) => {
             )
     }
     const toggle1Answer2InQuestion2 = () => {
-        FullyData[1].rating[1] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(1, 1, "G"),
-            console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[1] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor22(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "G"),
+                console.log(FullyData[1].rating),
+                setBackgroundColor22(Color.greate)
+            )
     }
     const toggle2Answer2InQuestion2 = () => {
-        FullyData[1].rating[1] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(1, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[1] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor22(Color.average)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor22(Color.average)
+            )
     }
     const toggle3Answer2InQuestion2 = () => {
-        FullyData[1].rating[1] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(1, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[1] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor22(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor22(Color.poor)
+            )
     }
     const toggle4Answer2InQuestion2 = () => {
         FullyData[1].rating[1] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor22(Color.black)
         ) : (
                 FullyData[1].rating.splice(1, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor22(Color.black)
             )
     }
     const toggle1Answer3InQuestion2 = () => {
-        FullyData[1].rating[2] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(2, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[2] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor23(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor23(Color.greate)
+            )
     }
     const toggle2Answer3InQuestion2 = () => {
-        FullyData[1].rating[2] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(2, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[2] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor23(Color.average)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor23(Color.average)
+            )
     }
     const toggle3Answer3InQuestion2 = () => {
-        FullyData[1].rating[2] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(2, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[2] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor23(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor23(Color.poor)
+            )
     }
     const toggle4Answer3InQuestion2 = () => {
         FullyData[1].rating[2] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor23(Color.black)
         ) : (
                 FullyData[1].rating.splice(2, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor23(Color.black)
             )
     }
     const toggle1Answer4InQuestion2 = () => {
-        FullyData[1].rating[3] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(3, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[3] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor24(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor24(Color.greate)
+            )
     }
     const toggle2Answer4InQuestion2 = () => {
-        FullyData[1].rating[3] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(3, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[3] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor24(Color.average)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor24(Color.average)
+            )
     }
     const toggle3Answer4InQuestion2 = () => {
-        FullyData[1].rating[3] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(3, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[3] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor24(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor24(Color.poor)
+            )
     }
     const toggle4Answer4InQuestion2 = () => {
         FullyData[1].rating[3] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor24(Color.black)
         ) : (
                 FullyData[1].rating.splice(3, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor24(Color.black)
             )
     }
     const toggle1Answer5InQuestion2 = () => {
-        FullyData[1].rating[4] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(4, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[4] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor25(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor25(Color.greate)
+            )
     }
     const toggle2Answer5InQuestion2 = () => {
-        FullyData[1].rating[4] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(4, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[4] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor25(Color.average)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor25(Color.average)
+            )
     }
     const toggle3Answer5InQuestion2 = () => {
-        FullyData[1].rating[4] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(4, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[4] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor25(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor25(Color.poor)
+            )
     }
     const toggle4Answer5InQuestion2 = () => {
         FullyData[1].rating[4] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor25(Color.black)
         ) : (
                 FullyData[1].rating.splice(4, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor25(Color.black)
             )
     }
     const toggle1Answer6InQuestion2 = () => {
-        FullyData[1].rating[5] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(5, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[5] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor26(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor26(Color.greate)
+            )
     }
     const toggle2Answer6InQuestion2 = () => {
-        FullyData[1].rating[5] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(5, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[5] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor26(Color.average)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor26(Color.average)
+            )
     }
     const toggle3Answer6InQuestion2 = () => {
-        FullyData[1].rating[5] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(5, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[5] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor26(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor26(Color.poor)
+            )
     }
     const toggle4Answer6InQuestion2 = () => {
         FullyData[1].rating[5] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor26(Color.black)
         ) : (
                 FullyData[1].rating.splice(5, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor26(Color.black)
             )
     }
     const toggle1Answer7InQuestion2 = () => {
-        FullyData[1].rating[6] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(6, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[6] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor27(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor27(Color.greate)
+            )
     }
     const toggle2Answer7InQuestion2 = () => {
-        FullyData[1].rating[6] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(6, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[6] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor27(Color.average)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor27(Color.average)
+            )
     }
     const toggle3Answer7InQuestion2 = () => {
-        FullyData[1].rating[6] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(6, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[6] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor27(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor27(Color.poor)
+            )
     }
     const toggle4Answer7InQuestion2 = () => {
         FullyData[1].rating[6] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor27(Color.black)
         ) : (
                 FullyData[1].rating.splice(6, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor27(Color.black)
             )
     }
     const toggle1Answer8InQuestion2 = () => {
-        FullyData[1].rating[7] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(7, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[7] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor28(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor28(Color.greate)
+            )
     }
     const toggle2Answer8InQuestion2 = () => {
-        FullyData[1].rating[7] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(7, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[7] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor28(Color.average)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor28(Color.average)
+            )
     }
     const toggle3Answer8InQuestion2 = () => {
-        FullyData[1].rating[7] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(7, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[7] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor28(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor28(Color.poor)
+            )
     }
     const toggle4Answer8InQuestion2 = () => {
         FullyData[1].rating[7] === null ? (
             FullyData[1].rating.push("VP"),
             console.log(FullyData[1].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor28(Color.black)
         ) : (
                 FullyData[1].rating.splice(7, 1, "VP")
                 , console.log(FullyData[1].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor28(Color.black)
             )
     }
     const toggle1Answer1InQuestion3 = () => {
-        FullyData[2].rating[0] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(0, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[0] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor31(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor31(Color.greate)
+            )
     }
     const toggle2Answer1InQuestion3 = () => {
-        FullyData[2].rating[0] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(0, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[0] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor31(Color.average)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor31(Color.average)
+
+            )
     }
     const toggle3Answer1InQuestion3 = () => {
-        FullyData[2].rating[0] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(0, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[0] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor31(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor31(Color.poor)
+            )
     }
     const toggle4Answer1InQuestion3 = () => {
         FullyData[2].rating[0] === null ? (
             FullyData[2].rating.push("VP"),
             console.log(FullyData[2].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor31(Color.black)
         ) : (
                 FullyData[1].rating.splice(0, 1, "VP")
                 , console.log(FullyData[2].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor31(Color.black)
             )
     }
     const toggle1Answer2InQuestion3 = () => {
-        FullyData[2].rating[1] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(1, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[1] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor32(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor32(Color.greate)
+            )
     }
     const toggle2Answer2InQuestion3 = () => {
-        FullyData[2].rating[1] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(1, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[1] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor32(Color.average)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor32(Color.average)
+            )
     }
     const toggle3Answer2InQuestion3 = () => {
-        FullyData[2].rating[1] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(1, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[1] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor32(Color.poor)
+
+        ) : (
+                FullyData[1].rating.splice(1, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor32(Color.poor)
+            )
     }
     const toggle4Answer2InQuestion3 = () => {
         FullyData[2].rating[1] === null ? (
             FullyData[2].rating.push("VP"),
             console.log(FullyData[2].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor32(Color.black)
         ) : (
                 FullyData[1].rating.splice(1, 1, "VP")
                 , console.log(FullyData[2].rating),
@@ -821,22 +958,37 @@ const DiversityMatrix = ({ navigation }) => {
             )
     }
     const toggle1Answer3InQuestion3 = () => {
-        FullyData[2].rating[2] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(2, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[2] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor33(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor33(Color.greate)
+            )
     }
     const toggle2Answer3InQuestion3 = () => {
-        FullyData[2].rating[2] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(2, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[2] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor33(Color.average)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor33(Color.average)
+            )
     }
     const toggle3Answer3InQuestion3 = () => {
-        FullyData[2].rating[2] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(2, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[2] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor33(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor33(Color.poor)
+            )
     }
     const toggle4Answer3InQuestion3 = () => {
         FullyData[2].rating[2] === null ? (
@@ -850,22 +1002,37 @@ const DiversityMatrix = ({ navigation }) => {
             )
     }
     const toggle1Answer4InQuestion3 = () => {
-        FullyData[2].rating[3] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(3, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[3] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor34(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor34(Color.greate)
+            )
     }
     const toggle2Answer4InQuestion3 = () => {
-        FullyData[2].rating[3] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(3, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[3] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor34(Color.average)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor34(Color.average)
+            )
     }
     const toggle3Answer4InQuestion3 = () => {
-        FullyData[2].rating[3] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(3, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[3] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor34(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor34(Color.poor)
+            )
     }
     const toggle4Answer4InQuestion3 = () => {
         FullyData[2].rating[3] === null ? (
@@ -879,518 +1046,886 @@ const DiversityMatrix = ({ navigation }) => {
             )
     }
     const toggle1Answer5InQuestion3 = () => {
-        FullyData[2].rating[4] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(4, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[4] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor35(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor35(Color.greate)
+            )
     }
     const toggle2Answer5InQuestion3 = () => {
-        FullyData[2].rating[4] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(4, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[4] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor35(Color.average)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor35(Color.average)
+            )
     }
     const toggle3Answer5InQuestion3 = () => {
-        FullyData[2].rating[4] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(4, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[4] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor35(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor35(Color.poor)
+            )
     }
     const toggle4Answer5InQuestion3 = () => {
         FullyData[2].rating[4] === null ? (
             FullyData[2].rating.push("VP"),
             console.log(FullyData[2].rating),
-            setBackgroundColor11(Color.black)) : (
+            setBackgroundColor35(Color.black)) : (
                 FullyData[1].rating.splice(4, 1, "VP")
                 , console.log(FullyData[2].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor35(Color.black)
             )
     }
     const toggle1Answer6InQuestion3 = () => {
-        FullyData[2].rating[5] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(5, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[5] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor36(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor36(Color.greate)
+            )
     }
     const toggle2Answer6InQuestion3 = () => {
-        FullyData[2].rating[5] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(5, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[5] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor36(Color.average)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor36(Color.average)
+            )
     }
     const toggle3Answer6InQuestion3 = () => {
-        FullyData[2].rating[5] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(5, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[5] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor36(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor36(Color.poor)
+            )
     }
     const toggle4Answer6InQuestion3 = () => {
         FullyData[2].rating[5] === null ? (
             FullyData[2].rating.push("VP"),
             console.log(FullyData[2].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor36(Color.black)
         ) : (
                 FullyData[1].rating.splice(5, 1, "VP")
                 , console.log(FullyData[2].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor36(Color.black)
             )
     }
     const toggle1Answer7InQuestion3 = () => {
-        FullyData[2].rating[6] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(6, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[6] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor37(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor37(Color.greate)
+            )
     }
     const toggle2Answer7InQuestion3 = () => {
-        FullyData[2].rating[6] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(6, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[6] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor37(Color.average)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor37(Color.average)
+            )
     }
     const toggle3Answer7InQuestion3 = () => {
-        FullyData[2].rating[6] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(6, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[6] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor37(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor37(Color.poor)
+            )
     }
     const toggle4Answer7InQuestion3 = () => {
         FullyData[2].rating[6] === null ? (
             FullyData[2].rating.push("VP"),
             console.log(FullyData[2].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor37(Color.black)
         ) : (
                 FullyData[1].rating.splice(6, 1, "VP")
                 , console.log(FullyData[2].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor37(Color.black)
             )
     }
     const toggle1Answer8InQuestion3 = () => {
-        FullyData[2].rating[7] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(7, 1, "G")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[7] === null ? (
+            FullyData[2].rating.push("G"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor38(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "G")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor38(Color.greate)
+            )
     }
     const toggle2Answer8InQuestion3 = () => {
-        FullyData[2].rating[7] === null ? (FullyData[2].rating.push("A"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(7, 1, "A")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[7] === null ? (
+            FullyData[2].rating.push("A"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor38(Color.average)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "A")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor38(Color.average)
+            )
     }
     const toggle3Answer8InQuestion3 = () => {
-        FullyData[2].rating[7] === null ? (FullyData[2].rating.push("P"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(7, 1, "P")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[7] === null ? (
+            FullyData[2].rating.push("P"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor38(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "P")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor38(Color.poor)
+            )
     }
     const toggle4Answer8InQuestion3 = () => {
         FullyData[2].rating[7] === null ? (
             FullyData[2].rating.push("VP"),
             console.log(FullyData[2].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor38(Color.black)
         ) : (
                 FullyData[1].rating.splice(7, 1, "VP")
                 , console.log(FullyData[2].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor38(Color.black)
             )
     }
     const toggle1Answer1InQuestion4 = () => {
-        FullyData[3].rating[0] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(0, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[0] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor41(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor41(Color.greate)
+            )
     }
     const toggle2Answer1InQuestion4 = () => {
-        FullyData[3].rating[0] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(0, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[0] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor41(Color.average)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor41(Color.average)
+            )
     }
     const toggle3Answer1InQuestion4 = () => {
-        FullyData[3].rating[0] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(0, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[0] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor41(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor41(Color.poor)
+            )
     }
     const toggle4Answer1InQuestion4 = () => {
         FullyData[3].rating[0] === null ? (
             FullyData[3].rating.push("VP"),
             console.log(FullyData[3].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor41(Color.black)
         ) : (
                 FullyData[1].rating.splice(0, 1, "VP")
                 , console.log(FullyData[3].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor41(Color.black)
             )
     }
     const toggle1Answer2InQuestion4 = () => {
-        FullyData[3].rating[1] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(1, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[1] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor42(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor42(Color.greate)
+            )
     }
     const toggle2Answer2InQuestion4 = () => {
-        FullyData[3].rating[1] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(1, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[1] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor42(Color.average)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor42(Color.average)
+            )
     }
     const toggle3Answer2InQuestion4 = () => {
-        FullyData[3].rating[1] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(1, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[1] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor42(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor42(Color.poor)
+            )
     }
     const toggle4Answer2InQuestion4 = () => {
         FullyData[3].rating[1] === null ? (
             FullyData[3].rating.push("VP"),
             console.log(FullyData[3].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor42(Color.black)
         ) : (
                 FullyData[1].rating.splice(1, 1, "VP")
                 , console.log(FullyData[3].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor42(Color.black)
             )
     }
     const toggle1Answer3InQuestion4 = () => {
-        FullyData[3].rating[2] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(2, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[2] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor43(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor43(Color.greate)
+
+            )
     }
     const toggle2Answer3InQuestion4 = () => {
-        FullyData[3].rating[2] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(2, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[2] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor43(Color.average)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor43(Color.average)
+            )
     }
     const toggle3Answer3InQuestion4 = () => {
-        FullyData[3].rating[2] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(2, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[2] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor43(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor43(Color.poor)
+            )
     }
     const toggle4Answer3InQuestion4 = () => {
         FullyData[3].rating[2] === null ? (
             FullyData[3].rating.push("VP"),
             console.log(FullyData[3].rating),
-            setBackgroundColor11(Color.black)
+            setBackgroundColor43(Color.black)
         ) : (
                 FullyData[1].rating.splice(2, 1, "VP")
                 , console.log(FullyData[3].rating),
-                setBackgroundColor11(Color.black)
+                setBackgroundColor43(Color.black)
             )
     }
     const toggle1Answer4InQuestion4 = () => {
-        FullyData[3].rating[3] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(3, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[3] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor44(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor44(Color.greate)
+            )
     }
     const toggle2Answer4InQuestion4 = () => {
-        FullyData[3].rating[3] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(3, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[3] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor44(Color.average)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor44(Color.average)
+            )
     }
     const toggle3Answer4InQuestion4 = () => {
-        FullyData[3].rating[3] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(3, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[3] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor44(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor44(Color.poor)
+            )
     }
     const toggle4Answer4InQuestion4 = () => {
-        FullyData[3].rating[3] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(3, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[3] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor44(Color.black)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor44(Color.black)
+            )
     }
     const toggle1Answer5InQuestion4 = () => {
-        FullyData[3].rating[4] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(4, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[4] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor45(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor45(Color.greate)
+            )
     }
     const toggle2Answer5InQuestion4 = () => {
-        FullyData[3].rating[4] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(4, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[4] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor45(Color.average)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor45(Color.average)
+            )
     }
     const toggle3Answer5InQuestion4 = () => {
-        FullyData[3].rating[4] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(4, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[4] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor45(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor45(Color.poor)
+            )
     }
     const toggle4Answer5InQuestion4 = () => {
-        FullyData[3].rating[4] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(4, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[4] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor45(Color.black)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor45(Color.black)
+            )
     }
     const toggle1Answer6InQuestion4 = () => {
-        FullyData[3].rating[5] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(5, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[5] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor46(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor46(Color.greate)
+            )
     }
     const toggle2Answer6InQuestion4 = () => {
-        FullyData[3].rating[5] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(5, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[5] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor46(Color.average)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor46(Color.average)
+            )
     }
     const toggle3Answer6InQuestion4 = () => {
-        FullyData[3].rating[5] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(5, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[5] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor46(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor46(Color.poor)
+            )
     }
     const toggle4Answer6InQuestion4 = () => {
-        FullyData[3].rating[5] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(5, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[5] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor46(Color.black)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor46(Color.black)
+            )
     }
     const toggle1Answer7InQuestion4 = () => {
-        FullyData[3].rating[6] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(6, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[6] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor47(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor47(Color.greate)
+            )
     }
     const toggle2Answer7InQuestion4 = () => {
-        FullyData[3].rating[6] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(6, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[6] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor47(Color.average)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor47(Color.average)
+
+            )
     }
     const toggle3Answer7InQuestion4 = () => {
-        FullyData[3].rating[6] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(6, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[6] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor47(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor47(Color.poor)
+            )
     }
     const toggle4Answer7InQuestion4 = () => {
-        FullyData[3].rating[6] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(6, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[6] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor47(Color.black)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor47(Color.black)
+            )
     }
     const toggle1Answer8InQuestion4 = () => {
-        FullyData[3].rating[7] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(7, 1, "G")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[7] === null ? (
+            FullyData[3].rating.push("G"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor48(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "G")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor48(Color.greate)
+            )
     }
     const toggle2Answer8InQuestion4 = () => {
-        FullyData[3].rating[7] === null ? (FullyData[3].rating.push("A"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(7, 1, "A")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[7] === null ? (
+            FullyData[3].rating.push("A"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor48(Color.average)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "A")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor48(Color.average)
+            )
     }
     const toggle3Answer8InQuestion4 = () => {
-        FullyData[3].rating[7] === null ? (FullyData[3].rating.push("P"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(7, 1, "P")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[7] === null ? (
+            FullyData[3].rating.push("P"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor48(Color.poor)
+
+        ) : (
+                FullyData[1].rating.splice(7, 1, "P")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor48(Color.poor)
+            )
     }
     const toggle4Answer8InQuestion4 = () => {
-        FullyData[3].rating[7] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(7, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[7] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor48(Color.black)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor48(Color.black)
+            )
     }
     const toggle1Answer1InQuestion5 = () => {
-        FullyData[4].rating[0] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(0, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[0] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor51(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor51(Color.greate)
+            )
     }
     const toggle2Answer1InQuestion5 = () => {
-        FullyData[4].rating[0] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(0, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[0] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor51(Color.average)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor51(Color.average)
+            )
     }
     const toggle3Answer1InQuestion5 = () => {
-        FullyData[4].rating[0] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(0, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[0] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor51(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor51(Color.poor)
+            )
     }
     const toggle4Answer1InQuestion5 = () => {
-        FullyData[4].rating[0] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(0, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[0] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor51(Color.black)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor51(Color.black)
+            )
     }
     const toggle1Answer2InQuestion5 = () => {
-        FullyData[4].rating[1] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(1, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[1] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor52(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor52(Color.greate)
+            )
     }
     const toggle2Answer2InQuestion5 = () => {
-        FullyData[4].rating[1] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(1, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[1] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor52(Color.average)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor52(Color.average)
+            )
     }
     const toggle3Answer2InQuestion5 = () => {
-        FullyData[4].rating[1] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(1, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[1] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor52(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor52(Color.poor)
+            )
     }
     const toggle4Answer2InQuestion5 = () => {
-        FullyData[4].rating[1] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(1, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[1] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor52(Color.black)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor52(Color.black)
+            )
     }
     const toggle1Answer3InQuestion5 = () => {
-        FullyData[4].rating[2] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(2, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[2] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor53(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor53(Color.greate)
+            )
     }
     const toggle2Answer3InQuestion5 = () => {
-        FullyData[4].rating[2] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(2, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[2] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor53(Color.average)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor53(Color.average)
+            )
     }
     const toggle3Answer3InQuestion5 = () => {
-        FullyData[4].rating[2] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(2, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[2] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor53(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor53(Color.poor)
+            )
     }
     const toggle4Answer3InQuestion5 = () => {
-        FullyData[4].rating[2] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(2, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[2] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor53(Color.black)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor53(Color.black)
+            )
     }
     const toggle1Answer4InQuestion5 = () => {
-        FullyData[4].rating[3] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(3, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[3] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor54(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor54(Color.greate)
+            )
     }
     const toggle2Answer4InQuestion5 = () => {
-        FullyData[4].rating[3] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(3, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[3] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor54(Color.average)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor54(Color.average)
+            )
     }
     const toggle3Answer4InQuestion5 = () => {
-        FullyData[4].rating[3] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(3, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[3] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor54(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor54(Color.poor)
+            )
     }
     const toggle4Answer4InQuestion5 = () => {
-        FullyData[4].rating[3] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(3, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[3] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor54(Color.black)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor54(Color.black)
+            )
     }
     const toggle1Answer5InQuestion5 = () => {
-        FullyData[4].rating[4] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(4, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[4] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor55(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor55(Color.greate)
+            )
     }
     const toggle2Answer5InQuestion5 = () => {
-        FullyData[4].rating[4] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(4, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[4] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor55(Color.average)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor55(Color.average)
+            )
     }
     const toggle3Answer5InQuestion5 = () => {
-        FullyData[4].rating[4] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(4, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[4] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor55(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor55(Color.poor)
+            )
     }
     const toggle4Answer5InQuestion5 = () => {
-        FullyData[4].rating[4] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(4, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[4] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor55(Color.black)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor55(Color.black)
+            )
     }
     const toggle1Answer6InQuestion5 = () => {
-        FullyData[4].rating[5] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(5, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[5] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor56(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor56(Color.greate)
+            )
     }
     const toggle2Answer6InQuestion5 = () => {
-        FullyData[4].rating[5] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(5, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[5] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor56(Color.average)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor56(Color.average)
+            )
     }
     const toggle3Answer6InQuestion5 = () => {
-        FullyData[4].rating[5] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(5, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[5] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor56(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor56(Color.poor)
+            )
     }
     const toggle4Answer6InQuestion5 = () => {
-        FullyData[4].rating[5] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(5, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[5] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor56(Color.black)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor56(Color.black)
+            )
     }
     const toggle1Answer7InQuestion5 = () => {
-        FullyData[4].rating[6] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(6, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[6] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor57(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor57(Color.greate)
+            )
     }
     const toggle2Answer7InQuestion5 = () => {
-        FullyData[4].rating[6] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(6, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[6] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor57(Color.average)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor57(Color.average)
+            )
     }
     const toggle3Answer7InQuestion5 = () => {
-        FullyData[4].rating[6] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(6, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[6] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor57(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor57(Color.poor)
+            )
     }
     const toggle4Answer7InQuestion5 = () => {
-        FullyData[4].rating[6] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(6, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[6] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor57(Color.black)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor57(Color.black)
+            )
     }
     const toggle1Answer8InQuestion5 = () => {
-        FullyData[4].rating[7] === null ? (FullyData[4].rating.push("G"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(7, 1, "G")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[7] === null ? (
+            FullyData[4].rating.push("G"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor58(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "G")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor58(Color.greate)
+            )
     }
     const toggle2Answer8InQuestion5 = () => {
-        FullyData[4].rating[7] === null ? (FullyData[4].rating.push("A"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(7, 1, "A")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[7] === null ? (
+            FullyData[4].rating.push("A"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor58(Color.average)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "A")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor58(Color.average)
+            )
     }
     const toggle3Answer8InQuestion5 = () => {
-        FullyData[4].rating[7] === null ? (FullyData[4].rating.push("P"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(7, 1, "P")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[7] === null ? (
+            FullyData[4].rating.push("P"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor58(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "P")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor58(Color.poor)
+            )
     }
     const toggle4Answer8InQuestion5 = () => {
-        FullyData[4].rating[7] === null ? (FullyData[4].rating.push("VP"), console.log(FullyData[4].rating)) : (
-            FullyData[1].rating.splice(7, 1, "VP")
-            , console.log(FullyData[4].rating)
-        )
+        FullyData[4].rating[7] === null ? (
+            FullyData[4].rating.push("VP"),
+            console.log(FullyData[4].rating),
+            setBackgroundColor58(Color.black)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "VP")
+                , console.log(FullyData[4].rating),
+                setBackgroundColor58(Color.black)
+            )
     }
 
     return (
@@ -1400,7 +1935,7 @@ const DiversityMatrix = ({ navigation }) => {
                 color={Color.primary}
                 goBack={() => navigation.goBack()}
             />
-            <ScrollView>
+            <ScrollView showsHorizontalScrollIndicator={false}>
                 <Text style={styles.compalianceMatrix}>Compliance Matrix ®</Text>
                 <Text style={styles.awareness}>Awareness & Unconscious Bias</Text>
                 <View style={styles.dotsContainer}>
@@ -1421,7 +1956,7 @@ const DiversityMatrix = ({ navigation }) => {
                         <Text style={styles.VerypoorText}>Very Poor</Text>
                     </View>
                 </View>
-                <ScrollView horizontal>
+                <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                     <View>
                         <View style={styles.topRow}>
                             <Image style={styles.Image}
