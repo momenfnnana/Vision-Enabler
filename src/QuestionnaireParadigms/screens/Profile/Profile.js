@@ -2,7 +2,6 @@ import React from 'react';
 import { View, Text, ScrollView, Image, ImageBackground, TouchableOpacity } from 'react-native';
 import Color from '@Assets/Constant';
 import styles from './Profile.style';
-import Table from '@ParadigmComponents/Table/Table';
 import { AntDesign } from '@expo/vector-icons';
 import LastPayment from '@QuestionnaireFakeData/LastPayment'
 const Profile = ({ navigation }) => {

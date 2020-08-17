@@ -2,7 +2,7 @@ import { Platform } from 'react-native';
 const styles = {
     container: {
         alignItems: "flex-start",
-        height: 80,
+        height: Platform.OS==="android"?80:105,
         justifyContent: "center",
         paddingHorizontal: "5%",
         marginTop: Platform.OS === "android" ? "0%" : "5%"
@@ -14,4 +14,4 @@ const styles = {
         alignItems: 'center',
     }
 }
-export default styles
+export default styles;

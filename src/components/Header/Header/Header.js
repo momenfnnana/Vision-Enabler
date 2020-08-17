@@ -2,22 +2,20 @@ import React from 'react';
 import {
     View,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    SafeAreaView
 } from 'react-native';
 import styles from './Styles'
 const Header = ({ OpenDrawer }) => {
     return (
-        <View style={styles.container}>
-            <TouchableOpacity
-                onPress={OpenDrawer}
-            >
-                <Image source={require('@Assets/images/LeftIcon.png')}
-                />
+        <SafeAreaView style={styles.container}>
+            <TouchableOpacity style={styles.lefyIcon} onPress={OpenDrawer}>
+                <Image source={require('@Assets/images/LeftIcon.png')}/>
             </TouchableOpacity>
             <Image
                 style={styles.logo}
                 source={require('@Assets/images/AppLogo.png')} />
-        </View>
+        </SafeAreaView>
     )
 }
 export default Header
