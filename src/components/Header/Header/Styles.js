@@ -8,7 +8,8 @@ const styles = {
         height: 80,
         alignItems: "center",
         borderBottomColor: `${Color.primary}20`,
-        borderBottomWidth: 1
+        borderBottomWidth: 1,
+        marginTop: "5%"
     },
     logo: {
         justifyContent: "center",

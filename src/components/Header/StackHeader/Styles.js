@@ -4,6 +4,7 @@ const styles = {
         height: 80,
         justifyContent: "center",
         paddingHorizontal: "5%",
+        marginTop: "5%"
     },
     touchableOpacity: {
         height: 50,

@@ -9,6 +9,7 @@ const styles = {
         borderBottomColor: `${Color.primary}20`,
         alignItems: "center",
         paddingTop: "7%",
+        marginTop: "5%"
     },
 }
-export default styles
+export default styles;

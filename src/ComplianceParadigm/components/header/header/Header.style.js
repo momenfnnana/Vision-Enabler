@@ -7,6 +7,7 @@ const styles = {
         paddingHorizontal: "5%",
         paddingVertical: "5%",
         borderBottomColor: `${Color.primary}20`,
+        marginTop: "5%"
     },
 }
 export default styles

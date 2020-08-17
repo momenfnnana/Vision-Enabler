@@ -6,6 +6,7 @@ import ChooseQuestionnaire from '@QuestionsAuthFlow/ChooseQuestionnaire/ChooseQu
 import Setting from '@QuestionsAuthFlow/Setting/Setting';
 
 const Tab = createMaterialBottomTabNavigator();
+
 const BottomChooseQuestionnaire = () => {
     return (
         <Tab.Navigator inactiveColor="#000">
@@ -28,4 +29,4 @@ const BottomChooseQuestionnaire = () => {
         </Tab.Navigator>
     )
 }
-export default ChooseQuestionnaire
+export default BottomChooseQuestionnaire;
