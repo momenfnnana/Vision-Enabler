@@ -1,5 +1,5 @@
 import Color from '@Assets/Constant';
-
+import { Platform } from 'react-native';
 const styles = {
     container: {
         flexDirection: "row",
@@ -7,7 +7,7 @@ const styles = {
         paddingHorizontal: "5%",
         paddingVertical: "5%",
         borderBottomColor: `${Color.primary}20`,
-        marginTop: "5%"
+        marginTop: Platform.OS === "android" ? "0%" : "5%"
     },
 }
 export default styles

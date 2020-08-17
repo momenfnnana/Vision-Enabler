@@ -296,15 +296,6 @@ const CustomDrawerContent = (props) => {
                         fontFamily: "Altissimo_bold",
                         color: Color.white
                     }}
-                    label="Choose Questionnaire"
-                    onPress={() => props.navigation.navigate("ChooseQuestionnaire")}
-                />
-                <DrawerItem
-                    labelStyle={{
-                        fontSize: 16,
-                        fontFamily: "Altissimo_bold",
-                        color: Color.white
-                    }}
                     label="Diversity"
                     onPress={() => props.navigation.navigate("Diversity")}
                 />

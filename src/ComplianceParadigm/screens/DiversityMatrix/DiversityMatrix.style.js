@@ -87,7 +87,7 @@ const styles = StyleSheet.create({
     footerContainer: {
         height: 180,
         backgroundColor: Color.primary,
-        marginTop: "8%",
+        paddingTop: "2%",
         borderTopRightRadius: 50,
         borderTopLeftRadius: 50,
     },
@@ -95,13 +95,13 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: Color.white,
         marginLeft: "5%",
-        marginTop: "5%"
+        paddingTop: "5%"
     },
     footerDescription: {
         fontSize: 13,
         color: Color.white,
         marginLeft: "5%",
-        marginTop: "1%"
+        paddingTop: "1%"
     },
     avarageRangeContainer2: {
         borderRightColor: `${Color.secondary}30`,
@@ -175,7 +175,6 @@ const styles = StyleSheet.create({
         height: 15,
         width: 15,
         borderRadius: 10,
-        backgroundColor: Color.secondary,
     },
 })
 export default styles;

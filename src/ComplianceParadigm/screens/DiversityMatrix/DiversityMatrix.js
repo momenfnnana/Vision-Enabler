@@ -8,7 +8,6 @@ import {
     TouchableOpacity
 } from 'react-native';
 import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
-// import Table from '@ParadigmComponents/Table/Table';
 import Color from '@Assets/Constant';
 import styles from './DiversityMatrix.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
@@ -18,6 +17,46 @@ import Pops from './Pops';
 import { Context as AuthContext } from '@Context/AuthContext';
 const DiversityMatrix = ({ navigation }) => {
     const { state } = useContext(AuthContext);
+    const [backgroundColor11, setBackgroundColor11] = useState(Color.secondary)
+    const [backgroundColor12, setBackgroundColor12] = useState(Color.secondary)
+    const [backgroundColor13, setBackgroundColor13] = useState(Color.secondary)
+    const [backgroundColor14, setBackgroundColor14] = useState(Color.secondary)
+    const [backgroundColor15, setBackgroundColor15] = useState(Color.secondary)
+    const [backgroundColor16, setBackgroundColor16] = useState(Color.secondary)
+    const [backgroundColor17, setBackgroundColor17] = useState(Color.secondary)
+    const [backgroundColor18, setBackgroundColor18] = useState(Color.secondary)
+    const [backgroundColor21, setBackgroundColor21] = useState(Color.secondary)
+    const [backgroundColor22, setBackgroundColor22] = useState(Color.secondary)
+    const [backgroundColor23, setBackgroundColor23] = useState(Color.secondary)
+    const [backgroundColor24, setBackgroundColor24] = useState(Color.secondary)
+    const [backgroundColor25, setBackgroundColor25] = useState(Color.secondary)
+    const [backgroundColor26, setBackgroundColor26] = useState(Color.secondary)
+    const [backgroundColor27, setBackgroundColor27] = useState(Color.secondary)
+    const [backgroundColor28, setBackgroundColor28] = useState(Color.secondary)
+    const [backgroundColor31, setBackgroundColor31] = useState(Color.secondary)
+    const [backgroundColor32, setBackgroundColor32] = useState(Color.secondary)
+    const [backgroundColor33, setBackgroundColor33] = useState(Color.secondary)
+    const [backgroundColor34, setBackgroundColor34] = useState(Color.secondary)
+    const [backgroundColor35, setBackgroundColor35] = useState(Color.secondary)
+    const [backgroundColor36, setBackgroundColor36] = useState(Color.secondary)
+    const [backgroundColor37, setBackgroundColor37] = useState(Color.secondary)
+    const [backgroundColor38, setBackgroundColor38] = useState(Color.secondary)
+    const [backgroundColor41, setBackgroundColor41] = useState(Color.secondary)
+    const [backgroundColor42, setBackgroundColor42] = useState(Color.secondary)
+    const [backgroundColor43, setBackgroundColor43] = useState(Color.secondary)
+    const [backgroundColor44, setBackgroundColor44] = useState(Color.secondary)
+    const [backgroundColor45, setBackgroundColor45] = useState(Color.secondary)
+    const [backgroundColor46, setBackgroundColor46] = useState(Color.secondary)
+    const [backgroundColor47, setBackgroundColor47] = useState(Color.secondary)
+    const [backgroundColor48, setBackgroundColor48] = useState(Color.secondary)
+    const [backgroundColor51, setBackgroundColor51] = useState(Color.secondary)
+    const [backgroundColor52, setBackgroundColor52] = useState(Color.secondary)
+    const [backgroundColor53, setBackgroundColor53] = useState(Color.secondary)
+    const [backgroundColor54, setBackgroundColor54] = useState(Color.secondary)
+    const [backgroundColor55, setBackgroundColor55] = useState(Color.secondary)
+    const [backgroundColor56, setBackgroundColor56] = useState(Color.secondary)
+    const [backgroundColor57, setBackgroundColor57] = useState(Color.secondary)
+    const [backgroundColor58, setBackgroundColor58] = useState(Color.secondary)
     const toggleNextScreen = () => {
         if (state.setPyamentFlow === 1) {
             navigation.navigate('PerceptionReport')
@@ -138,225 +177,392 @@ const DiversityMatrix = ({ navigation }) => {
             setQuestionColor5({ container: styles.rowNum, questionNumber: styles.rowNumCol })
     }
     const toggle1Answer1InQuestion1 = () => {
-        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating[0])) : (
+        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating[0]), setBackgroundColor11(Color.greate)) : (
             FullyData[0].rating.splice(0, 1, "G")
-            , console.log(FullyData[0].rating[0])
+            , console.log(FullyData[0].rating[0]),
+            setBackgroundColor11(Color.greate)
         )
     }
     const toggle2Answer1InQuestion1 = () => {
-        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating[0])) : (
-            FullyData[0].rating.splice(0, 1, "A")
-            , console.log(FullyData[0].rating[0])
-        )
+        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating[0]), setBackgroundColor11(Color.average)
+        ) : (
+                FullyData[0].rating.splice(0, 1, "A")
+                , console.log(FullyData[0].rating[0]),
+                setBackgroundColor11(Color.average)
+            )
     }
     const toggle3Answer1InQuestion1 = () => {
-        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating[0])) : (
-            FullyData[0].rating.splice(0, 1, "P")
-            , console.log(FullyData[0].rating[0])
-        )
+        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating[0]), setBackgroundColor11(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(0, 1, "P")
+                , console.log(FullyData[0].rating[0]),
+                setBackgroundColor11(Color.poor)
+            )
     }
     const toggle4Answer1InQuestion1 = () => {
-        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating[0])) : (
-            FullyData[0].rating.splice(0, 1, "VP")
-            , console.log(FullyData[0].rating[0])
-        )
+        FullyData[0].rating[0] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating[0]), setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[0].rating.splice(0, 1, "VP")
+                , console.log(FullyData[0].rating[0]),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer2InQuestion1 = () => {
-        FullyData[0].rating[1] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(1, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[1] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor11(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(1, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor12(Color.greate)
+            )
     }
     const toggle2Answer2InQuestion1 = () => {
-        FullyData[0].rating[1] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(1, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[1] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor12(Color.average)
+        ) : (
+                FullyData[0].rating.splice(1, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor12(Color.average)
+            )
     }
     const toggle3Answer2InQuestion1 = () => {
-        FullyData[0].rating[1] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(1, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[1] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor12(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(1, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor12(Color.poor)
+            )
     }
     const toggle4Answer2InQuestion1 = () => {
-        FullyData[0].rating[1] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(1, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[1] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor12(Color.black)
+        ) : (
+                FullyData[0].rating.splice(1, 1, "VP")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor12(Color.black)
+            )
     }
     const toggle1Answer3InQuestion1 = () => {
-        FullyData[0].rating[2] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(2, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[2] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor13(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(2, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor13(Color.greate)
+            )
     }
     const toggle2Answer3InQuestion1 = () => {
-        FullyData[0].rating[2] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(2, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[2] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor13(Color.average)
+        ) : (
+                FullyData[0].rating.splice(2, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor13(Color.average)
+            )
     }
     const toggle3Answer3InQuestion1 = () => {
-        FullyData[0].rating[2] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(2, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[2] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor13(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(2, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor13(Color.poor)
+            )
     }
     const toggle4Answer3InQuestion1 = () => {
-        FullyData[0].rating[2] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(2, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[2] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor13(Color.black)
+        ) : (
+                FullyData[0].rating.splice(2, 1, "VP")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor13(Color.black)
+            )
     }
     const toggle1Answer4InQuestion1 = () => {
-        FullyData[0].rating[3] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(3, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[3] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor14(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(3, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor14(Color.greate)
+            )
     }
     const toggle2Answer4InQuestion1 = () => {
-        FullyData[0].rating[3] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(3, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[3] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor14(Color.average)
+        ) : (
+                FullyData[0].rating.splice(3, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor14(Color.average)
+            )
     }
     const toggle3Answer4InQuestion1 = () => {
-        FullyData[0].rating[3] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(3, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[3] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor14(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(3, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor14(Color.poor)
+            )
     }
     const toggle4Answer4InQuestion1 = () => {
-        FullyData[0].rating[3] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(3, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[3] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor14(Color.black)
+        ) : (
+                FullyData[0].rating.splice(3, 1, "VP")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor14(Color.black)
+            )
     }
     const toggle1Answer5InQuestion1 = () => {
-        FullyData[0].rating[4] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(4, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[4] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor15(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(4, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor15(Color.greate)
+            )
     }
     const toggle2Answer5InQuestion1 = () => {
-        FullyData[0].rating[4] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(4, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[4] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor15(Color.average)
+        ) : (
+                FullyData[0].rating.splice(4, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor15(Color.average)
+            )
     }
     const toggle3Answer5InQuestion1 = () => {
-        FullyData[0].rating[4] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(4, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[4] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor15(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(4, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor15(Color.poor)
+            )
     }
     const toggle4Answer5InQuestion1 = () => {
-        FullyData[0].rating[4] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(4, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[4] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor15(Color.black)
+        ) : (
+                FullyData[0].rating.splice(4, 1, "VP")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor15(Color.black)
+            )
     }
     const toggle1Answer6InQuestion1 = () => {
-        FullyData[0].rating[5] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(5, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[5] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor16(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(5, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor16(Color.greate)
+            )
     }
     const toggle2Answer6InQuestion1 = () => {
-        FullyData[0].rating[5] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(5, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[5] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor16(Color.average)
+        ) : (
+                FullyData[0].rating.splice(5, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor16(Color.average)
+            )
     }
     const toggle3Answer6InQuestion1 = () => {
-        FullyData[0].rating[5] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(5, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[5] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor16(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(5, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor16(Color.poor)
+            )
     }
     const toggle4Answer6InQuestion1 = () => {
-        FullyData[0].rating[5] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(5, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[5] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor16(Color.black)
+        ) : (
+                FullyData[0].rating.splice(5, 1, "VP")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor16(Color.black)
+            )
     }
     const toggle1Answer7InQuestion1 = () => {
-        FullyData[0].rating[6] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(6, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[6] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor17(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(6, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor17(Color.greate)
+            )
     }
     const toggle2Answer7InQuestion1 = () => {
-        FullyData[0].rating[6] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(6, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[6] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor17(Color.average)
+        ) : (
+                FullyData[0].rating.splice(6, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor17(Color.average)
+            )
     }
     const toggle3Answer7InQuestion1 = () => {
-        FullyData[0].rating[6] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(6, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[6] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor17(Color.average)
+        ) : (
+                FullyData[0].rating.splice(6, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor17(Color.average)
+            )
     }
     const toggle4Answer7InQuestion1 = () => {
-        FullyData[0].rating[6] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(6, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[6] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor17(Color.black)
+        ) : (
+                FullyData[0].rating.splice(6, 1, "VP")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor17(Color.black)
+            )
     }
     const toggle1Answer8InQuestion1 = () => {
-        FullyData[0].rating[7] === null ? (FullyData[0].rating.push("G"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(7, 1, "G")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[7] === null ? (
+            FullyData[0].rating.push("G"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor18(Color.greate)
+        ) : (
+                FullyData[0].rating.splice(7, 1, "G")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor18(Color.greate)
+            )
     }
     const toggle2Answer8InQuestion1 = () => {
-        FullyData[0].rating[7] === null ? (FullyData[0].rating.push("A"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(7, 1, "A")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[7] === null ? (
+            FullyData[0].rating.push("A"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor18(Color.average)
+        ) : (
+                FullyData[0].rating.splice(7, 1, "A")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor18(Color.average)
+            )
     }
     const toggle3Answer8InQuestion1 = () => {
-        FullyData[0].rating[7] === null ? (FullyData[0].rating.push("P"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(7, 1, "P")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[7] === null ? (
+            FullyData[0].rating.push("P"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor18(Color.poor)
+        ) : (
+                FullyData[0].rating.splice(7, 1, "P")
+                , console.log(FullyData[0].rating),
+                setBackgroundColor18(Color.poor)
+            )
     }
     const toggle4Answer8InQuestion1 = () => {
-        FullyData[0].rating[7] === null ? (FullyData[0].rating.push("VP"), console.log(FullyData[0].rating)) : (
-            FullyData[0].rating.splice(7, 1, "VP")
-            , console.log(FullyData[0].rating)
-        )
+        FullyData[0].rating[7] === null ? (
+            FullyData[0].rating.push("VP"),
+            console.log(FullyData[0].rating),
+            setBackgroundColor18(Color.black)
+        ) : (
+                FullyData[0].rating.splice(7, 1, "VP"),
+                console.log(FullyData[0].rating),
+                setBackgroundColor18(Color.black)
+            )
     }
     const toggle1Answer1InQuestion2 = () => {
-        FullyData[1].rating[0] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(0, 1, "G")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[0] === null ? (
+            FullyData[1].rating.push("G"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor21(Color.greate)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "G")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor21(Color.greate)
+            )
     }
     const toggle2Answer1InQuestion2 = () => {
-        FullyData[1].rating[0] === null ? (FullyData[1].rating.push("A"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(0, 1, "A")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[0] === null ? (
+            FullyData[1].rating.push("A"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor21(Color.average)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "A")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor21(Color.average)
+            )
     }
     const toggle3Answer1InQuestion2 = () => {
-        FullyData[1].rating[0] === null ? (FullyData[1].rating.push("P"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(0, 1, "P")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[0] === null ? (
+            FullyData[1].rating.push("P"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor21(Color.poor)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "P")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor21(Color.poor)
+            )
     }
     const toggle4Answer1InQuestion2 = () => {
-        FullyData[1].rating[0] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(0, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[0] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor21(Color.black)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "VP"),
+                console.log(FullyData[1].rating),
+                setBackgroundColor21(Color.black)
+            )
     }
     const toggle1Answer2InQuestion2 = () => {
         FullyData[1].rating[1] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(1, 1, "G")
-            , console.log(FullyData[1].rating)
+            FullyData[1].rating.splice(1, 1, "G"),
+            console.log(FullyData[1].rating)
         )
     }
     const toggle2Answer2InQuestion2 = () => {
@@ -372,10 +578,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer2InQuestion2 = () => {
-        FullyData[1].rating[1] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(1, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[1] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer3InQuestion2 = () => {
         FullyData[1].rating[2] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
@@ -396,10 +607,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer3InQuestion2 = () => {
-        FullyData[1].rating[2] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(2, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[2] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer4InQuestion2 = () => {
         FullyData[1].rating[3] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
@@ -420,10 +636,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer4InQuestion2 = () => {
-        FullyData[1].rating[3] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(3, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[3] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer5InQuestion2 = () => {
         FullyData[1].rating[4] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
@@ -444,10 +665,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer5InQuestion2 = () => {
-        FullyData[1].rating[4] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(4, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[4] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(4, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer6InQuestion2 = () => {
         FullyData[1].rating[5] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
@@ -468,10 +694,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer6InQuestion2 = () => {
-        FullyData[1].rating[5] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(5, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[5] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer7InQuestion2 = () => {
         FullyData[1].rating[6] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
@@ -492,10 +723,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer7InQuestion2 = () => {
-        FullyData[1].rating[6] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(6, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[6] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer8InQuestion2 = () => {
         FullyData[1].rating[7] === null ? (FullyData[1].rating.push("G"), console.log(FullyData[1].rating)) : (
@@ -516,10 +752,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer8InQuestion2 = () => {
-        FullyData[1].rating[7] === null ? (FullyData[1].rating.push("VP"), console.log(FullyData[1].rating)) : (
-            FullyData[1].rating.splice(7, 1, "VP")
-            , console.log(FullyData[1].rating)
-        )
+        FullyData[1].rating[7] === null ? (
+            FullyData[1].rating.push("VP"),
+            console.log(FullyData[1].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "VP")
+                , console.log(FullyData[1].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer1InQuestion3 = () => {
         FullyData[2].rating[0] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -540,10 +781,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer1InQuestion3 = () => {
-        FullyData[2].rating[0] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(0, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[0] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer2InQuestion3 = () => {
         FullyData[2].rating[1] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -564,10 +810,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer2InQuestion3 = () => {
-        FullyData[2].rating[1] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(1, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[1] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor32(Color.black)
+            )
     }
     const toggle1Answer3InQuestion3 = () => {
         FullyData[2].rating[2] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -588,10 +839,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer3InQuestion3 = () => {
-        FullyData[2].rating[2] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(2, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[2] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor33(Color.black)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor33(Color.black)
+            )
     }
     const toggle1Answer4InQuestion3 = () => {
         FullyData[2].rating[3] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -612,10 +868,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer4InQuestion3 = () => {
-        FullyData[2].rating[3] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(3, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[3] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor34(Color.black)
+        ) : (
+                FullyData[1].rating.splice(3, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor34(Color.black)
+            )
     }
     const toggle1Answer5InQuestion3 = () => {
         FullyData[2].rating[4] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -636,10 +897,14 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer5InQuestion3 = () => {
-        FullyData[2].rating[4] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(4, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[4] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor11(Color.black)) : (
+                FullyData[1].rating.splice(4, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer6InQuestion3 = () => {
         FullyData[2].rating[5] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -660,10 +925,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer6InQuestion3 = () => {
-        FullyData[2].rating[5] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(5, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[5] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(5, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer7InQuestion3 = () => {
         FullyData[2].rating[6] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -684,10 +954,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer7InQuestion3 = () => {
-        FullyData[2].rating[6] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(6, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[6] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(6, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer8InQuestion3 = () => {
         FullyData[2].rating[7] === null ? (FullyData[2].rating.push("G"), console.log(FullyData[2].rating)) : (
@@ -708,10 +983,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer8InQuestion3 = () => {
-        FullyData[2].rating[7] === null ? (FullyData[2].rating.push("VP"), console.log(FullyData[2].rating)) : (
-            FullyData[1].rating.splice(7, 1, "VP")
-            , console.log(FullyData[2].rating)
-        )
+        FullyData[2].rating[7] === null ? (
+            FullyData[2].rating.push("VP"),
+            console.log(FullyData[2].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(7, 1, "VP")
+                , console.log(FullyData[2].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer1InQuestion4 = () => {
         FullyData[3].rating[0] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
@@ -732,10 +1012,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer1InQuestion4 = () => {
-        FullyData[3].rating[0] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(0, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[0] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(0, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer2InQuestion4 = () => {
         FullyData[3].rating[1] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
@@ -756,10 +1041,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer2InQuestion4 = () => {
-        FullyData[3].rating[1] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(1, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[1] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(1, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer3InQuestion4 = () => {
         FullyData[3].rating[2] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
@@ -780,10 +1070,15 @@ const DiversityMatrix = ({ navigation }) => {
         )
     }
     const toggle4Answer3InQuestion4 = () => {
-        FullyData[3].rating[2] === null ? (FullyData[3].rating.push("VP"), console.log(FullyData[3].rating)) : (
-            FullyData[1].rating.splice(2, 1, "VP")
-            , console.log(FullyData[3].rating)
-        )
+        FullyData[3].rating[2] === null ? (
+            FullyData[3].rating.push("VP"),
+            console.log(FullyData[3].rating),
+            setBackgroundColor11(Color.black)
+        ) : (
+                FullyData[1].rating.splice(2, 1, "VP")
+                , console.log(FullyData[3].rating),
+                setBackgroundColor11(Color.black)
+            )
     }
     const toggle1Answer4InQuestion4 = () => {
         FullyData[3].rating[3] === null ? (FullyData[3].rating.push("G"), console.log(FullyData[3].rating)) : (
@@ -1167,7 +1462,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer1InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor11 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1177,7 +1472,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer2InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor12 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1187,7 +1482,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer3InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor13 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1197,7 +1492,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer4InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor14 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1207,7 +1502,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer5InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor15 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1217,7 +1512,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer6InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor16 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1227,7 +1522,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer7InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor17 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1237,7 +1532,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer8InQuestion1}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor18 }]} />
                                         </View>
                                     </Tooltip>
                                 </View>
@@ -1254,7 +1549,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer1InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor21 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1264,7 +1559,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer2InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor22 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1274,7 +1569,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer3InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor23 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1284,7 +1579,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer4InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor24 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1294,7 +1589,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer5InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor25 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1304,7 +1599,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer6InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor26 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1314,7 +1609,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer7InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor27 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1324,7 +1619,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer8InQuestion2}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor28 }]} />
                                         </View>
                                     </Tooltip>
                                 </View>
@@ -1341,7 +1636,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer1InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor31 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1351,7 +1646,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer2InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor32 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1361,7 +1656,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer3InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor33 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1371,7 +1666,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer4InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor34 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1381,7 +1676,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer5InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor35 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1391,7 +1686,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer6InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor36 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1401,7 +1696,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer7InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor37 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1411,7 +1706,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer8InQuestion3}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor38 }]} />
                                         </View>
                                     </Tooltip>
                                 </View>
@@ -1428,7 +1723,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer1InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor41 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1438,7 +1733,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer2InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor42 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1448,7 +1743,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer3InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor43 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1458,7 +1753,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer4InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor44 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1468,7 +1763,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer5InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor45 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1478,7 +1773,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer6InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor46 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1488,7 +1783,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer7InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor47 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1498,7 +1793,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer8InQuestion4}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor48 }]} />
                                         </View>
                                     </Tooltip>
                                 </View>
@@ -1515,7 +1810,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer1InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor51 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1525,7 +1820,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer2InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor52 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1535,7 +1830,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer3InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor53 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1545,7 +1840,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer4InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor54 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1555,7 +1850,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer5InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor55 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1565,7 +1860,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer6InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor56 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1575,7 +1870,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer7InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor57 }]} />
                                         </View>
                                     </Tooltip>
                                     <Tooltip popover={<Pops
@@ -1585,7 +1880,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         circle4={toggle4Answer8InQuestion5}
                                     />}>
                                         <View style={styles.circle}>
-                                            <View style={styles.subCircle} />
+                                            <View style={[styles.subCircle, { backgroundColor: backgroundColor58 }]} />
                                         </View>
                                     </Tooltip>
                                 </View>

@@ -1,5 +1,5 @@
 import Color from '@Assets/Constant';
-
+import { Platform } from 'react-native';
 const styles = {
     container: {
         flexDirection: "row",
@@ -9,7 +9,7 @@ const styles = {
         alignItems: "center",
         borderBottomColor: `${Color.primary}20`,
         borderBottomWidth: 1,
-        marginTop: "5%"
+        marginTop: Platform.OS === "android" ? "0%" : "5%"
     },
     logo: {
         justifyContent: "center",

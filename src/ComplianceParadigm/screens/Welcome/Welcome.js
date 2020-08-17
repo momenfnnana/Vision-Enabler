@@ -15,7 +15,7 @@ const Welcome = ({ navigation }) => {
             />
             <Image
                 style={styles.iconImage}
-                source={require('@Assets/icon.png')}
+                source={require('@Assets/images/LogoWelcomeScreen.png')}
             />
             <View style={styles.textContainer}>
                 <Text style={styles.welcome}>{'Welcome to '.toUpperCase()}</Text>

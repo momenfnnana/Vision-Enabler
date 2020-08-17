@@ -5,7 +5,7 @@ const styles = {
     iconImage: {
         marginTop: "30%",
         alignSelf: "center",
-        resizeMode: "cover"
+        resizeMode: "contain",
     },
     textContainer: {
         alignSelf: "center",
