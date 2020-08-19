@@ -58,12 +58,18 @@ const DiversityMatrix = ({ navigation }) => {
     const [backgroundColor57, setBackgroundColor57] = useState(Color.secondary)
     const [backgroundColor58, setBackgroundColor58] = useState(Color.secondary)
     const toggleNextScreen = () => {
-        if (state.setPyamentFlow === 1) {
+        if (state.PaymentFlow === 1) {
+            navigation.navigate('QuestionnaireA1')
+        } else if (state.PaymentFlow === 2) {
+            navigation.navigate('QuestionnaireA2')
+        } else if (state.PaymentFlow === 3) {
+            navigation.navigate('QuestionnaireA3')
+        } else if (state.PaymentFlow === 4) {
             navigation.navigate('PerceptionReport')
-        } else if (state.setPyamentFlow === 2) {
-            navigation.navigate('Questionnaire')
-        } else {
-            navigation.navigate('Questionnaire')
+        } else if (state.PaymentFlow === 5) {
+            navigation.navigate('PerceptionReport')
+        } else if (state.PaymentFlow === 6) {
+            navigation.navigate('PerceptionReport')
         }
     }
 
@@ -1934,6 +1940,7 @@ const DiversityMatrix = ({ navigation }) => {
                 borderBottomWith={1}
                 color={Color.primary}
                 goBack={() => navigation.goBack()}
+                onPress2={() => navigation.navigate('Profile')}
             />
             <ScrollView showsHorizontalScrollIndicator={false}>
                 <Text style={styles.compalianceMatrix}>Compliance Matrix ®</Text>

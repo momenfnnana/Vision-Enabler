@@ -1,12 +1,26 @@
 // 
-import React from 'react';
+import React, { useContext } from 'react';
 import Color from '@Assets/Constant';
 import { View, Text, ScrollView } from 'react-native';
 import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
 import List from './List';
 import styles from './StatementsAttribute.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
+import StatementAvarageData from '@ParadigmFakeData/StatementAvarage';
+import { Context as AuthContext } from '@Context/AuthContext'
+
 const StatementsAttribute = ({ navigation }) => {
+    const { state } = useContext(AuthContext)
+
+    const toggleNextScreen = () => {
+        if (state.QuestionsFlow === 4) {
+            navigation.navigate("PaymentFor")
+        } else if (state.QuestionsFlow === 5) {
+            navigation.navigate("PerceptionQuestionnaire")
+        } else {
+            navigation.navigate("DiversityMatrix")
+        }
+    }
     return (
         <View style={{ flex: 1, backgroundColor: Color.white }}>
             <HeaderStack
@@ -14,6 +28,7 @@ const StatementsAttribute = ({ navigation }) => {
                 color={Color.primary}
                 goBack={() => navigation.goBack()}
                 backgroundColor={Color.white}
+                onPress2={() => navigation.navigate('Profile')}
             />
             <ScrollView style={{ flex: 1, backgroundColor: Color.white }}>
                 <Text style={styles.screenTitle}>
@@ -22,11 +37,18 @@ const StatementsAttribute = ({ navigation }) => {
                         Attributes
                 </Text>
                 </Text>
-                <List />
+                {
+                    StatementAvarageData.map(i => {
+                        return (
+                            <List key={i.id} i={i} />
+                        )
+                    }
+                    )
+                }
             </ScrollView>
             <Footer
                 goBack={() => navigation.goBack()}
-                next={() => navigation.navigate('StatementsAttribute2')}
+                next={toggleNextScreen}
                 backgroundColor1={Color.primary}
                 backgroundColor2={Color.secondary}
                 backgroundColor3={Color.secondary}

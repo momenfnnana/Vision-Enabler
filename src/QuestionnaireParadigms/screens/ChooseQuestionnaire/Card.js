@@ -5,12 +5,13 @@ import Color from '@Assets/Constant';
 import { Context as AuthContext } from '@Context/AuthContext';
 
 const Card = ({ data, onPress }) => {
-    const { setQuestionFlow } = useContext(AuthContext)
+    const { setQuestionFlow, setPyamentFlow } = useContext(AuthContext)
 
     const [click, setClick] = useState("flex");
     const [backGroundColor, setBackGroundColor] = useState(Color.primary);
     const setQuestionType = () => {
         setQuestionFlow(data.id);
+        setPyamentFlow(data.id)
     }
     const SelectItem = () => {
         click === "flex" ? (

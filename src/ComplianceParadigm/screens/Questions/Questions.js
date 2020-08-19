@@ -38,4 +38,4 @@ const Questions = () => {
         </View>
     )
 }
-export default Questions
+export default Questions;

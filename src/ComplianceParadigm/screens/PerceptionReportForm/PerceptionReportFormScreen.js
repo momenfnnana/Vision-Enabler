@@ -37,11 +37,10 @@ const PerceptionReportFormScreen = ({ navigation }) => {
         color={Color.primary}
         goBack={() => navigation.goBack()}
         backgroundColor={Color.white}
+        onPress2={() => navigation.navigate('Profile')}
+        borderBottomWith={1}
       />
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={{ paddingHorizontal: "5%" }}
-      >
+      <ScrollView showsVerticalScrollIndicator={false} style={{ paddingHorizontal: "5%" }}>
         <Text style={[styles.text, styles.upperTitle]}>My Personal</Text>
         <TitleForm>Perception Report</TitleForm>
         <Text style={[styles.lowerTitle, styles.text]}>

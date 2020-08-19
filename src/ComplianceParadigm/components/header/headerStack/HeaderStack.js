@@ -6,7 +6,7 @@ import {
 } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import styles from './HeaderStack.style';
-const HeaderStack = ({ borderBottomWith, goBack, color, backgroundColor }) => {
+const HeaderStack = ({ borderBottomWith, goBack, color, backgroundColor, onPress2 }) => {
     return (
         <View
             style={[
@@ -19,9 +19,9 @@ const HeaderStack = ({ borderBottomWith, goBack, color, backgroundColor }) => {
             <TouchableOpacity onPress={goBack}>
                 <AntDesign name="arrowleft" size={24} color={color} />
             </TouchableOpacity>
-            <Image
-                source={require('@Assets/images/PersonRightIcon.png')}
-            />
+            <TouchableOpacity onPress={onPress2}>
+                <Image source={require('@Assets/images/PersonRightIcon.png')} />
+            </TouchableOpacity>
         </View>
     )
 }

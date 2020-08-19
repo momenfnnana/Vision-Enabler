@@ -67,7 +67,9 @@ const PerceptionReport = ({ navigation }) => {
                         <TouchableOpacity onPress={() => navigation.goBack()}>
                             <AntDesign name="arrowleft" size={24} color={Color.white} />
                         </TouchableOpacity>
-                        <Image source={require('@Assets/images/PersonRightIconWhite.png')} />
+                        <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
+                            <Image source={require('@Assets/images/PersonRightIconWhite.png')} />
+                        </TouchableOpacity>
                     </View>
                     <Text style={styles.PerceptionReport}>Perception Report</Text>
                     <Text style={styles.Overall}>Overall Inclusive Leadership score : 5 out of 10</Text>

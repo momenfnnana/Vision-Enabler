@@ -71,6 +71,7 @@ const InclusionOmeter = ({ navigation }) => {
                 borderBottomWith={1}
                 backgroundColor={Color.white}
                 goBack={() => navigation.goBack()}
+                onPress2={() => navigation.navigate('Profile')}
             />
             <Text style={styles.title}>Inclusion <Text style={styles.completeTitle}>ometer</Text></Text>
             <RNSpeedometer

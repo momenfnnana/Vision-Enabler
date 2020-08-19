@@ -6,9 +6,13 @@ import ChooseQuestionnaire from '@QuestionsAuthFlow/ChooseQuestionnaire/ChooseQu
 import Setting from '@QuestionsAuthFlow/Setting/Setting';
 
 import StatementsAttribute from '../ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute1';
-import StatementsAttribute2 from '../ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute2';
 import DiversityMatrix from '../ComplianceParadigm/screens/DiversityMatrix/DiversityMatrix'
-import Questionnaire from '../ComplianceParadigm/screens/Questionnaire/Questionnaire'
+import QuestionnaireA1 from '../ComplianceParadigm/screens/Questionnaire/QuestionnaireA1'
+import QuestionnaireA2 from '../ComplianceParadigm/screens/Questionnaire/QuestionnaireA2'
+import QuestionnaireA3 from '../ComplianceParadigm/screens/Questionnaire/QuestionnaireA3'
+import QuestionnaireB1 from '../ComplianceParadigm/screens/Questionnaire/QuestionnaireB1'
+import QuestionnaireB2 from '../ComplianceParadigm/screens/Questionnaire/QuestionnaireB2'
+import QuestionnaireB3 from '../ComplianceParadigm/screens/Questionnaire/QuestionnaireB3'
 import PerceptionReport from '../ComplianceParadigm/screens/PerceptionReport/PerceptionReport'
 import InclusionOmeter from '../ComplianceParadigm/screens/InclusionOmeter/InclusionOmeter';
 import PerceptionReportFormScreen from '../ComplianceParadigm/screens/PerceptionReportForm/PerceptionReportFormScreen'
@@ -96,20 +100,6 @@ const QuestionsStack = () => {
                         close: closeConfig,
                     },
                 }}
-                name="StatementsAttribute2"
-                component={StatementsAttribute2}
-                animation="fade"
-            />
-            <Stack.Screen
-                options={{
-                    gestureEnabled: true,
-                    gestureDirection: "horizontal",
-                    ...TransitionPresets.SlideFromRightIOS,
-                    transitionSpec: {
-                        open: openConfig,
-                        close: closeConfig,
-                    },
-                }}
                 name="DiversityMatrix"
                 component={DiversityMatrix}
                 animation="fade"
@@ -124,8 +114,78 @@ const QuestionsStack = () => {
                         close: closeConfig,
                     },
                 }}
-                name="Questionnaire"
-                component={Questionnaire}
+                name="QuestionnaireA1"
+                component={QuestionnaireA1}
+                animation="fade"
+            />
+            <Stack.Screen
+                options={{
+                    gestureEnabled: true,
+                    gestureDirection: "horizontal",
+                    ...TransitionPresets.SlideFromRightIOS,
+                    transitionSpec: {
+                        open: openConfig,
+                        close: closeConfig,
+                    },
+                }}
+                name="QuestionnaireA2"
+                component={QuestionnaireA2}
+                animation="fade"
+            />
+            <Stack.Screen
+                options={{
+                    gestureEnabled: true,
+                    gestureDirection: "horizontal",
+                    ...TransitionPresets.SlideFromRightIOS,
+                    transitionSpec: {
+                        open: openConfig,
+                        close: closeConfig,
+                    },
+                }}
+                name="QuestionnaireA3"
+                component={QuestionnaireA3}
+                animation="fade"
+            />
+            <Stack.Screen
+                options={{
+                    gestureEnabled: true,
+                    gestureDirection: "horizontal",
+                    ...TransitionPresets.SlideFromRightIOS,
+                    transitionSpec: {
+                        open: openConfig,
+                        close: closeConfig,
+                    },
+                }}
+                name="QuestionnaireB1"
+                component={QuestionnaireB1}
+                animation="fade"
+            />
+            <Stack.Screen
+                options={{
+                    gestureEnabled: true,
+                    gestureDirection: "horizontal",
+                    ...TransitionPresets.SlideFromRightIOS,
+                    transitionSpec: {
+                        open: openConfig,
+                        close: closeConfig,
+                    },
+                }}
+                name="QuestionnaireB2"
+                component={QuestionnaireB2}
+                animation="fade"
+            />
+            <Stack.Screen
+                options={{
+                    gestureEnabled: true,
+                    gestureDirection: "horizontal",
+                    ...TransitionPresets.SlideFromRightIOS,
+                    transitionSpec: {
+                        open: openConfig,
+                        close: closeConfig,
+                    },
+                }}
+                name="QuestionnaireB3"
+                component={QuestionnaireB3}
                 animation="fade"
             />
             <Stack.Screen

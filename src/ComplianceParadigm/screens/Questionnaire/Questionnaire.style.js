@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         color: Color.primary,
         position: "absolute",
         top: "5%",
-        left: "30%",
+        alignSelf: "center",
         fontFamily: "DINNextLTProRegular",
         marginBottom: "10%"
     },
@@ -42,8 +42,11 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: Color.primary,
     },
-    questionNumberStyle: {
+    PrimaryquestionNumberStyle: {
         color: Color.white
+    },
+    SecondayquestionNumberStyle: {
+        color: Color.primary
     },
     secondaryQuestionsContainer: {
         backgroundColor: Color.white,
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
     },
     Question1Container: {
         backgroundColor: Color.white,
-        width: "25%",
+        width: "40%",
         justifyContent: "center",
         alignItems: "center",
         paddingVertical: "3%",
@@ -133,7 +136,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         color: Color.white,
         marginLeft: "8%",
-        marginTop: "2%"
+        marginTop: "3%",
+        lineHeight: 20
     },
     subQuestionsContainer: {
         backgroundColor: Color.white,

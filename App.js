@@ -6,7 +6,6 @@ import Navigator from './src/Navigation/Navigation';
 import { Provider as AuthProvider } from './src/Context/AuthContext';
 import Welcome from './src/ComplianceParadigm/screens/Welcome/Welcome';
 import StatementsAttribute from './src/ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute1';
-import StatementsAttribute2 from './src/ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute2';
 import Blug from './src/screens/MainFlow/Blug/Blug';
 import ChooseQuestionnaire from './src/QuestionnaireParadigms/screens/ChooseQuestionnaire/ChooseQuestionnaire';
 import QuestionnaireLogin from './src/QuestionnaireParadigms/screens/AuthFlow/login/login';
@@ -18,7 +17,7 @@ import QuestionnaireActiveAccount from './src/QuestionnaireParadigms/screens/Aut
 import QuestionnaireResetPassword from './src/QuestionnaireParadigms/screens/AuthFlow/ForgotPassword/ResetPassword';
 import PerceptionReportFormScreen from './src/ComplianceParadigm/screens/PerceptionReportForm/PerceptionReportFormScreen';
 import DiversityMatrix from './src/ComplianceParadigm/screens/DiversityMatrix/DiversityMatrix';
-import Questionnaire from './src/ComplianceParadigm/screens/Questionnaire/Questionnaire';
+import QuestionnaireA1 from './src/ComplianceParadigm/screens/Questionnaire/QuestionnaireA1';
 import InclusionOmeter from './src/ComplianceParadigm/screens/InclusionOmeter/InclusionOmeter';
 import Questions from './src/ComplianceParadigm/screens/Questions/Questions';
 import Profile from './src/QuestionnaireParadigms/screens/Profile/Profile';
@@ -28,7 +27,7 @@ import PaymentFor from './src/ComplianceParadigm/screens/PaymentFor/PaymentFor';
 import PerceptionQuestionnaire from './src/ComplianceParadigm/screens/PerceptionQuestionnaire/PerceptionQuestionnaire';
 import EditPassword from './src/QuestionnaireParadigms/screens/EditPassword/EditPassword';
 // import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
-
+import Splash from './src/screens/splash/splash'
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {
@@ -52,10 +51,11 @@ export default function App() {
   return (
     <AuthProvider>
       <Navigator />
+      {/* <Splash /> */}
       {/* <Welcome /> */}
       {/* <StatementsAttribute /> */}
-      {/* <StatementsAttribute2 /> */}
       {/* <Blug /> */}
+      {/* <QuestionnaireA1 /> */}
       {/* <ChooseQuestionnaire /> */}
       {/* <QuestionnaireLogin /> */}
       {/* <QuestionnaireSignUp /> */}

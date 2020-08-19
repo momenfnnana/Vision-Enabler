@@ -12,6 +12,7 @@ const Welcome = ({ navigation }) => {
                 borderBottomWith={1}
                 color={Color.primary}
                 onPress={() => navigation.openDrawer()}
+                onPress2={() => navigation.navigate('Profile')}
             />
             <Image
                 style={styles.iconImage}

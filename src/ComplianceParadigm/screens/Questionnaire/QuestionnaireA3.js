@@ -4,13 +4,12 @@ import { View, Text, Image, TouchableOpacity, Easing, Slider, ScrollView } from 
 import HeaderStack from '../../components/header/headerStack/HeaderStack';
 import Color from '@Assets/Constant';
 import { ProgressBar } from 'react-native-paper';
-// import Modal from 'react-native-modal';
 import subQuestions from '@ParadigmFakeData/subQuestions';
 import styles from './Questionnaire.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
 import SwipeUpDown from 'react-native-swipe-up-down';
 import Questions from '../Questions/Questions'
-const Questionnaire = ({ navigation }) => {
+const QuestionnaireA3 = ({ navigation }) => {
     const [isVisible2, setIsVisible2] = useState(true)
     const [height, setHeight] = useState("100")
     const [sliderHeight, setSliderHeight] = useState("80")
@@ -32,6 +31,7 @@ const Questionnaire = ({ navigation }) => {
                 color={Color.primary}
                 borderBottomWith={1}
                 goBack={() => navigation.goBack()}
+                onPress2={() => navigation.navigate('Profile')}
             />
             <Text style={styles.headerTitle}>Working Environment</Text>
             <View style={styles.modalContainer}>
@@ -153,4 +153,4 @@ const Questionnaire = ({ navigation }) => {
         </View >
     )
 }
-export default Questionnaire;
+export default QuestionnaireA3;

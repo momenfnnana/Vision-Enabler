@@ -2,6 +2,7 @@ import { StatusBar } from "expo-status-bar";
 import React, { useEffect } from "react";
 import Color from '@Assets/Constant'
 import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import LottieView from 'lottie-react-native';
 const width = Dimensions.get("screen").width
 const height = Dimensions.get("screen").height
 const Splash = ({ navigation }) => {
@@ -9,10 +10,16 @@ const Splash = ({ navigation }) => {
     setTimeout(() => {
       navigation.navigate('Login')
     }, 3000);
+    // data.play()
   }, []);
+  // const resetAnimation = () => {
+  //   data.reset();
+  //   data.play();
+  // };
   return (
     <View style={styles.container}>
       <StatusBar style="light" />
+      {/* <LottieView  source={require('../../../assets/moshin/data.json')} loop /> */}
       <View>
         <Image
           style={{ alignSelf: "flex-end" }}
