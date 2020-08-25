@@ -7,9 +7,9 @@ const List = ({ data }) => {
             style={styles.container}>
             <Image
                 style={styles.img}
-                source={data.item.img}
+                source={{ uri:'https://visionenabler.dits.cloud/public/img/media/'+data.item.photo}}
             />
         </View>
     )
 }
-export default List
+export default List;

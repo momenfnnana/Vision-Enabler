@@ -11,39 +11,45 @@ import Select2 from "react-native-select-two";
 import CompaniesData from '@FakeData/Companies';
 import Color from '@Assets/Constant';
 
-const Form = ({ SignUp }) => {
-    const [selectedValue, setSelectedValue] = useState("+966");
-    const [data, setData] = useState(CompaniesData);
-    console.log(data[0].name);
-    const selectItem = (data, i) => {
-        setData(data[i] = data)
-    }
+const Form = ({
+    SignUp,
+    name,
+    setName,
+    email,
+    setEmail,
+    firstPhone,
+    setFirstPhone,
+    phoneNumber,
+    setPhoneNumber,
+    setSelectItem,
+    data,
+    setData,
+    items,
+    selectedValue,
+    setSelectedValue,
+    password,
+    setPassword
+}) => {
+
+    // const selectItem = (data, i) => {
+    //     setData(data)
+    // }
+
     return (
         <View style={styles.container}>
-            <Input
-                placeholder="Name"
-            />
-            <Input
-                placeholder="Email"
-            />
+            <Input placeholder="Name" value={name} onChangeText={setName} />
+            <Input placeholder="Email" value={email} onChangeText={setEmail} />
             <View style={styles.DropDownPickerContainer}>
                 <DropDownPicker
-                    items={[
-                        { label: '+966', value: '+966' },
-                        { label: '+999', value: '+999' },
-                        { label: '+662', value: '+662' },
-                        { label: '+795', value: '+795' },
-                    ]}
+                    items={items}
                     defaultValue={selectedValue}
                     containerStyle={styles.PickerContainerStyle}
                     style={styles.PickerStyle}
                     itemStyle={styles.PickerItemStyle}
                     dropDownStyle={styles.dropDownStyle}
-                    onChangeItem={() => setSelectedValue}
+                    onChangeItem={(val) => setSelectedValue(selectedValue = val.value)}
                 />
-                <Input style={styles.PickerInput}
-                    placeholder="0599 000 000"
-                />
+                <Input style={styles.PickerInput} placeholder="0599 000 000" keyboardType="numeric" value={phoneNumber} onChangeText={setPhoneNumber} />
             </View>
             <Text style={{
                 color: Color.secondary,
@@ -58,17 +64,14 @@ const Form = ({ SignUp }) => {
                 popupTitle="Select item"
                 title="Select item"
                 data={data}
-                onSelect={selectItem}
-                onRemoveItem={selectItem}
+                onSelect={(val) => setSelectItem(val)}
+                onRemoveItem={(val) => setData(val)}
             />
-            <Input
-                placeholder="Password"
-                secureTextEntry
-            />
+            <Input placeholder="Password" secureTextEntry value={password} onChangeText={setPassword} />
             <View style={styles.privacyText}>
                 <Text style={styles.textPrimary}>
                     By creating account, you agree to Vision Enabler
-            </Text>
+                 </Text>
                 <TouchableOpacity>
                     <Text style={styles.textSecondary}> Privacy Policy</Text>
                 </TouchableOpacity>
@@ -77,14 +80,11 @@ const Form = ({ SignUp }) => {
                     <Text style={styles.textSecondary}>Terms of Use</Text>
                 </TouchableOpacity>
             </View>
-            <TouchableOpacity
-                onPress={SignUp}
-                style={styles.button}
-            >
+            <TouchableOpacity onPress={SignUp} style={styles.button}>
                 <Text style={styles.SignupText}>Sign up</Text>
             </TouchableOpacity>
         </View >
     )
 }
 
-export default Form
+export default Form;

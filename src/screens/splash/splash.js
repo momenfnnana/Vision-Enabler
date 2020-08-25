@@ -1,14 +1,20 @@
 import { StatusBar } from "expo-status-bar";
-import React, { useEffect } from "react";
+import React, { useEffect} from "react";
 import Color from '@Assets/Constant'
-import { View, Text, StyleSheet, Image, Dimensions } from "react-native";
+import { View, Text, StyleSheet, Image, Dimensions,AsyncStorage } from "react-native";
 import LottieView from 'lottie-react-native';
+
 const width = Dimensions.get("screen").width
 const height = Dimensions.get("screen").height
 const Splash = ({ navigation }) => {
   useEffect(() => {
-    setTimeout(() => {
+    setTimeout( () => {
+      const token =  AsyncStorage.getItem('token');
+    if (token) {
+      navigation.navigate('Drawer')
+    } else {
       navigation.navigate('Login')
+    }
     }, 3000);
     // data.play()
   }, []);

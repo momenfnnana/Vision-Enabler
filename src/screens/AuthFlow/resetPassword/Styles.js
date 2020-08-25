@@ -40,8 +40,8 @@ const styles = {
     imgFooter: {
         resizeMode: "contain",
         position: "absolute",
-        bottom: "-40%",
-        marginLeft: "-18%"
+        top: 230,
+        right: -60
     }
 }
 export default styles

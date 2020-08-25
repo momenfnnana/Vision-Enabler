@@ -11,28 +11,18 @@ import { Context as AuthContext } from "../Context/AuthContext";
 import Drawer from './Drawer';
 const Stack = createStackNavigator();
 const Navigator = () => {
-    const { state } = useContext(AuthContext)
+    const { state } = useContext(AuthContext);
     return (
         <NavigationContainer>
-            {
-                state.token === false ? (
-                    <Stack.Navigator
-                        screenOptions={{
-                            headerShown: false
-                        }}
-                        initialRouteName="Splash"
-                    >
+                    <Stack.Navigator screenOptions={{ headerShown: false}} initialRouteName="Splash">
                         <Stack.Screen name="Splash" component={Splash} />
                         <Stack.Screen name="SignUp" component={SignUp} />
                         <Stack.Screen name="Login" component={Login} />
                         <Stack.Screen name="ResetPassword" component={ResetPassword} />
                         <Stack.Screen name="ActiveAccount" component={ActiveAccount} />
                         <Stack.Screen name="ChooseCompany" component={ChooseCompany} />
+                        <Stack.Screen name="Drawer" component={Drawer} />
                     </Stack.Navigator>
-                ) : (
-                        <Drawer />
-                    )
-            }
         </NavigationContainer>
     )
 }

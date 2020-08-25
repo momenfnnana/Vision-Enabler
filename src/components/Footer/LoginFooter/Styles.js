@@ -1,8 +1,8 @@
 const styles = {
     img: {
         position: "absolute",
-        bottom: "-40%",
-        right: "-20%"
+        top:230,
+        right:-60
     }
 }
-export default styles
+export default styles;

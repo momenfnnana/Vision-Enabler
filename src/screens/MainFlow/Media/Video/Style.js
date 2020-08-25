@@ -3,10 +3,10 @@ import Color from '@Assets/Constant';
 const styles = {
     container: {
         backgroundColor: Color.white,
-        alignItems: 'center',
+        alignItems: 'center'
     },
     img: {
-        borderRadius: 15,
+        borderRadius: 10,
         marginHorizontal: "2%",
         marginVertical: "4%",
         width: 165,

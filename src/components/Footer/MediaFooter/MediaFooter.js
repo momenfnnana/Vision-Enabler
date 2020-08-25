@@ -9,9 +9,9 @@ import styles from './Styles';
 const Footer = ({ goToInterView }) => {
     return (
         <View>
-            <TouchableOpacity style={styles.button}>
+            {/* <TouchableOpacity style={styles.button}>
                 <Text style={styles.SignupText}>Load More</Text>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
             <View
                 style={styles.mediaCenterCard}
             >

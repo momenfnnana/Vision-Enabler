@@ -17,13 +17,8 @@ const Media = ({ navigation }) => {
                 color={Color.primary}
             />
             <Image style={styles.image} source={require('@Assets/images/MediaHeadCorner.png')} />
-            <SectionTitle
-                title1="Our"
-                title2="Media Center"
-            />
-            <SectionDescription
-                text="Vision Enabler is a diversity-consulting firm, and a leading advisor on diversity-powered performance."
-            />
+            <SectionTitle title1="Our" title2="Media Center"/>
+            <SectionDescription text="Vision Enabler is a diversity-consulting firm, and a leading advisor on diversity-powered performance."/>
             <Tabs
                 tabBarActiveTextColor={Color.primary}
                 tabBarUnderlineStyle={{

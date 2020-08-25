@@ -6,9 +6,7 @@ import {
 } from 'react-native';
 import { Input } from 'react-native-elements';
 import styles from './Styles';
-const Form = ({ SignUp, ForgotPassword, Login }) => {
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+const Form = ({ SignUp, ForgotPassword, Login, email, setEmail, password, setPassword }) => {
     return (
         <View style={styles.container}>
             <Input

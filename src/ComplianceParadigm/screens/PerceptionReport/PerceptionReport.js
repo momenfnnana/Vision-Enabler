@@ -16,40 +16,33 @@ import BarChartShape from '../../components/BarChart/BarChart';
 import Footer from '@ParadigmComponents/Footer/Footer';
 import { BarChart, Grid } from 'react-native-svg-charts';
 import { Defs, LinearGradient, Stop } from 'react-native-svg';
-
+import Graph from '@ParadigmComponents/Graph/Graph';
 const PerceptionReport = ({ navigation }) => {
     const data = [
         {
+            id: 1,
             value: 32,
-            svg: {
-                fill: "#FA475F"
-            }
+            color: Color.lowRate,
+            title: "Working Environment"
         },
         {
+            id: 2,
             value: 10,
-            svg: {
-                fill: '#44DD7F',
-            },
+            color: Color.midRate,
+            title: "Diversity Policy"
         },
         {
+            id: 3,
             value: 40,
-            svg: {
-                stroke: 'purple',
-                fill: '#44DD7F',
-            },
+            color: Color.highRate,
+            title: "Employees"
         },
         {
+            id: 4,
             value: 95,
-            svg: {
-                fill: '#F77700',
-            },
-        },
-        {
-            value: 100,
-            svg: {
-                fill: '#F77700',
-            },
-        },
+            color: Color.highRate,
+            title: "Complaints Handling"
+        }
     ]
     const Gradient = () => (
         <Defs key={'gradient'}>
@@ -74,8 +67,13 @@ const PerceptionReport = ({ navigation }) => {
                     <Text style={styles.PerceptionReport}>Perception Report</Text>
                     <Text style={styles.Overall}>Overall Inclusive Leadership score : 5 out of 10</Text>
                     <Text style={styles.avarageNum}>Average <Text style={styles.number}>5</Text></Text>
-                    <BarChartShape />
+                    {/* <BarChartShape /> */}
                     {/* <BarChart /> */}
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+                        <View style={{marginLeft:20}}>
+                            <Graph data={data} />
+                        </View>
+                    </ScrollView>
                 </SafeAreaView>
             </ScrollView>
             <Footer

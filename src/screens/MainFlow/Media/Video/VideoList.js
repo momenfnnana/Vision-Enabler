@@ -1,24 +1,19 @@
-import React from 'react';
-import { View, Image } from 'react-native';
+import React, { useCallback } from 'react';
+import { View, Image, TouchableOpacity, Linking } from 'react-native';
 import Color from '@Assets/Constant';
 import { FontAwesome5 } from '@expo/vector-icons';
-import styles from './Style'
+import { Thumbnail } from 'native-base';
+import styles from './Style';
 const List = ({ data }) => {
+
     return (
-        <View
-            style={styles.container}
-        >
-            <Image
-                style={styles.img}
-                source={data.item.img}
-            />
-            <View
-                style={styles.video}
-            >
+        <TouchableOpacity style={styles.container} onPress={() => Linking.openURL(data.item.video_url)}>
+            <Image style={styles.img} source={{ uri: data.item.thumbnail_url }} />
+            <View style={styles.video}>
                 <FontAwesome5 name="play" size={18} color={Color.white} />
             </View>
-        </View>
+        </TouchableOpacity>
     )
 }
 
-export default List
+export default List;

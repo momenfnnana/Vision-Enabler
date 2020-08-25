@@ -24,6 +24,7 @@ const styles = {
         height: 100,
         width: 100,
         borderRadius: 50,
+        marginVertical: 20
     },
     logo: {
         resizeMode: "contain",
@@ -48,7 +49,8 @@ const styles = {
         fontSize: 20,
         color: Color.primary,
         fontFamily: "Altissimo_bold",
-        fontWeight: "bold"
+        fontWeight: "bold",
+        textTransform: "uppercase"
     }
 }
 export default styles

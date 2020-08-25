@@ -14,23 +14,18 @@ import PersonCard from '@Components/card/PersonCard/PersonCard';
 import Card from '@Components/card/HistoryList/HistoryList';
 import ReadMore from 'react-native-read-more-text';
 import styles from './Styles';
+
 const AboutUs = ({ navigation }) => {
     const renderTruncatedFooter = (handlePress) => {
         return (
-            <Text
-                style={styles.handleReadMore}
-                onPress={handlePress}
-            >
+            <Text style={styles.handleReadMore} onPress={handlePress}>
                 Read more
             </Text>
         );
     }
     const renderRevealedFooter = (handlePress) => {
         return (
-            <Text
-                style={styles.handleReadLess}
-                onPress={handlePress}
-            >
+            <Text style={styles.handleReadLess} onPress={handlePress}>
                 Show less
             </Text>
         );
@@ -46,10 +41,7 @@ const AboutUs = ({ navigation }) => {
                 <View style={styles.headSection}>
                     <View style={styles.titleContainer}>
                         <View style={styles.sectionTitleContainer}>
-                            <SectionTitle
-                                title1="Who"
-                                title2="We are"
-                            />
+                            <SectionTitle title1="Who" title2="We are" />
                         </View>
                     </View>
                     <View style={styles.headImageContainer}>
@@ -84,26 +76,17 @@ const AboutUs = ({ navigation }) => {
                     <Text style={styles.our}>{'our'.toUpperCase()}</Text>
                     <Text style={styles.awards}>{'AWARDs'.toUpperCase()}</Text>
                 </View>
-                <View
-                    style={styles.FranceCard}
-                >
-                    <Text
-                        style={styles.cardTitle}
-                    >FRANCE-MAGHREB AWARD</Text>
-                    <Text
-                        style={styles.cardsubTitle}
-                    >Cultural Diversity</Text>
-                    <View
-                        style={styles.readMoreView}>
+                <View style={styles.FranceCard}>
+                    <Text style={styles.cardTitle}>FRANCE-MAGHREB AWARD</Text>
+                    <Text style={styles.cardsubTitle}>Cultural Diversity</Text>
+                    <View style={styles.readMoreView}>
                         <ReadMore
                             numberOfLines={3}
                             renderTruncatedFooter={renderTruncatedFooter}
                             renderRevealedFooter={renderRevealedFooter}
                         >
-                            <Text
-                                style={styles.readMoreText}
-                            >In February 2007 Vision Enabler won the prestigious France-Maghreb award for cultural diversity (business category).
-                                The project, Recruiting Visible Minorities, involved eight global French organisations: Axa, BNP Paribas, Danone, Gas de France, L’Oréal, Schneider Electric, Société Générale and Total. The results of our work were presented to the United Nations.
+                            <Text style={styles.readMoreText}>In February 2007 Vision Enabler won the prestigious France-Maghreb award for cultural diversity (business category).
+                            The project, Recruiting Visible Minorities, involved eight global French organisations: Axa, BNP Paribas, Danone, Gas de France, L’Oréal, Schneider Electric, Société Générale and Total. The results of our work were presented to the United Nations.
                             The France-Maghreb Convention was set up in 2003 to facilitate business and social cooperation between France and North Africa. Previous recipients include Peugeot, L’Oréal and Veolia.</Text>
                         </ReadMore>
                     </View>
@@ -112,22 +95,14 @@ const AboutUs = ({ navigation }) => {
                         source={require('@Assets/images/Awards.png')}
                     />
                 </View>
-                <View
-                    style={styles.mediaCenterCard}
-                >
+                <View style={styles.mediaCenterCard}>
                     <Image
                         style={styles.mediaCenterImage}
                         source={require('@Assets/images/ourMediaCenter.png')}
                     />
-                    <View
-                        style={styles.mediaCenterTextContainer}
-                    >
-                        <Text
-                            style={styles.mediaOur}
-                        >{'our'.toUpperCase()}</Text>
-                        <Text
-                            style={styles.mediaCenter}
-                        >{'media center'.toUpperCase()}</Text>
+                    <View style={styles.mediaCenterTextContainer}>
+                        <Text style={styles.mediaOur}>{'our'.toUpperCase()}</Text>
+                        <Text style={styles.mediaCenter}>{'media center'.toUpperCase()}</Text>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('Media')}
                             style={styles.button}>
@@ -139,4 +114,4 @@ const AboutUs = ({ navigation }) => {
         </View>
     )
 }
-export default AboutUs
+export default AboutUs;

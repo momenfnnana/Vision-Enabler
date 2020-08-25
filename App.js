@@ -4,6 +4,7 @@ import * as Font from 'expo-font';
 import Navigator from './src/Navigation/Navigation';
 // import Navigator from './src/Navigation/Questionaier/Navigation';
 import { Provider as AuthProvider } from './src/Context/AuthContext';
+import { Provider as MatrixProvider } from './src/Context/Matrix';
 import Welcome from './src/ComplianceParadigm/screens/Welcome/Welcome';
 import StatementsAttribute from './src/ComplianceParadigm/screens/StatementsAttribute/StatementsAttribute1';
 import Blug from './src/screens/MainFlow/Blug/Blug';
@@ -49,32 +50,10 @@ export default function App() {
     );
   }
   return (
-    <AuthProvider>
-      <Navigator />
-      {/* <Splash /> */}
-      {/* <Welcome /> */}
-      {/* <StatementsAttribute /> */}
-      {/* <Blug /> */}
-      {/* <QuestionnaireA1 /> */}
-      {/* <ChooseQuestionnaire /> */}
-      {/* <QuestionnaireLogin /> */}
-      {/* <QuestionnaireSignUp /> */}
-      {/* <QuestionnaireActiveAccount /> */}
-      {/* <QuestionnaireResetPassword /> */}
-      {/* <PerceptionReport /> */}
-      {/* <DiversityMatrix /> */}
-      {/* <Questionnaire /> */}
-      {/* <InclusionOmeter /> */}
-      {/* <Questions /> */}
-      {/* <Profile /> */}
-      {/* <Setting /> */}
-      {/* <EditProfile /> */}
-      {/* <DiversityInvoiceScreen /> */}
-      {/* <AddPromoCodeScreen /> */}
-      {/* <PerceptionReportFormScreen /> */}
-      {/* <PaymentFor /> */}
-      {/* <PerceptionQuestionnaire /> */}
-      {/* <EditPassword /> */}
-    </AuthProvider>
+    <MatrixProvider>
+      <AuthProvider>
+        <Navigator />
+      </AuthProvider>
+    </MatrixProvider>
   );
 }

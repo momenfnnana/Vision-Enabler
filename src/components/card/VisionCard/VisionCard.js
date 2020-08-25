@@ -6,16 +6,14 @@ const VisionCard = ({ data }) => {
         <View key={data.id} style={styles.visionList}>
             <View style={{ padding: 15, width: "100%" }}>
                 <Image
-                    source={data.img}
-                    style={{
-                        marginVertical: "3%"
-                    }}
+                    source={{ uri: 'https://visionenabler.dits.cloud/public/img/' + data.icon }}
+                    style={{ marginVertical: "3%", width: 100, height: 70, resizeMode: "contain" }}
                 />
-                <Text style={styles.visionCardTitle}>{data.title.toUpperCase()}</Text>
-                <Text style={styles.visionCardDescription}>{data.description}</Text>
+                <Text style={styles.visionCardTitle}>{data.title}</Text>
+                <Text style={styles.visionCardDescription}>{data.text_content}</Text>
             </View>
             <Image style={styles.leftCornerImage} source={require('@Assets/images/cardPups.png')} />
         </View>
     )
 }
-export default VisionCard
+export default VisionCard;

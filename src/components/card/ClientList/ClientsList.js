@@ -6,16 +6,14 @@ const Card = ({ data }) => {
     return (
         <View style={styles.container}>
             <View style={styles.box}>
-                <View
-                    style={styles.card}
-                >
+                <View style={styles.card}>
                     <Image
                         style={styles.Image}
-                        source={data.item.img}
+                        source={{ uri: 'https://visionenabler.dits.cloud/public/img/clients/' + data.item.logo }}
                     />
                 </View>
             </View>
         </View >
     )
 }
-export default Card
+export default Card;

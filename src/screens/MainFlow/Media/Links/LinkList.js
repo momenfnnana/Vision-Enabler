@@ -7,15 +7,10 @@ const List = ({ data }) => {
         <View
             style={styles.listContainer}
         >
-            <View
-                style={styles.DateContainer}
-            >
-                <Text style={styles.date}>{data.item.day}</Text>
-                <Text style={styles.date}>{data.item.month}</Text>
+            <View style={styles.DateContainer}>
+                <Text style={styles.date}>{data.item.created_date}</Text>
             </View>
-            <Text
-                style={styles.description}
-            >{data.item.description}</Text>
+            <Text style={styles.description}>{data.item.description}</Text>
         </View>
     )
 }

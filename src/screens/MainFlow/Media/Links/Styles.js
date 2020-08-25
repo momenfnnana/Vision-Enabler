@@ -20,13 +20,14 @@ const styles = {
         alignSelf: "center"
     },
     DateContainer: {
-        height: 60,
-        width: 60,
+        height: 70,
+        width: 70,
         backgroundColor: Color.secondary,
         margin: "2%",
         borderRadius: 10,
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        padding:5
     },
     date: {
         color: Color.white

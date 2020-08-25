@@ -8,26 +8,25 @@ import {
     TouchableOpacity
 } from 'react-native';
 import Color from '@Assets/Constant';
-import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack'
-import styles from './InclusionOmeter.style'
+import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
+import styles from './InclusionOmeter.style';
 import RNSpeedometer from 'react-native-speedometer';
-import InclusionOmeterData from '@ParadigmFakeData/InclusionOmeter.Data'
-import Footer from '@ParadigmComponents/Footer/Footer'
+import InclusionOmeterData from '@ParadigmFakeData/InclusionOmeter.Data';
+import Footer from '@ParadigmComponents/Footer/Footer';
 import Carousel from 'react-native-anchor-carousel';
 
 const InclusionOmeter = ({ navigation }) => {
     const width = Dimensions.get('window').width
     const carouselRef = useRef(null);
+    const [ometerValue, setOmeterValue] = useState(0);
     const renderItem = ({ item, index }) => {
         const { id, title, from, to, description, completeDescription, backgroundColor } = item;
         return (
             <TouchableOpacity
-                style={[
-                    styles.View,
-                    { backgroundColor: backgroundColor }
-                ]}
+                style={[styles.View, { backgroundColor: backgroundColor }]}
                 key={id}
-                onPress={() => { carouselRef.current.scrollToIndex(index); }}>
+                onPress={() => { carouselRef.current.scrollToIndex(index); }}
+            >
                 <View style={styles.head}>
                     <Text style={styles.headTitle}>{title}</Text>
                     <Text style={styles.headRange}>{from}% - {to}%</Text>
@@ -78,7 +77,7 @@ const InclusionOmeter = ({ navigation }) => {
                 labelNoteStyle={{
                     display: "none"
                 }}
-                value={20}
+                value={ometerValue}
                 size={330}
                 wrapperStyle={{ marginTop: "13%" }}
                 labelStyle={{ display: "none" }}
@@ -99,12 +98,23 @@ const InclusionOmeter = ({ navigation }) => {
                 easeDuration={500}
             />
             <Carousel
+                // keyExtractor = {(item, index) => {
+                //     index.toString(),
+                //     setOmeterValue(item)
+                //     console.log("asd",ometerValue);
+                // }}
                 data={InclusionOmeterData}
                 renderItem={renderItem}
                 itemWidth={width - 120}
                 containerWidth={width}
                 separatorWidth={-20}
                 ref={carouselRef}
+                onScrollEnd={(e) => {
+                    setOmeterValue(InclusionOmeterData[carouselRef.current.currentIndex].to),
+                    ()=>carouselRef.current.scrollToIndex(e)
+                    // console.log(InclusionOmeterData[carouselRef.current.currentIndex]);
+                }}
+
             />
             <Footer
                 next={() => navigation.navigate("PerceptionReportFormScreen")}

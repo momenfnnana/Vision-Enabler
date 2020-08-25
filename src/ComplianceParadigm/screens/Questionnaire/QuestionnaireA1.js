@@ -15,160 +15,66 @@ const QuestionnaireA1 = ({ navigation }) => {
     const [index, setIndex] = useState(0);
     const [questionIndex, setQuestionIndex] = useState(0);
     const [slideValue, setSlideValue] = useState(0)
+    const questionsLength = QuestionnaireA1Data.length;
+
     const answers = [
-        {
-            id: 1,
-            answersArray: ['', '', '', '', '']
-        },
-        {
-            id: 2,
-            answersArray: ['', '', '', '', '']
-        },
-        {
-            id: 3,
-            answersArray: ['', '', '', '', '']
-        },
-        {
-            id: 4,
-            answersArray: ['', '', '', '', '']
-        },
+        // {
+        //     id: 1,
+        //     answersArray: []
+        // },
+        // {
+        //     id: 2,
+        //     answersArray: []
+        // },
+        // {
+        //     id: 3,
+        //     answersArray: []
+        // },
+        // {
+        //     id: 4,
+        //     answersArray: []
+        // },
     ]
     const toggleNextScreen = () => {
-        if (questionIndex === 0 && index === 0) {
-            setQuestionIndex(1)
-            setIndex(0)
-            answers[0].answersArray.splice(0, 1, slideValue)
-            console.log(answers[0].answersArray)
-        } else if (questionIndex === 1 && index === 0) {
-            setQuestionIndex(2)
-            setIndex(0)
-            answers[0].answersArray.splice(1, 1, slideValue)
-            console.log(answers[0].answersArray)
-        } else if (questionIndex === 2 && index === 0) {
-            setQuestionIndex(3)
-            setIndex(0)
-            answers[0].answersArray[2] === null ? answers[0].answersArray.push(slideValue) : answers[0].answersArray.splice(0, 2, slideValue)
-        } else if (questionIndex === 3 && index === 0) {
-            setQuestionIndex(4)
-            setIndex(0)
-            answers[0].answersArray[3] === null ? answers[0].answersArray.push(slideValue) : answers[0].answersArray.splice(3, 1, slideValue)
-
-        } else if (questionIndex === 4 && index === 0) {
-            setIndex(1)
-            setQuestionIndex(0)
-            answers[0].answersArray[4] === null ? answers[0].answersArray.push(slideValue) : answers[0].answersArray.splice(4, 1, slideValue)
-        } else if (questionIndex === 0 && index === 1) {
-            setQuestionIndex(1)
-            setIndex(1)
-        } else if (questionIndex === 1 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(4)
-        } else if (questionIndex === 4 && index === 1) {
-            setIndex(2)
-            setQuestionIndex(0)
-        } else if (questionIndex === 0 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(1)
-        } else if (questionIndex === 1 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(3)
-        } else if (questionIndex === 1 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(4)
-        } else if (questionIndex === 4 && index === 2) {
-            setIndex(3)
-            setQuestionIndex(0)
-        } else if (questionIndex === 0 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(1)
-        } else if (questionIndex === 1 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(4)
-        } else if (questionIndex === 4 && index === 3) {
-            navigation.navigate('PerceptionReport');
+        let a = {
+            id: 1,
+            answers: [
+                {
+                    id:1,
+                    value: 0.5
+                }
+            ]
+        };
+        if (index < questionsLength -1 ){ 
+            if(questionIndex < QuestionnaireA1Data[index].questions.length -1){
+                setQuestionIndex(questionIndex + 1);
+            }else{
+                setIndex(index + 1);
+                setQuestionIndex(0);
+            }
+        } else if (index == questionsLength - 1 ){
+            if (questionIndex < QuestionnaireA1Data[index].questions.length - 1) {
+                setQuestionIndex(questionIndex + 1);
+            } else {
+                navigation.navigate('PerceptionReport');
+            }
         }
     }
+
     const toggleBackScreen = () => {
-        if (questionIndex === 4 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(1)
-        } else if (questionIndex === 1 && index === 3) {
-            setIndex(3)
-            setQuestionIndex(0)
-        } else if (questionIndex === 0 && index === 3) {
-            setIndex(2)
-            setQuestionIndex(4)
-        } else if (questionIndex === 4 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(1)
-        } else if (questionIndex === 1 && index === 2) {
-            setIndex(2)
-            setQuestionIndex(0)
-        } else if (questionIndex === 0 && index === 2) {
-            setIndex(1)
-            setQuestionIndex(4)
-        } else if (questionIndex === 4 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(1)
-        } else if (questionIndex === 1 && index === 1) {
-            setIndex(1)
-            setQuestionIndex(0)
-        } else if (questionIndex === 0 && index === 1) {
-            setIndex(0)
-            setQuestionIndex(4)
-        } else if (questionIndex === 4 && index === 0) {
-            setIndex(0)
-            setQuestionIndex(3)
-        } else if (questionIndex === 3 && index === 0) {
-            setIndex(0)
-            setQuestionIndex(2)
-        } else if (questionIndex === 2 && index === 0) {
-            setIndex(0)
-            setQuestionIndex(1)
-        } else if (questionIndex === 1 && index === 0) {
-            setIndex(0)
-            setQuestionIndex(0)
-        } else if (questionIndex === 0 && index === 0) {
-            navigation.goBack()
+        if (index > 0) {
+            if (questionIndex > 0) {
+                setQuestionIndex(questionIndex - 1);
+            } else {
+                setIndex(index - 1);
+                setQuestionIndex(QuestionnaireA1Data[index].questions.length -1);
+            }
+        } else if (index == 0) {
+            if (questionIndex > 0) {
+                setQuestionIndex(questionIndex - 1);
+            } else {
+                navigation.goBack()
+            }
         }
     }
     return (
@@ -179,7 +85,7 @@ const QuestionnaireA1 = ({ navigation }) => {
                 goBack={() => navigation.goBack()}
                 onPress2={() => navigation.navigate('Profile')}
             />
-            <Text style={styles.headerTitle}>{QuestionnaireA1Data[index].name}</Text>
+            <Text style={styles.headerTitle}>{QuestionnaireA1Data[index] ? QuestionnaireA1Data[index].name:  ''}</Text>
             <View style={styles.modalContainer}>
                 <View style={styles.questionsNumber}>
                     <View style={styles.backgroundLine} />
@@ -196,14 +102,14 @@ const QuestionnaireA1 = ({ navigation }) => {
                         <Text style={QuestionnaireA1Data[index].id === 4 ? styles.PrimaryquestionNumberStyle : styles.SecondayquestionNumberStyle}>4</Text>
                     </View>
                 </View>
-                <Text style={styles.mainTitle}>{QuestionnaireA1Data[index].mainQuestion}</Text>
+                <Text style={styles.mainTitle}>{QuestionnaireA1Data[index].mainQuestion??''}</Text>
                 <View style={styles.progressBarContainer}>
                     <ProgressBar progress={QuestionnaireA1Data[index].id === 1 ? 0.25 : QuestionnaireA1Data[index].id === 2 ? 0.50 : QuestionnaireA1Data[index].id === 3 ? 0.75 : 1} color={Color.secondary} style={{ width: "100%" }} />
                 </View>
                 <View style={[styles.firstModal, { height: `${height}%`, justifyContent: justifyContent }]}>
                     <View style={styles.firstModalContainer}>
                         <View style={styles.Question1Container}>
-                            <Text style={styles.modalQuestionNumber}>Questions {QuestionnaireA1Data[index].questions[questionIndex].id} from {QuestionnaireA1Data.length + 1}</Text>
+                            <Text style={styles.modalQuestionNumber}>Questions {QuestionnaireA1Data[index].questions[questionIndex].id} from {QuestionnaireA1Data[index].id}</Text>
                         </View>
                         <Text style={styles.questionDescription}>{QuestionnaireA1Data[index].questions[questionIndex].question}</Text>
                         <View style={styles.imagesAndSliderContainer}>
@@ -226,7 +132,7 @@ const QuestionnaireA1 = ({ navigation }) => {
                                     thumbProps={{
                                         children: (
                                             <Image style={{ alignSelf: "center", position: "absolute", top: -10 }} source={require('@Assets/images/thumbImage.png')} />
-                                        ),
+                                        )
                                     }}
                                     thumbStyle={{}}
                                     value={slideValue}
