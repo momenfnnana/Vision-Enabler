@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Image, Easing } from 'react-native';
+import { View, Image, Easing, AsyncStorage } from 'react-native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import {
     createDrawerNavigator,
@@ -56,10 +56,15 @@ import BottomAboutUs from './BottomAboutUs.js'
 import BottomContact from './BottomContact.js'
 import BottomMedia from './BottomMedia.js'
 import BottomBlug from './BottomBlug.js'
+// import {Context as AuthContext} from '@Context/AuthContext';
 import BottomChooseQuestionnaire from './BottomChooseQuestionnaire.js'
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
+// const { signout} = useContext(AuthContext);
+// const signout =  () => {
+    
+// }
 
 const Screens = ({ style }) => {
     const openConfig = {
@@ -413,6 +418,15 @@ const CustomDrawerContent = (props) => {
                     label="Blug"
                     onPress={() => props.navigation.navigate("Blug")}
                 />
+                {/* <DrawerItem
+                    labelStyle={{
+                        fontSize: 16,
+                        fontFamily: "Altissimo_bold",
+                        color: Color.white
+                    }}
+                    label="sign out"
+                    onPress={signout}
+                /> */}
                 <Image
                     style={{
                         width: 260,
@@ -439,9 +453,7 @@ export default () => {
     })
     const screenStyles = { borderRadius, transform: [{ scale }] };
     return (
-        <View
-            style={{ flex: 1, backgroundColor: Color.primary }}
-        >
+        <View style={{ flex: 1, backgroundColor: Color.primary }}>
             <Drawer.Navigator
                 contentContainerStyle={{ flex: 1 }}
                 drawerStyle={{ width: "50%", backgroundColor: "transparent" }}

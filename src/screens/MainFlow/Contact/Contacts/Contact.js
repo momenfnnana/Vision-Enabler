@@ -32,9 +32,9 @@ const Contact = ({ navigation }) => {
                 </View>
                 <View style={styles.loopCardContainer}>
                     {
-                        ContactData.map(i => {
+                        ContactData.map((i, index) => {
                             return (
-                                <Card data={i} />
+                                <Card key={index.toString()} data={i} />
                             )
                         })
                     }

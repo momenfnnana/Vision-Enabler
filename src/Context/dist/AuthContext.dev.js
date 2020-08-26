@@ -132,12 +132,31 @@ var changePdf = function changePdf(dispatch) {
   };
 };
 
+var signout = function signout() {
+  return function _callee3() {
+    return regeneratorRuntime.async(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            _context3.next = 2;
+            return regeneratorRuntime.awrap(_reactNative.AsyncStorage.removeItem('token', ''));
+
+          case 2:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    });
+  };
+};
+
 var _createDataContext = (0, _createDataContext2["default"])(authReducer, {
   loginToken: loginToken,
   setQuestionFlow: setQuestionFlow,
   setPyamentFlow: setPyamentFlow,
   tryLocalSignin: tryLocalSignin,
-  changePdf: changePdf
+  changePdf: changePdf,
+  signout: signout
 }, {
   token: false,
   QuestionsFlow: 0,

@@ -46,8 +46,13 @@ const changePdf = dispatch => (data) => {
     dispatch({ type: 'change_pdf', payload: data })
 }
 
+const signout = () => {
+    return async () => {
+        await AsyncStorage.removeItem('token', '');
+    }
+}
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { loginToken, setQuestionFlow, setPyamentFlow, tryLocalSignin, changePdf },
+    { loginToken, setQuestionFlow, setPyamentFlow, tryLocalSignin, changePdf, signout },
     { token: false, QuestionsFlow: 0, PaymentFlow: 0, pdf: null }
 );

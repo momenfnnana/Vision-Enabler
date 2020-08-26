@@ -34,6 +34,7 @@ const Row = ({
         container: styles.rowNum,
         questionNumber: styles.rowNumCol
     })
+    const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
 
     const [backgroundColor11, setBackgroundColor11] = useState(Color.secondary)
     const [backgroundColor12, setBackgroundColor12] = useState(Color.secondary)

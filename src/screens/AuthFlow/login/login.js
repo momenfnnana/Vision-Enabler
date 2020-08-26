@@ -37,7 +37,7 @@ const Login = ({ navigation }) => {
             console.log(e);
             setIsLoading(false);
             setTimeout(() => {
-                alert("Please Enter email and password");
+                alert("username or password not correct");
             }, 300);
         }
     };
