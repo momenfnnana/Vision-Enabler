@@ -18,44 +18,18 @@ import Footer from '@ParadigmComponents/Footer/Footer';
 // import { BarChart, Grid } from 'react-native-svg-charts';
 // import { Defs, LinearGradient, Stop } from 'react-native-svg';
 // import Graph from '@ParadigmComponents/Graph/Graph';
-import { BarChart } from 'react-native-charts-wrapper';
+// import { BarChart } from 'react-native-charts-wrapper';
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
 
 const PerceptionReport = ({ navigation }) => {
-    const [state, setState] = useState({
-        legend: {
-            enabled: true,
-            textSize: 14,
-            form: 'SQUARE',
-            formSize: 14,
-            xEntrySpace: 10,
-            yEntrySpace: 5,
-            formToTextSpace: 5,
-            wordWrapEnabled: true,
-            maxSizePercent: 0.5
-        },
-        data: {
-            dataSets: [{
-                values: [{ y: 100 }, { y: 105 }, { y: 102 }, { y: 110 }, { y: 114 }, { y: 109 }, { y: 105 }, { y: 99 }, { y: 95 }],
-                label: 'Bar dataSet',
-                config: {
-                    color: processColor('teal'),
-                    barShadowColor: processColor('lightgrey'),
-                    highlightAlpha: 90,
-                    highlightColor: processColor('red'),
-                }
-            }],
 
-            config: {
-                barWidth: 0.7,
-            }
-        },
-        highlights: [{ x: 3 }, { x: 6 }],
-        xAxis: {
-            valueFormatter: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep'],
-            granularityEnabled: true,
-            granularity: 1,
-        }
-    })
+    const data = [
+        { quarter: 1, earnings: 13000 },
+        { quarter: 2, earnings: 16500 },
+        { quarter: 3, earnings: 14250 },
+        { quarter: 4, earnings: 19000 },
+        { quarter: 5, earnings: 1000 }
+    ];
     // const data = [
     //     {
     //         id: 1,
@@ -119,7 +93,28 @@ const PerceptionReport = ({ navigation }) => {
                     {/* <BarChartShape /> */}
                     {/* <BarChart /> */}
                     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                        <BarChart
+                        <VictoryChart width={350} theme={VictoryTheme.material}>
+                            <VictoryBar
+                                style={{
+                                    data: {
+                                        fill: ({ datum }) => datum.x === 3 ? "#000000" : "#c43a31",
+                                        stroke: ({ index }) => +index % 2 === 0 ? "#000000" : "#c43a31",
+                                        fillOpacity: 1,
+                                        strokeWidth: 1,
+                                        
+                                    },
+                                    labels: {
+                                        fontSize: 50,
+                                        fill: ({ datum }) => datum.x === 3 ? "#000000" : "#c43a31"
+                                    }
+                                }}
+                                // labels={({ datum }) => datum.x}
+                                data={data}
+                                x="quarter"
+                                y="earnings"
+                            />
+                        </VictoryChart>
+                        {/* <BarChart
                             style={styles.chart}
                             data={state.data}
                             xAxis={state.xAxis}
@@ -133,7 +128,7 @@ const PerceptionReport = ({ navigation }) => {
                             onSelect={handleSelect.bind(this)}
                             highlights={state.highlights}
                             onChange={(event) => console.log(event.nativeEvent)}
-                        />
+                        /> */}
                         {/* <View style={{marginLeft:20}}>
                             <Graph data={data} />
                         </View> */}

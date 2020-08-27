@@ -20,33 +20,30 @@ import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
 import Row from './Row';
 const DiversityMatrix = ({ navigation }) => {
     const [MatrixQuestions, setMatrixQuestions] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
-    useEffect(() => {
-        (async function () {
-            try {
-                setIsLoading(true);
-                const data = await getMatrix1();
-                // console.log("aaa", data.data);
-                await setMatrixQuestions(data.data);
-                setIsLoading(false);
-                if (data.status == true) {
-                    alert("get data")
-                } else {
-                    alert("error with getting data")
-                    console.log(data.data);
-                }
-            } catch (e) {
-                setIsLoading(false);
-                alert("We got an problem!");
-                console.log(e);
-            }
-        })();
-    }, []);
+    // useEffect(() => {
+    //     (async function () {
+    //         try {
+    //             setIsLoading(true);
+    //             const data = await getMatrix1();
+    //             // console.log("aaa", data.data);
+    //             await setMatrixQuestions(data.data);
+    //             setIsLoading(false);
+    //             if (data.status == true) {
+    //                 alert("get data")
+    //             } else {
+    //                 alert("error with getting data")
+    //                 console.log(data.data);
+    //             }
+    //         } catch (e) {
+    //             setIsLoading(false);
+    //             alert("We got an problem!");
+    //             console.log(e);
+    //         }
+    //     })();
+    // }, []);
     const { state } = useContext(AuthContext);
-    const [IdColor, setIdColor] = useState({ style: styles.rowNum })
-    const [backgroundID, setBackgroundID] = useState({ style: styles.rowNumCol })
-
     const [index, setIndex] = useState(0);
     const questionsLength = MatrixQuestions.length;
 
@@ -55,8 +52,8 @@ const DiversityMatrix = ({ navigation }) => {
             console.log("index before", index);
             setIndex(index + 1);
             console.log("index after", index);
-            setIdColor({ style: styles.rowNum1 })
-            setBackgroundID({ style: styles.rowNumCol1 })
+            // setIdColor({ style: styles.rowNum1 })
+            // setBackgroundID({ style: styles.rowNumCol1 })
         }
         else {
             console.log("iam here");
@@ -226,25 +223,24 @@ const DiversityMatrix = ({ navigation }) => {
                                     />
                                 </View>
                                 <View style={styles.leftColumn}>
-                                    {
-                                        MatrixQuestions.map((i, index) => {
+                                    {/* {
+                                        MatrixQuestions.map((item, index) => {
                                             return (
                                                 <Row
                                                     key={index.toString()}
-                                                    data={i}
-                                                    IDcolor={IdColor.style}
-                                                    backgroundID={backgroundID.style}
+                                                    data={item}
+                                                    index={index}
                                                 />
                                             )
                                         })
-                                    }
+                                    } */}
                                 </View>
                             </View>
                         </ScrollView>
                     </ScrollView>
                     <View style={styles.footerContainer}>
-                        <Text style={styles.footerTitle}>{MatrixQuestions[index].question}</Text>
-                        <Text style={styles.footerDescription}>{MatrixQuestions[index].hint}</Text>
+                        {/* <Text style={styles.footerTitle}>{MatrixQuestions[index].question}</Text>
+                        <Text style={styles.footerDescription}>{MatrixQuestions[index].hint}</Text> */}
                         <View style={{ position: "absolute", bottom: 0, right: 0, left: 0 }}>
                             <Footer
                                 goBack={toggleBackButton}

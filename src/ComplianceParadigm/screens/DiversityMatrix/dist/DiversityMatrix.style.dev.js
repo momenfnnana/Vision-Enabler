@@ -96,7 +96,7 @@ var styles = _reactNative.StyleSheet.create({
     color: "#000"
   },
   footerContainer: {
-    height: 180,
+    height: "23%",
     backgroundColor: _Constant["default"].primary,
     paddingTop: "2%",
     borderTopRightRadius: 50,
