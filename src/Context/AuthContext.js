@@ -1,36 +1,26 @@
 import createDataContext from "./createDataContext";
 import { register } from "@Services/AuthServices";
-import { AsyncStorage } from 'react-native';
+import { AsyncStorage, ColorPropType } from 'react-native';
+import Color from '@Assets/Constant';
+
 const authReducer = (state, action) => {
     switch (action.type) {
-        case "signin":
-            return { token: true };
-        case "login":
-            return { token: true };
         case "questionFlow":
             return { token: true, QuestionsFlow: action.payload };
         case "pyamentFlow":
             return { token: true, PaymentFlow: action.payload };
         case "change_pdf":
             return { ...state, pdf: action.payload }
+        case "matrix_questions":
+            return { ...state, MatrixQuestions: action.payload }
+        case "matrix_answers":
+            return { ...state, MatrixAnswers: action.payload }
+        case "set_pops_color":
+            return { ...state, popsColor: action.payload }
         default:
             return state;
     }
 };
-const loginToken = dispatch => {
-    return async () => {
-        dispatch({ type: 'login' })
-    }
-}
-
-const tryLocalSignin = dispatch => async () => {
-    const token = await AsyncStorage.getItem('token');
-    if (token) {
-        dispatch({ type: 'signin', payload: token })
-    } else {
-        console.log("something went wrong with us");
-    }
-}
 
 const setQuestionFlow = dispatch => (flowNumber) => {
     dispatch({ type: 'questionFlow', payload: flowNumber })
@@ -46,13 +36,26 @@ const changePdf = dispatch => (data) => {
     dispatch({ type: 'change_pdf', payload: data })
 }
 
-const signout = () => {
-    return async () => {
-        await AsyncStorage.removeItem('token', '');
-    }
+const MatrixQuestions = dispatch => async (data) => {
+    await dispatch({ type: 'matrix_questions', payload: data })
+    console.log("questions from context", data);
 }
+
+const MatrixAnswers = dispatch => async (data) => {
+    await dispatch({ type: 'matrix_answers', payload: data })
+    console.log("answers from context", data);
+}
+
+const setPopsColor = dispatch => async (data) => {
+    await dispatch({ type: 'set_pops_color', payload: data })
+}
+// const signout = () => {
+//     return async () => {
+//         await AsyncStorage.removeItem('token', '');
+//     }
+// }
 export const { Provider, Context } = createDataContext(
     authReducer,
-    { loginToken, setQuestionFlow, setPyamentFlow, tryLocalSignin, changePdf, signout },
-    { token: false, QuestionsFlow: 0, PaymentFlow: 0, pdf: null }
+    { setQuestionFlow, setPyamentFlow, changePdf, MatrixQuestions, MatrixAnswers, setPopsColor },
+    { QuestionsFlow: 0, PaymentFlow: 0, pdf: null, MatrixQuestions: [], MatrixAnswers: [], popsColor: Color.secondary }
 );

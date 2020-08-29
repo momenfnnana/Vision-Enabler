@@ -52,14 +52,13 @@ const styles = StyleSheet.create({
         marginTop: "10%"
     },
     chart: {
-        paddingLeft: "5%",
         height: 510
     },
     descriptionShape: {
         backgroundColor: Color.secondary,
-        paddingHorizontal: "3%",
         borderRadius: 15,
-        height: "16%",
+        height: "50%",
+        width: "30%",
         justifyContent: "center",
         alignItems: "center"
     },

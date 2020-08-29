@@ -11,6 +11,8 @@ var _AuthServices = require("@Services/AuthServices");
 
 var _reactNative = require("react-native");
 
+var _Constant = _interopRequireDefault(require("@Assets/Constant"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -21,16 +23,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var authReducer = function authReducer(state, action) {
   switch (action.type) {
-    case "signin":
-      return {
-        token: true
-      };
-
-    case "login":
-      return {
-        token: true
-      };
-
     case "questionFlow":
       return {
         token: true,
@@ -48,59 +40,24 @@ var authReducer = function authReducer(state, action) {
         pdf: action.payload
       });
 
+    case "matrix_questions":
+      return _objectSpread({}, state, {
+        MatrixQuestions: action.payload
+      });
+
+    case "matrix_answers":
+      return _objectSpread({}, state, {
+        MatrixAnswers: action.payload
+      });
+
+    case "set_pops_color":
+      return _objectSpread({}, state, {
+        popsColor: action.payload
+      });
+
     default:
       return state;
   }
-};
-
-var loginToken = function loginToken(dispatch) {
-  return function _callee() {
-    return regeneratorRuntime.async(function _callee$(_context) {
-      while (1) {
-        switch (_context.prev = _context.next) {
-          case 0:
-            dispatch({
-              type: 'login'
-            });
-
-          case 1:
-          case "end":
-            return _context.stop();
-        }
-      }
-    });
-  };
-};
-
-var tryLocalSignin = function tryLocalSignin(dispatch) {
-  return function _callee2() {
-    var token;
-    return regeneratorRuntime.async(function _callee2$(_context2) {
-      while (1) {
-        switch (_context2.prev = _context2.next) {
-          case 0:
-            _context2.next = 2;
-            return regeneratorRuntime.awrap(_reactNative.AsyncStorage.getItem('token'));
-
-          case 2:
-            token = _context2.sent;
-
-            if (token) {
-              dispatch({
-                type: 'signin',
-                payload: token
-              });
-            } else {
-              console.log("something went wrong with us");
-            }
-
-          case 4:
-          case "end":
-            return _context2.stop();
-        }
-      }
-    });
-  };
 };
 
 var setQuestionFlow = function setQuestionFlow(dispatch) {
@@ -132,14 +89,65 @@ var changePdf = function changePdf(dispatch) {
   };
 };
 
-var signout = function signout() {
-  return function _callee3() {
+var MatrixQuestions = function MatrixQuestions(dispatch) {
+  return function _callee(data) {
+    return regeneratorRuntime.async(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return regeneratorRuntime.awrap(dispatch({
+              type: 'matrix_questions',
+              payload: data
+            }));
+
+          case 2:
+            console.log("questions from context", data);
+
+          case 3:
+          case "end":
+            return _context.stop();
+        }
+      }
+    });
+  };
+};
+
+var MatrixAnswers = function MatrixAnswers(dispatch) {
+  return function _callee2(data) {
+    return regeneratorRuntime.async(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.next = 2;
+            return regeneratorRuntime.awrap(dispatch({
+              type: 'matrix_answers',
+              payload: data
+            }));
+
+          case 2:
+            console.log("answers from context", data);
+
+          case 3:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    });
+  };
+};
+
+var setPopsColor = function setPopsColor(dispatch) {
+  return function _callee3(data) {
     return regeneratorRuntime.async(function _callee3$(_context3) {
       while (1) {
         switch (_context3.prev = _context3.next) {
           case 0:
             _context3.next = 2;
-            return regeneratorRuntime.awrap(_reactNative.AsyncStorage.removeItem('token', ''));
+            return regeneratorRuntime.awrap(dispatch({
+              type: 'set_pops_color',
+              payload: data
+            }));
 
           case 2:
           case "end":
@@ -148,20 +156,27 @@ var signout = function signout() {
       }
     });
   };
-};
+}; // const signout = () => {
+//     return async () => {
+//         await AsyncStorage.removeItem('token', '');
+//     }
+// }
+
 
 var _createDataContext = (0, _createDataContext2["default"])(authReducer, {
-  loginToken: loginToken,
   setQuestionFlow: setQuestionFlow,
   setPyamentFlow: setPyamentFlow,
-  tryLocalSignin: tryLocalSignin,
   changePdf: changePdf,
-  signout: signout
+  MatrixQuestions: MatrixQuestions,
+  MatrixAnswers: MatrixAnswers,
+  setPopsColor: setPopsColor
 }, {
-  token: false,
   QuestionsFlow: 0,
   PaymentFlow: 0,
-  pdf: null
+  pdf: null,
+  MatrixQuestions: [],
+  MatrixAnswers: [],
+  popsColor: _Constant["default"].secondary
 }),
     Provider = _createDataContext.Provider,
     Context = _createDataContext.Context;

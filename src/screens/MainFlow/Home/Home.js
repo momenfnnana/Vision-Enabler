@@ -21,19 +21,19 @@ import { getVisionAndValues, getClients } from "@Services/MainFlow/HomeScreen";
 import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
 
 const Home = ({ navigation }) => {
-    const [vision, setVision] = useState(null);
-    const [clients, setClients] = useState(null);
+    const [vision, setVision] = useState([]);
+    const [clients, setClients] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         (async function () {
             try {
                 setIsLoading(true);
-                // const VisionAndValues = await getVisionAndValues();
-                // const ClientsData = await getClients();
+                const VisionAndValues = await getVisionAndValues();
+                const ClientsData = await getClients();
                 console.log("aaa", ClientsData.data);
-                // setVision(VisionAndValues.data);
-                // setClients(ClientsData.data);
+                setVision(VisionAndValues.data);
+                setClients(ClientsData.data);
                 setIsLoading(false);
             } catch (e) {
                 setIsLoading(false);
@@ -71,13 +71,13 @@ const Home = ({ navigation }) => {
                             <SectionDescription text="At Vision Enabler we believe that diversity should be at the core of every forward thinking company’s management strategy." />
                         </View>
                         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                            {/* {
+                            {
                                 vision.map(i => {
                                     return (
                                         <VisionCard key={i.id} data={i} />
                                     )
                                 })
-                            } */}
+                            }
                         </ScrollView>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('OurVision')}
@@ -99,13 +99,13 @@ const Home = ({ navigation }) => {
                             style={{ marginLeft: "0%" }}
                             showsHorizontalScrollIndicator={false}
                         >
-                            {/* {
+                            {
                                 clients.map(i => {
                                     return (
                                         <ClientCard key={i.id} data={i} />
                                     )
                                 })
-                            } */}
+                            }
                         </ScrollView>
                         <TouchableOpacity
                             onPress={() => navigation.navigate('Clients')}

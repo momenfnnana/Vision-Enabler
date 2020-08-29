@@ -1,214 +1,91 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { View, TouchableOpacity, Text } from 'react-native';
 import { Tooltip } from 'react-native-elements';
 import Color from '@Assets/Constant';
 import styles from './DiversityMatrix.style';
 import Pops from './Pops';
-const Row = ({
-    data,
-    index
-}) => {
+import ToolTips from '@ParadigmFakeData/Tooltips';
+// import { postMatrixAnswers1 } from "@Services/Matrix/Matrix";
+import { Context as AuthContext } from '@Context/AuthContext';
+const Row = ({ data }) => {
     const [IdColor, setIdColor] = useState({ style: styles.rowNum })
     const [backgroundID, setBackgroundID] = useState({ style: styles.rowNumCol })
-
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
-    const toggleQuestion1 = () => {
-        backgroundID.style === styles.rowNumCol ? (
-            setBackgroundID({ style: styles.rowNumCol1 }),
-            setIdColor({ style: styles.rowNum1 })
-        ) : (
-                setBackgroundID({ style: styles.rowNumCol }),
-                setIdColor({ style: styles.rowNum })
-            )
-    }
+    const { state: { popsColor }, MatrixData } = useContext(AuthContext);
+    const sendData = async () => {
+        setIsLoading(true);
+        try {
+            const response = await login(_data);
+            if (response.status == true) {
+                navigation.navigate('QuestionnaireA1')
+            } else {
+                alert("you should have to answer all questions");
+            }
+            setIsLoading(false);
+        } catch (e) {
+            console.log(e);
+            setIsLoading(false);
+            setTimeout(() => {
+                alert("somthingwent wrong with us");
+            }, 300);
+        }
+    };
 
-    const MatrixAnswers = [
+    let _data = [
         {
             id: 1,
-            answers: ['A']
+            answers: [null, null, null, null, null, null, null, null]
         },
         {
             id: 2,
-            answers: []
+            answers: [null, null, null, null, null, null, null, null]
         },
         {
             id: 3,
-            answers: []
+            answers: [null, null, null, null, null, null, null, null]
         },
         {
             id: 4,
-            answers: []
+            answers: [null, null, null, null, null, null, null, null]
         },
         {
             id: 5,
-            answers: []
-        },
-    ]
-
-    // pass id to index 
-    // find matrix answers by id
-    // overRide or creat new object containing same id new answers
-
-
-    // id is the x axis 
-    //index is the y axis 
-    const handleClick = (id, index) => {
-
-    }
-
-    const handleTooltipClick = (color, index) => {
-        //color = 'A'
-        const foundInData = data.find(e => e.id === id)
-        [{ id: 1 }]
-
-    }
-
-    const toggle1Answer1InQuestion1 = () => {
-        if (index + 1 == data.id) {
-            if (MatrixAnswers[index].answers[0] === null) {
-                MatrixAnswers[index].answers[0].push('G')
-            } else {
-                MatrixAnswers[index].answers.splice(0, 1, 'G')
-            }
-            console.log(MatrixAnswers);
-        } else {
-            console.log("error");
+            answers: [null, null, null, null, null, null, null, null]
         }
-    };
-
-    const toggle2Answer1InQuestion1 = () => {
-        if (index + 1 == data.id) {
-            if (MatrixAnswers[index].answers[0] === null) {
-                MatrixAnswers[index].answers[0].push('A')
-            } else {
-                MatrixAnswers[index].answers.splice(0, 1, 'A')
-            }
-            console.log(MatrixAnswers);
-        } else {
-            console.log("error");
-        }
-    };
-
-    const toggle3Answer1InQuestion1 = () => {
-        if (index + 1 == data.id) {
-            if (MatrixAnswers[index].answers[0] === null) {
-                MatrixAnswers[index].answers[0].push('P')
-            } else {
-                MatrixAnswers[index].answers.splice(0, 1, 'P')
-            }
-            console.log(MatrixAnswers);
-        } else {
-            console.log("error");
-        }
-    };
-
-    const toggle4Answer1InQuestion1 = () => {
-        if (index + 1 == data.id) {
-            if (MatrixAnswers[index].answers[0] === null) {
-                MatrixAnswers[index].answers[0].push('VP')
-            } else {
-                MatrixAnswers[index].answers.splice(0, 1, 'VP')
-            }
-            console.log(MatrixAnswers);
-        } else {
-            console.log("error");
-        }
-    };
+    ];
 
     return (
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <TouchableOpacity onPress={toggleQuestion1} style={backgroundID.style}>
+            <TouchableOpacity style={backgroundID.style}>
                 <Text style={IdColor.style}>{data.id}</Text>
             </TouchableOpacity>
             <View style={{ flexDirection: "row", marginLeft: 40 }}>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={() => handleTooltipClick('G')}
-                        circle2={() => handleTooltipClick('A')}
-                        circle3={() => handleTooltipClick('P')}
-                        circle4={() => handleTooltipClick('VP')}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
-                <Tooltip backgroundColor={Color.secondary}
-                    popover={<Pops
-                        circle1={toggle1Answer1InQuestion1}
-                        circle2={toggle2Answer1InQuestion1}
-                        circle3={toggle3Answer1InQuestion1}
-                        circle4={toggle4Answer1InQuestion1}
-                    />}>
-                    <View style={styles.circle}>
-                        <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
-                    </View>
-                </Tooltip>
+                {
+                    ToolTips.map((i, index) => {
+                        const handelClick = (color) => {
+                            const findInAnswers = _data.find((e) => e.id === data.id);
+                            findInAnswers.answers[index] = color;
+                            console.log(_data);
+                            color === "G" ? setSubCircleBackground(Color.greate) :
+                                color === "A" ? setSubCircleBackground(Color.average) :
+                                    color === "P" ? setSubCircleBackground(Color.poor) :
+                                        color === "VP" && setSubCircleBackground(Color.black)
+                        };
+                        return (
+                            <Tooltip key={index.toString()} backgroundColor={Color.secondary}
+                                popover={<Pops
+                                    circle1={() => handelClick('G')}
+                                    circle2={() => handelClick('A')}
+                                    circle3={() => handelClick('P')}
+                                    circle4={() => handelClick('VP')}
+                                />}>
+                                <View style={styles.circle}>
+                                    <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
+                                </View>
+                            </Tooltip>
+                        )
+                    })
+                }
             </View>
         </View>
     )

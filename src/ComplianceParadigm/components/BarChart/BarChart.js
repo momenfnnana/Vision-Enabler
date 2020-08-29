@@ -8,6 +8,7 @@ import styles from './BarChart.style'
 import * as scale from 'd3-scale'
 import { getStyle } from 'react-native-confirmation-code-field/esm/utils';
 const screenWidth = Dimensions.get("window").width;
+const xAXIS = ['Working', 'Diversity Policy', 'Employees', 'Complaints Handling']
 const data = {
     labels: [
         {
@@ -79,21 +80,36 @@ const BarChartShape = () => {
                 </View>
             </View>
             <ScrollView horizontal style={styles.chart}>
-                <View style={{ height: "90%", justifyContent: "space-between" }}>
-                    <View style={styles.descriptionShape}>
-                        <Image source={require('@Assets/images/100%.png')} />
+                <View style={{ height: "50%",marginVertical:40, justifyContent: "space-between" }}>
+                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
+                        <View style={styles.descriptionShape}>
+                            <Image style={{ width: 30, resizeMode: "contain" }} source={require('@Assets/images/100%.png')} />
+                        </View>
+                        <Text style={styles.yAxis}>0</Text>
                     </View>
-                    <View style={styles.descriptionShape}>
-                        <Image source={require('@Assets/images/75%.png')} />
+                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
+                        <View style={styles.descriptionShape}>
+                            <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/75%.png')} />
+                        </View>
+                        <Text style={styles.yAxis}>2.5</Text>
                     </View>
-                    <View style={styles.descriptionShape}>
-                        <Image source={require('@Assets/images/50%.png')} />
+                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
+                        <View style={styles.descriptionShape}>
+                            <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/50%.png')} />
+                        </View>
+                        <Text style={styles.yAxis}>5</Text>
                     </View>
-                    <View style={styles.descriptionShape}>
-                        <Image source={require('@Assets/images/25%.png')} />
+                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
+                        <View style={styles.descriptionShape}>
+                            <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/25%.png')} />
+                        </View>
+                        <Text style={styles.yAxis}>7.5</Text>
                     </View>
-                    <View style={styles.descriptionShape}>
-                        <Image source={require('@Assets/images/0%.png')} />
+                    <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                        <View style={styles.descriptionShape}>
+                            <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/0%.png')} />
+                        </View>
+                        <Text style={styles.yAxis}>10</Text>
                     </View>
                 </View>
                 <View style={{ marginRight: 100 }}>
@@ -112,6 +128,13 @@ const BarChartShape = () => {
                         <Grid />
                         <Gradient />
                     </BarChart>
+                    <XAxis
+                        style={{ marginHorizontal: 15, marginLeft: 20 }}
+                        data={xAXIS}
+                        formatLabel={(value, index) => value}
+                        contentInset={{ left: 10, right: 10 }}
+                        svg={{ fontSize: 10, fill: Color.white }}
+                    />
                     {/* <XAxis
                         data={data.labels}
                         yAccessor={({ index }) => index}

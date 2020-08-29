@@ -13,7 +13,7 @@ import {
 import Color from '@Assets/Constant';
 import styles from './PerceptionReport.style'
 import { AntDesign } from '@expo/vector-icons';
-// import BarChartShape from '../../components/BarChart/BarChart';
+import BarChartShape from '../../components/BarChart/BarChart';
 import Footer from '@ParadigmComponents/Footer/Footer';
 // import { BarChart, Grid } from 'react-native-svg-charts';
 // import { Defs, LinearGradient, Stop } from 'react-native-svg';
@@ -90,48 +90,12 @@ const PerceptionReport = ({ navigation }) => {
                     <Text style={styles.PerceptionReport}>Perception Report</Text>
                     <Text style={styles.Overall}>Overall Inclusive Leadership score : 5 out of 10</Text>
                     <Text style={styles.avarageNum}>Average <Text style={styles.number}>5</Text></Text>
-                    {/* <BarChartShape /> */}
+                    <BarChartShape />
                     {/* <BarChart /> */}
                     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-                        <VictoryChart width={350} theme={VictoryTheme.material}>
-                            <VictoryBar
-                                style={{
-                                    data: {
-                                        fill: ({ datum }) => datum.x === 3 ? "#000000" : "#c43a31",
-                                        stroke: ({ index }) => +index % 2 === 0 ? "#000000" : "#c43a31",
-                                        fillOpacity: 1,
-                                        strokeWidth: 1,
-                                        
-                                    },
-                                    labels: {
-                                        fontSize: 50,
-                                        fill: ({ datum }) => datum.x === 3 ? "#000000" : "#c43a31"
-                                    }
-                                }}
-                                // labels={({ datum }) => datum.x}
-                                data={data}
-                                x="quarter"
-                                y="earnings"
-                            />
-                        </VictoryChart>
-                        {/* <BarChart
-                            style={styles.chart}
-                            data={state.data}
-                            xAxis={state.xAxis}
-                            animation={{ durationX: 2000 }}
-                            legend={state.legend}
-                            gridBackgroundColor={processColor('#ffffff')}
-                            visibleRange={{ x: { min: 5, max: 5 } }}
-                            drawBarShadow={false}
-                            drawValueAboveBar={true}
-                            drawHighlightArrow={true}
-                            onSelect={handleSelect.bind(this)}
-                            highlights={state.highlights}
-                            onChange={(event) => console.log(event.nativeEvent)}
-                        /> */}
-                        {/* <View style={{marginLeft:20}}>
-                            <Graph data={data} />
-                        </View> */}
+                        {/* <BarChart style={{ height: 200 }} data={data} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}>
+                            <Grid />
+                        </BarChart> */}
                     </ScrollView>
                 </SafeAreaView>
             </ScrollView>

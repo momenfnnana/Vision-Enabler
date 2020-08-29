@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Image, Easing, AsyncStorage } from 'react-native';
 import { createStackNavigator, TransitionPresets } from '@react-navigation/stack';
 import {
@@ -56,16 +56,16 @@ import BottomAboutUs from './BottomAboutUs.js'
 import BottomContact from './BottomContact.js'
 import BottomMedia from './BottomMedia.js'
 import BottomBlug from './BottomBlug.js'
-// import {Context as AuthContext} from '@Context/AuthContext';
+// import { Context as AuthContext } from '@Context/AuthContext';
 import BottomChooseQuestionnaire from './BottomChooseQuestionnaire.js'
 const Drawer = createDrawerNavigator();
 const Stack = createStackNavigator();
 const Tab = createMaterialBottomTabNavigator();
-// const { signout} = useContext(AuthContext);
-// const signout =  () => {
-    
-// }
-
+// const { signout } = useContext(AuthContext);
+const signOut = ({ navigation }) => {
+    AsyncStorage.removeItem("accessToken")
+    navigation.navigate("login")
+}
 const Screens = ({ style }) => {
     const openConfig = {
         animation: 'spring',
@@ -418,15 +418,15 @@ const CustomDrawerContent = (props) => {
                     label="Blug"
                     onPress={() => props.navigation.navigate("Blug")}
                 />
-                {/* <DrawerItem
+                <DrawerItem
                     labelStyle={{
                         fontSize: 16,
                         fontFamily: "Altissimo_bold",
                         color: Color.white
                     }}
                     label="sign out"
-                    onPress={signout}
-                /> */}
+                    onPress={signOut}
+                />
                 <Image
                     style={{
                         width: 260,
