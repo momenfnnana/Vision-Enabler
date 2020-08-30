@@ -19,7 +19,7 @@ const QuestionnaireA1 = ({ navigation }) => {
     const [questionIndex, setQuestionIndex] = useState(0);
     const [slideValue, setSlideValue] = useState(0)
     const [QuestionnaireA1Data, setQuestions] = useState([
-        { title: "" }
+        {}
     ]);
     const questionsLength = QuestionnaireA1Data.length;
     const [isLoading, setIsLoading] = useState(false);
@@ -33,6 +33,7 @@ const QuestionnaireA1 = ({ navigation }) => {
                 setQuestions(Questions.data.Sections);
                 setIsLoading(false);
             } catch (e) {
+                console.log(e);
                 setIsLoading(false);
                 alert("We got an problem!");
             }
@@ -57,6 +58,7 @@ const QuestionnaireA1 = ({ navigation }) => {
         //     answersArray: []
         // },
     ]
+
     const toggleNextScreen = () => {
         let a = {
             id: 1,
@@ -99,6 +101,7 @@ const QuestionnaireA1 = ({ navigation }) => {
             }
         }
     }
+
     return (
         <>
             {isLoading === true ? <LoadingDialog /> : (
@@ -112,7 +115,7 @@ const QuestionnaireA1 = ({ navigation }) => {
                     <Text style={styles.headerTitle}>{QuestionnaireA1Data[index] ? QuestionnaireA1Data[index].name : ''}</Text>
                     <View style={styles.modalContainer}>
                         <View style={styles.questionsNumber}>
-                            <View style={styles.backgroundLine} />
+                            <View style={[styles.backgroundLine, { width: "90%" }]} />
                             <View style={QuestionnaireA1Data[index].id === 1 ? styles.questionNumberContainer : styles.secondaryQuestionsContainer} >
                                 <Text style={QuestionnaireA1Data[index].id === 1 ? styles.PrimaryquestionNumberStyle : styles.SecondayquestionNumberStyle}>1</Text>
                             </View>

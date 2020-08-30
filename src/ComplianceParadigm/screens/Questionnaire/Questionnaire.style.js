@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
     },
     backgroundLine: {
         borderBottomWidth: 1,
-        width: "90%",
+        width: "60%",
         borderBottomColor: `${Color.secondary}50`,
         position: "absolute",
         alignSelf: "center"
@@ -172,6 +172,70 @@ const styles = StyleSheet.create({
         left: 0,
         borderTopRightRadius: 50,
         borderTopLeftRadius: 50
+    },
+    container2: {
+        backgroundColor: `${Color.black}05`,
+        marginTop: "2%",
+        borderTopLeftRadius: 50,
+        borderTopRightRadius: 50,
+        alignSelf: "center",
+    },
+    headerTitle2: {
+        fontSize: 16,
+        color: Color.primary,
+        position: "absolute",
+        top: "3.5%",
+        left: "30%",
+        fontFamily: "DINNextLTProRegular",
+        marginBottom: "10%"
+    },
+    line2: {
+        borderColor: Color.primary,
+        borderWidth: 1,
+        width: 30,
+        borderRadius: 50,
+        height: "0%",
+        alignSelf: "center",
+        marginTop: "2%"
+    },
+    questionsScroll2: {
+        padding: "5%"
+    },
+    title2: {
+        fontSize: 16,
+        color: Color.primary
+    },
+    subTitle2: {
+        fontSize: 14,
+        color: `${Color.black}80`
+    },
+    questionsContainer2: {
+        marginTop: "5%",
+        marginHorizontal: "10%"
+    },
+    qustions2: {
+        width: "80%",
+        fontSize: 14,
+        color: "#38465F",
+        marginLeft: "2%"
+    },
+    questionContainer2: {
+        flexDirection: "row",
+        shadowColor: Color.primary,
+        shadowOffset: {
+            width: 0,
+            height: 4,
+        },
+        shadowOpacity: 0.30,
+        shadowRadius: 4.65,
+        elevation: 3,
+        backgroundColor: Color.white,
+        borderRadius: 10,
+        marginVertical: "2%",
+        paddingVertical: "5%",
+        justifyContent: "center",
+        alignItems: "center",
+        paddingHorizontal: "5%"
     }
 })
-export default styles
+export default styles;

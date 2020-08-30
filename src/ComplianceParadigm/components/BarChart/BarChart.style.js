@@ -60,7 +60,8 @@ const styles = StyleSheet.create({
         height: "50%",
         width: "30%",
         justifyContent: "center",
-        alignItems: "center"
+        alignItems: "center",
+        marginHorizontal:"10%"
     },
 })
 export default styles;

@@ -14,9 +14,7 @@ import styles from './Blug.style';
 
 const Blug = ({ navigation }) => {
     return (
-        <View
-            style={styles.container}
-        >
+        <View style={styles.container}>
             <Header OpenDrawer={() => navigation.openDrawer()} />
             <ScrollView>
                 {

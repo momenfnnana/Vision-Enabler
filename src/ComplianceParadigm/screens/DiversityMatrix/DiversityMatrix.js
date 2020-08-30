@@ -10,31 +10,36 @@ import HeaderStack from '@ParadigmComponents/header/headerStack/HeaderStack';
 import Color from '@Assets/Constant';
 import styles from './DiversityMatrix.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
+import { Context as AuthContext } from '@Context/AuthContext';
 import { getMatrix } from "@Services/Matrix/Matrix";
 import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
 import Row from './Row';
-import { Context as AuthContext } from '@Context/AuthContext';
+import { postMatrixAnswers1 } from '@Services/Matrix/Matrix';
 const DiversityMatrix = ({ navigation }) => {
+    const { state: { PaymentFlow, MatrixAnswersArray } } = useContext(AuthContext);
+    console.log("PaymentFlow", PaymentFlow);
+    const [matrixQuestions, setMatrixQuestions] = useState([
+        {
+            question: "",
+            hint: ""
+        }
+    ]);
+    console.log("MatrixAnswersArray", MatrixAnswersArray);
     const [isLoading, setIsLoading] = useState(false);
-    const [matrixQuestions, setMatrixQuestions] = useState([{
-        question: "",
-        hint: ""
-    }]);
-    const { state: { PaymentFlow }, setQuestionFlow, setPyamentFlow } = useContext(AuthContext);
-    console.log("asd", PaymentFlow);
+    const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
     useEffect(() => {
         (async function () {
             try {
                 setIsLoading(true);
-                const data = await getMatrix(1);
-                console.log("data", data);
-                await setMatrixQuestions(data.data);
+                const data = await getMatrix();
+                setMatrixQuestions(data.data);
+                // console.log("aaa", data.data);
                 setIsLoading(false);
                 if (data.status == true) {
                     alert("get data")
                 } else {
                     alert("error with getting data")
-                    console.log(data.data);
+                    console.log(data);
                 }
             } catch (e) {
                 setIsLoading(false);
@@ -49,6 +54,7 @@ const DiversityMatrix = ({ navigation }) => {
     const toggleNextScreen = () => {
         if (index < questionsLength - 1) {
             setIndex(index + 1);
+            console.log("index", index);
         }
         else {
             console.log("iam here");
@@ -60,6 +66,7 @@ const DiversityMatrix = ({ navigation }) => {
                                 PaymentFlow === 6 && navigation.navigate('QuestionnaireA6')
         }
     }
+
     const toggleBackButton = () => {
         if (index > 0) {
             setIndex(index - 1);
@@ -67,6 +74,7 @@ const DiversityMatrix = ({ navigation }) => {
             navigation.goBack()
         }
     }
+
     return (
         <>
             {isLoading === true ? <LoadingDialog /> : (
@@ -133,7 +141,6 @@ const DiversityMatrix = ({ navigation }) => {
                                                 <Row
                                                     key={index.toString()}
                                                     data={item}
-                                                    index={index}
                                                 />
                                             )
                                         })

@@ -7,13 +7,15 @@ exports.Context = exports.Provider = void 0;
 
 var _createDataContext2 = _interopRequireDefault(require("./createDataContext"));
 
-var _AuthServices = require("@Services/AuthServices");
-
-var _reactNative = require("react-native");
-
-var _Constant = _interopRequireDefault(require("@Assets/Constant"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -47,12 +49,7 @@ var authReducer = function authReducer(state, action) {
 
     case "matrix_answers":
       return _objectSpread({}, state, {
-        MatrixAnswers: action.payload
-      });
-
-    case "set_pops_color":
-      return _objectSpread({}, state, {
-        popsColor: action.payload
+        MatrixAnswersArray: [].concat(_toConsumableArray(state.MatrixAnswersArray), [action.payload])
       });
 
     default:
@@ -89,7 +86,7 @@ var changePdf = function changePdf(dispatch) {
   };
 };
 
-var MatrixQuestions = function MatrixQuestions(dispatch) {
+var MatrixData = function MatrixData(dispatch) {
   return function _callee(data) {
     return regeneratorRuntime.async(function _callee$(_context) {
       while (1) {
@@ -137,46 +134,18 @@ var MatrixAnswers = function MatrixAnswers(dispatch) {
   };
 };
 
-var setPopsColor = function setPopsColor(dispatch) {
-  return function _callee3(data) {
-    return regeneratorRuntime.async(function _callee3$(_context3) {
-      while (1) {
-        switch (_context3.prev = _context3.next) {
-          case 0:
-            _context3.next = 2;
-            return regeneratorRuntime.awrap(dispatch({
-              type: 'set_pops_color',
-              payload: data
-            }));
-
-          case 2:
-          case "end":
-            return _context3.stop();
-        }
-      }
-    });
-  };
-}; // const signout = () => {
-//     return async () => {
-//         await AsyncStorage.removeItem('token', '');
-//     }
-// }
-
-
 var _createDataContext = (0, _createDataContext2["default"])(authReducer, {
   setQuestionFlow: setQuestionFlow,
   setPyamentFlow: setPyamentFlow,
   changePdf: changePdf,
-  MatrixQuestions: MatrixQuestions,
-  MatrixAnswers: MatrixAnswers,
-  setPopsColor: setPopsColor
+  MatrixData: MatrixData,
+  MatrixAnswers: MatrixAnswers
 }, {
   QuestionsFlow: 0,
   PaymentFlow: 0,
   pdf: null,
   MatrixQuestions: [],
-  MatrixAnswers: [],
-  popsColor: _Constant["default"].secondary
+  MatrixAnswersArray: []
 }),
     Provider = _createDataContext.Provider,
     Context = _createDataContext.Context;

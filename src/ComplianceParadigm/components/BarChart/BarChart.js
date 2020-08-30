@@ -105,7 +105,7 @@ const BarChartShape = () => {
                         </View>
                         <Text style={styles.yAxis}>7.5</Text>
                     </View>
-                    <View style={{ flexDirection: "row", justifyContent: "space-around" }}>
+                    <View style={{ flexDirection: "row", justifyContent: "center" }}>
                         <View style={styles.descriptionShape}>
                             <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/0%.png')} />
                         </View>
