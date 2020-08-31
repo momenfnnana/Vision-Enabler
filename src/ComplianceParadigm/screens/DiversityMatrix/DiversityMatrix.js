@@ -17,7 +17,7 @@ import Row from './Row';
 import { postMatrixAnswers1 } from '@Services/Matrix/Matrix';
 const DiversityMatrix = ({ navigation }) => {
     const { ResetMatrixAnswers, state: { PaymentFlow, MatrixAnswersArray } } = useContext(AuthContext);
-    console.log("PaymentFlow", PaymentFlow);
+    // console.log("PaymentFlow", PaymentFlow);
     const [matrixQuestions, setMatrixQuestions] = useState([
         {
             question: "",
@@ -32,11 +32,11 @@ const DiversityMatrix = ({ navigation }) => {
             try {
                 setIsLoading(true);
                 const data = await getMatrix();
-                setMatrixQuestions(data.data);
                 // console.log("aaa", data.data);
                 setIsLoading(false);
                 if (data.status == true) {
-                    alert("get data")
+                    setMatrixQuestions(data.data);
+                    // alert("get data")
                 } else {
                     alert("error with getting data")
                     console.log(data);
@@ -66,6 +66,7 @@ const DiversityMatrix = ({ navigation }) => {
                                 PaymentFlow === 6 && navigation.navigate('QuestionnaireA6')
         }
     }
+    const selectQuestion = index => setIndex(index);
 
     const toggleBackButton = () => {
         if (index > 0) {
@@ -136,12 +137,14 @@ const DiversityMatrix = ({ navigation }) => {
                                 </View>
                                 <View style={styles.leftColumn}>
                                     {
-                                        matrixQuestions.map((item, index) => {
+                                        matrixQuestions.map((item, qIndex) => {
                                             return (
                                                 <Row
-                                                    key={index.toString()}
+                                                    onPress={()=> selectQuestion(qIndex)}
+                                                    key={qIndex.toString()}
                                                     data={item}
-                                                    qIndex={index}
+                                                    qIndex={qIndex}
+                                                    isActive={qIndex === index}
                                                 />
                                             )
                                         })
