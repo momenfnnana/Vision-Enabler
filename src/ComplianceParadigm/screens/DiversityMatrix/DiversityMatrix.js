@@ -16,7 +16,7 @@ import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
 import Row from './Row';
 import { postMatrixAnswers1 } from '@Services/Matrix/Matrix';
 const DiversityMatrix = ({ navigation }) => {
-    const { state: { PaymentFlow, MatrixAnswersArray } } = useContext(AuthContext);
+    const { ResetMatrixAnswers, state: { PaymentFlow, MatrixAnswersArray } } = useContext(AuthContext);
     console.log("PaymentFlow", PaymentFlow);
     const [matrixQuestions, setMatrixQuestions] = useState([
         {
@@ -24,11 +24,11 @@ const DiversityMatrix = ({ navigation }) => {
             hint: ""
         }
     ]);
-    console.log("MatrixAnswersArray", MatrixAnswersArray);
     const [isLoading, setIsLoading] = useState(false);
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
     useEffect(() => {
         (async function () {
+            ResetMatrixAnswers();
             try {
                 setIsLoading(true);
                 const data = await getMatrix();
@@ -141,6 +141,7 @@ const DiversityMatrix = ({ navigation }) => {
                                                 <Row
                                                     key={index.toString()}
                                                     data={item}
+                                                    qIndex={index}
                                                 />
                                             )
                                         })

@@ -6,11 +6,12 @@ import styles from './DiversityMatrix.style';
 import Pops from './Pops';
 import ToolTips from '@ParadigmFakeData/Tooltips';
 import { Context as AuthContext } from '@Context/AuthContext';
-const Row = ({ data }) => {
+const Row = ({ data , qIndex}) => {
     const [IdColor, setIdColor] = useState({ style: styles.rowNum })
     const [backgroundID, setBackgroundID] = useState({ style: styles.rowNumCol })
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
     const { MatrixAnswers } = useContext(AuthContext);
+    const {  state: {MatrixAnswersArray} } = useContext(AuthContext);
     const sendData = async () => {
         setIsLoading(true);
         try {
@@ -29,29 +30,19 @@ const Row = ({ data }) => {
             }, 300);
         }
     };
-
-    let _data = [
-        {
-            id: 1,
-            answers: [null, null, null, null, null, null, null, null]
-        },
-        {
-            id: 2,
-            answers: [null, null, null, null, null, null, null, null]
-        },
-        {
-            id: 3,
-            answers: [null, null, null, null, null, null, null, null]
-        },
-        {
-            id: 4,
-            answers: [null, null, null, null, null, null, null, null]
-        },
-        {
-            id: 5,
-            answers: [null, null, null, null, null, null, null, null]
+    const getColor = (matrixKey)=>{
+        if(matrixKey == null){
+            return Color.secondary;
         }
-    ];
+        let colors = [];
+        colors['G'] = '#44DD7F';
+        colors['A'] = '#FF7058';
+        colors['P'] = '#FA475F';
+        colors['VP']= '#000000';
+        return colors[matrixKey];
+    }
+
+    let _data = MatrixAnswersArray;
 
     return (
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -62,12 +53,9 @@ const Row = ({ data }) => {
                 {
                     ToolTips.map((i, index) => {
                         const handelClick = async (color) => {
-                            let myIndex = _data.findIndex(x => x.id === data.id);
-                            _data[myIndex].answers[index] = color;
-                            // console.log("_data", _data);
-                            // console.log("myIndex", myIndex);
-                            // console.log(_data);
-                            await _data[myIndex].answers[_data[myIndex].answers.length - 1] !== null && await MatrixAnswers({ id: myIndex + 1, answers: _data[myIndex].answers })
+                            _data[qIndex].answers[index] = color;
+                            MatrixAnswers({ id: qIndex + 1, answers: _data[qIndex].answers,
+                                questionIndex: qIndex ,answerIndex:index });
                         };
                         return (
                             <Tooltip key={index.toString()} backgroundColor={Color.secondary}
@@ -78,7 +66,8 @@ const Row = ({ data }) => {
                                     circle4={() => handelClick('VP')}
                                 />}>
                                 <View style={styles.circle}>
-                                    <View style={[styles.subCircle, { backgroundColor: subCircleBackground }]} />
+                                    <View style={[styles.subCircle, 
+                                        { backgroundColor: getColor(MatrixAnswersArray[qIndex].answers[index]) }]} />
                                 </View>
                             </Tooltip>
                         )
