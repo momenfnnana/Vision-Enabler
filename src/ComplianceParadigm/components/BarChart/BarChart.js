@@ -6,7 +6,7 @@ import { BarChart, Grid, XAxis } from 'react-native-svg-charts';
 import { Defs, LinearGradient, Stop } from 'react-native-svg';
 import styles from './BarChart.style'
 import * as scale from 'd3-scale'
-// import { getStyle } from 'react-native-confirmation-code-field/esm/utils';
+import { getStyle } from 'react-native-confirmation-code-field/esm/utils';
 const screenWidth = Dimensions.get("window").width;
 const xAXIS = ['Working', 'Diversity Policy', 'Employees', 'Complaints Handling']
 const data = {
@@ -79,7 +79,7 @@ const BarChartShape = () => {
                     <Text style={styles.avarageRangeText3}>From 0 to 5</Text>
                 </View>
             </View>
-            <ScrollView>
+            <ScrollView horizontal style={styles.chart}>
                 <View style={{ height: "50%", marginVertical: 40, justifyContent: "space-between" }}>
                     <View style={{ flexDirection: "row", justifyContent: "center" }}>
                         <View style={styles.descriptionShape}>
@@ -143,7 +143,7 @@ const BarChartShape = () => {
                         spacing={0.2}
                         formatLabel={(_, index) => data[index].label}
                     /> */}
-                    {/* <View style={{ flexDirection: "row", width: 350, justifyContent: "space-between" }}>
+                    <View style={{ flexDirection: "row", width: 350, justifyContent: "space-between" }}>
                         {
                             data.labels.map(i => {
                                 return (
@@ -151,7 +151,7 @@ const BarChartShape = () => {
                                 )
                             })
                         }
-                    </View> */}
+                    </View>
                     {/* <BarChart
                         style={{ width: "100%", height: 200 }}
                         data={data}

@@ -1,14 +1,14 @@
 // 
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import {
     View,
     Text,
-    // Dimensions,
+    Dimensions,
     SafeAreaView,
     TouchableOpacity,
     Image,
     ScrollView,
-    // processColor
+    processColor
 } from 'react-native';
 import Color from '@Assets/Constant';
 import styles from './PerceptionReport.style'
@@ -19,17 +19,19 @@ import Footer from '@ParadigmComponents/Footer/Footer';
 // import { Defs, LinearGradient, Stop } from 'react-native-svg';
 // import Graph from '@ParadigmComponents/Graph/Graph';
 // import { BarChart } from 'react-native-charts-wrapper';
-// import { VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
+import { Context as AuthContext } from '@Context/AuthContext'
+import { VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
 
 const PerceptionReport = ({ navigation }) => {
-
-    // const data = [
-    //     { quarter: 1, earnings: 13000 },
-    //     { quarter: 2, earnings: 16500 },
-    //     { quarter: 3, earnings: 14250 },
-    //     { quarter: 4, earnings: 19000 },
-    //     { quarter: 5, earnings: 1000 }
-    // ];
+    const { state: { MatrixAnswersArray } } = useContext(AuthContext);
+    console.log("MatrixAnswersArray", MatrixAnswersArray);
+    const data = [
+        { quarter: 1, earnings: 13000 },
+        { quarter: 2, earnings: 16500 },
+        { quarter: 3, earnings: 14250 },
+        { quarter: 4, earnings: 19000 },
+        { quarter: 5, earnings: 1000 }
+    ];
     // const data = [
     //     {
     //         id: 1,
@@ -65,16 +67,16 @@ const PerceptionReport = ({ navigation }) => {
     //     </Defs>
     // )
 
-    // const handleSelect = (event) => {
-    //     let entry = event.nativeEvent
-    //     if (entry == null) {
-    //         setState({ ...state, selectedEntry: null })
-    //     } else {
-    //         setState({ ...state, selectedEntry: JSON.stringify(entry) })
-    //     }
+    const handleSelect = (event) => {
+        let entry = event.nativeEvent
+        if (entry == null) {
+            setState({ ...state, selectedEntry: null })
+        } else {
+            setState({ ...state, selectedEntry: JSON.stringify(entry) })
+        }
 
-    //     console.log(event.nativeEvent)
-    // }
+        console.log(event.nativeEvent)
+    }
     return (
         <View style={{ flex: 1, backgroundColor: Color.primary }}>
             <ScrollView style={styles.container}>
@@ -92,11 +94,11 @@ const PerceptionReport = ({ navigation }) => {
                     <Text style={styles.avarageNum}>Average <Text style={styles.number}>5</Text></Text>
                     <BarChartShape />
                     {/* <BarChart /> */}
-                    {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}> */}
+                    <ScrollView horizontal showsHorizontalScrollIndicator={false}>
                         {/* <BarChart style={{ height: 200 }} data={data} svg={{ fill }} contentInset={{ top: 30, bottom: 30 }}>
                             <Grid />
                         </BarChart> */}
-                    {/* </ScrollView> */}
+                    </ScrollView>
                 </SafeAreaView>
             </ScrollView>
             <Footer

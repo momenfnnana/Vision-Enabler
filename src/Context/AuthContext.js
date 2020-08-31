@@ -80,6 +80,7 @@ const MatrixData = dispatch => async (data) => {
 
 const MatrixAnswers = dispatch => async (data) => {
     return await dispatch({ type: 'matrix_answers', payload: data });
+    console.log(data);
 }
 const ResetMatrixAnswers = dispatch => () => {
     return dispatch({ type: 'reset_matrix_answers'});
