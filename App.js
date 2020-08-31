@@ -52,8 +52,8 @@ export default function App() {
   return (
     <MatrixProvider>
       <AuthProvider>
-        {/* <Navigator /> */}
-        <PerceptionReport />
+        <Navigator />
+        {/* <PerceptionReport /> */}
       </AuthProvider>
     </MatrixProvider>
   );

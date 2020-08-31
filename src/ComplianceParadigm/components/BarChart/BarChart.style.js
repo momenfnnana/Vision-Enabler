@@ -58,10 +58,10 @@ const styles = StyleSheet.create({
         backgroundColor: Color.secondary,
         borderRadius: 15,
         height: "50%",
-        // width: "30%",
+        width: "30%",
         justifyContent: "center",
         alignItems: "center",
-        // marginHorizontal: "10%"
+        marginHorizontal: 20
     }
 })
 export default styles;
