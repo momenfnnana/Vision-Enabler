@@ -80,6 +80,7 @@ const QuestionnaireA1 = ({ navigation }) => {
             if (questionIndex < QuestionnaireA1Data[index].questions.length - 1) {
                 setQuestionIndex(questionIndex + 1);
             } else {
+                console.log("iam here");
                 navigation.navigate('PerceptionReport');
             }
         }

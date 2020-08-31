@@ -28,7 +28,7 @@ import PaymentFor from './src/ComplianceParadigm/screens/PaymentFor/PaymentFor';
 import PerceptionQuestionnaire from './src/ComplianceParadigm/screens/PerceptionQuestionnaire/PerceptionQuestionnaire';
 import EditPassword from './src/QuestionnaireParadigms/screens/EditPassword/EditPassword';
 // import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
-import Splash from './src/screens/splash/splash'
+import Splash from './src/screens/splash/splash';
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {
@@ -52,7 +52,8 @@ export default function App() {
   return (
     <MatrixProvider>
       <AuthProvider>
-        <Navigator />
+        {/* <Navigator /> */}
+        <PerceptionReport />
       </AuthProvider>
     </MatrixProvider>
   );
