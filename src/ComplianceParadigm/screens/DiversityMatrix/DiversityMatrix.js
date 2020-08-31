@@ -16,16 +16,20 @@ import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
 import Row from './Row';
 import { postMatrixAnswers1 } from '@Services/Matrix/Matrix';
 const DiversityMatrix = ({ navigation }) => {
+   
     const { ResetMatrixAnswers, state: { PaymentFlow, MatrixAnswersArray } } = useContext(AuthContext);
-    // console.log("PaymentFlow", PaymentFlow);
+    console.log("MatrixAnswersArray", MatrixAnswersArray);
+   
     const [matrixQuestions, setMatrixQuestions] = useState([
         {
             question: "",
             hint: ""
         }
     ]);
+
     const [isLoading, setIsLoading] = useState(false);
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
+    
     useEffect(() => {
         (async function () {
             ResetMatrixAnswers();
@@ -48,8 +52,28 @@ const DiversityMatrix = ({ navigation }) => {
             }
         })();
     }, []);
+
     const [index, setIndex] = useState(0);
     const questionsLength = matrixQuestions.length;
+
+    const sendData = async () => {
+        setIsLoading(true);
+        try {
+            const response = await postMatrixAnswers1(MatrixAnswersArray);
+            if (response.status == true) {
+                console.log(response);
+            } else {
+                alert("go back to fill all answers please");
+            }
+            setIsLoading(false);
+        } catch (e) {
+            console.log(e);
+            setIsLoading(false);
+            setTimeout(() => {
+                alert("fuck");
+            }, 300);
+        }
+    };
 
     const toggleNextScreen = () => {
         if (index < questionsLength - 1) {
@@ -58,7 +82,10 @@ const DiversityMatrix = ({ navigation }) => {
         }
         else {
             console.log("iam here");
-            PaymentFlow === 1 ? navigation.navigate('QuestionnaireA1') :
+            PaymentFlow === 1 ? (
+                navigation.navigate('QuestionnaireA1'),
+                sendData()
+            ) :
                 PaymentFlow === 2 ? navigation.navigate('QuestionnaireA2') :
                     PaymentFlow === 3 ? navigation.navigate('QuestionnaireA3') :
                         PaymentFlow === 4 ? navigation.navigate('QuestionnaireA4') :
@@ -66,6 +93,7 @@ const DiversityMatrix = ({ navigation }) => {
                                 PaymentFlow === 6 && navigation.navigate('QuestionnaireA6')
         }
     }
+
     const selectQuestion = index => setIndex(index);
 
     const toggleBackButton = () => {
@@ -140,7 +168,7 @@ const DiversityMatrix = ({ navigation }) => {
                                         matrixQuestions.map((item, qIndex) => {
                                             return (
                                                 <Row
-                                                    onPress={()=> selectQuestion(qIndex)}
+                                                    onPress={() => selectQuestion(qIndex)}
                                                     key={qIndex.toString()}
                                                     data={item}
                                                     qIndex={qIndex}

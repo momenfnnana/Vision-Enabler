@@ -53,7 +53,7 @@ export default function App() {
     <MatrixProvider>
       <AuthProvider>
         <Navigator />
-        {/* <PerceptionReport /> */}
+        {/* <QuestionnaireA1/> */}
       </AuthProvider>
     </MatrixProvider>
   );

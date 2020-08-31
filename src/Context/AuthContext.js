@@ -1,27 +1,74 @@
 import createDataContext from "./createDataContext";
 
 let inialState = {
-    MatrixQuestions:[],
+    MatrixQuestions: [],
     MatrixAnswersArray: [
         {
             id: 1,
-            answers: [null, null, null, null, null, null, null, null]
+            answers: ["A", "A", "A", "A", "A", "A", "A", "A"]
         },
         {
             id: 2,
-            answers: [null, null, null, null, null, null, null, null]
+            answers: ["A", "A", "A", "A", "A", "A", "A", "A"]
         },
         {
             id: 3,
-            answers: [null, null, null, null, null, null, null, null]
+            answers: ["A", "A", "A", "A", "A", "A", "A", "A"]
         },
         {
             id: 4,
-            answers: [null, null, null, null, null, null, null, null]
+            answers: ["A", "A", "A", "A", "A", "A", "A", "A"]
         },
         {
             id: 5,
-            answers: [null, null, null, null, null, null, null, null]
+            answers: ["A", "A", "A", "A", "A", "A", "A", "A"]
+        }
+    ],
+    QuestionsAnswersArray: [
+        {
+            id: 1,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 2,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 3,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 4,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 5,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
         }
     ],
     QuestionsFlow: null,
@@ -32,9 +79,9 @@ let inialState = {
 const authReducer = (state = inialState, action) => {
     switch (action.type) {
         case "questionFlow":
-            return { ...state,token: true, QuestionsFlow: action.payload };
+            return { ...state, token: true, QuestionsFlow: action.payload };
         case "pyamentFlow":
-            return { ...state,token: true, PaymentFlow: action.payload };
+            return { ...state, token: true, PaymentFlow: action.payload };
         case "change_pdf":
             return { ...state, pdf: action.payload }
         case "matrix_questions":
@@ -52,8 +99,23 @@ const authReducer = (state = inialState, action) => {
                 MatrixAnswersArray: MatrixAnswersArray
             }
             return answers;
-        case "reset_matrix_answers":
-            return {...state, MatrixAnswersArray: inialState.MatrixAnswersArray}
+        case "questions_answers":
+            var QuestionsAnswersArray = state.QuestionsAnswersArray;
+
+            let questionIndex = action.payload.questionIndex;
+            // let answersIndex = action.payload.answerIndex;
+
+            QuestionsAnswersArray[questionIndex].answers[questionIndex].value = action.payload.answers[questionIndex];
+
+            var answers = {
+                ...state,
+                QuestionsAnswersArray: MatrixAnswersArray
+            }
+
+            return answers;
+
+        case "reset_questions_answers":
+            return { ...state, QuestionsAnswersArray: inialState.QuestionsAnswersArray }
         default:
             return state;
     }
@@ -82,8 +144,17 @@ const MatrixAnswers = dispatch => async (data) => {
     return await dispatch({ type: 'matrix_answers', payload: data });
     console.log(data);
 }
+
 const ResetMatrixAnswers = dispatch => () => {
-    return dispatch({ type: 'reset_matrix_answers'});
+    return dispatch({ type: 'reset_matrix_answers' });
+}
+
+const QuestionsAnswers = dispatch => async (data) => {
+    return await dispatch({ type: 'questions_answers', payload: data });
+}
+
+const ResetQuestionsAnswers = dispatch => () => {
+    return dispatch({ type: 'reset_questions_answers' });
 }
 
 export const { Provider, Context } = createDataContext(
@@ -94,7 +165,9 @@ export const { Provider, Context } = createDataContext(
         changePdf,
         MatrixData,
         MatrixAnswers,
-        ResetMatrixAnswers
+        ResetMatrixAnswers,
+        QuestionsAnswers,
+        ResetQuestionsAnswers
     },
     {
         QuestionsFlow: 0,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, ScrollView, Image, Dimensions } from 'react-native';
 import Color from '@Assets/Constant';
 // import { BarChart } from 'react-native-chart-kit';
@@ -8,6 +8,8 @@ import styles from './BarChart.style'
 import * as scale from 'd3-scale'
 import { getStyle } from 'react-native-confirmation-code-field/esm/utils';
 const screenWidth = Dimensions.get("window").width;
+import { GraphData } from '@Services/BarChart/BarChart';
+
 const xAXIS = ['Working', 'Diversity Policy', 'Employees', 'Complaints Handling']
 const data = {
     labels: [
@@ -63,6 +65,24 @@ const Gradient = () => (
 )
 
 const BarChartShape = () => {
+    const [ChartData, setChartData] = useState([{}]);
+    const [isLoading, setIsLoading] = useState(false);
+    useEffect(() => {
+        (async function () {
+            try {
+                setIsLoading(true);
+                const data = await GraphData();
+                console.log("aaa", data);
+                setChartData(data.data);
+                setIsLoading(false);
+            } catch (e) {
+                setIsLoading(false);
+                alert("We got an problem!");
+                console.log(e);
+            }
+        })();
+    }, []);
+    
     return (
         <View style={styles.container}>
             <View style={styles.avarageRangesContainer}>
@@ -85,13 +105,13 @@ const BarChartShape = () => {
                         <View style={styles.descriptionShape}>
                             <Image style={{ width: 30, resizeMode: "contain" }} source={require('@Assets/images/100%.png')} />
                         </View>
-                        <Text style={styles.yAxis}>0</Text>
+                        <Text style={styles.yAxis}>10</Text>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: "center" }}>
                         <View style={styles.descriptionShape}>
                             <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/75%.png')} />
                         </View>
-                        <Text style={styles.yAxis}>2.5</Text>
+                        <Text style={styles.yAxis}>7.5</Text>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: "center" }}>
                         <View style={styles.descriptionShape}>
@@ -103,18 +123,18 @@ const BarChartShape = () => {
                         <View style={styles.descriptionShape}>
                             <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/25%.png')} />
                         </View>
-                        <Text style={styles.yAxis}>7.5</Text>
+                        <Text style={styles.yAxis}>2.5</Text>
                     </View>
                     <View style={{ flexDirection: "row", justifyContent: "center" }}>
                         <View style={styles.descriptionShape}>
                             <Image style={{ width: 25, resizeMode: "contain" }} source={require('@Assets/images/0%.png')} />
                         </View>
-                        <Text style={styles.yAxis}>10</Text>
+                        <Text style={styles.yAxis}>0</Text>
                     </View>
                 </View>
                 <View style={{ marginRight: 100 }}>
                     <BarChart
-                        style={{ height: 470, width: 330, marginLeft: 20 }}
+                        style={{ height: 470, width: 330 }}
                         data={data.datasets}
                         gridMin={0}
                         svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
