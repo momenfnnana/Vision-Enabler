@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
         elevation: 4
     },
+   
     rowNum1: {
         color: Color.white,
         fontSize: 14
@@ -155,8 +156,16 @@ const styles = StyleSheet.create({
         shadowRadius: 4.65,
         elevation: 4
     },
+    activeRowNumCol: {
+        backgroundColor: Color.primary,
+        color: Color.white
+    },
     rowNum: {
         color: Color.primary,
+        fontSize: 14
+    },
+    activeText: {
+        color: Color.white,
         fontSize: 14
     },
     circle: {

@@ -6,7 +6,7 @@ import styles from './DiversityMatrix.style';
 import Pops from './Pops';
 import ToolTips from '@ParadigmFakeData/Tooltips';
 import { Context as AuthContext } from '@Context/AuthContext';
-const Row = ({ data , qIndex}) => {
+const Row = ({ data , qIndex, onPress, isActive}) => {
     const [IdColor, setIdColor] = useState({ style: styles.rowNum })
     const [backgroundID, setBackgroundID] = useState({ style: styles.rowNumCol })
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
@@ -46,8 +46,9 @@ const Row = ({ data , qIndex}) => {
 
     return (
         <View style={{ flexDirection: "row", alignItems: "center" }}>
-            <TouchableOpacity style={backgroundID.style}>
-                <Text style={IdColor.style}>{data.id}</Text>
+            <TouchableOpacity onPress={onPress} style={[backgroundID.style,
+                isActive? styles.activeRowNumCol: null]}>
+                <Text style={[IdColor.style, isActive? styles.activeText: null]}>{data.id}</Text>
             </TouchableOpacity>
             <View style={{ flexDirection: "row", marginLeft: 40 }}>
                 {
