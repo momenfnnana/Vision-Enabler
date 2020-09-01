@@ -51,8 +51,7 @@ export default function App() {
   }
   return (
     <AuthProvider>
-      {/* <Navigator /> */}
-      <PerceptionReport />
+      <Navigator />
     </AuthProvider>
   );
 }

@@ -31,7 +31,6 @@ const data = {
             value: 32,
             svg: {
                 fill: "#FA475F",
-                text: "asd"
             },
         },
         {
