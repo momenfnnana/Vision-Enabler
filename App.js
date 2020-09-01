@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import Navigator from './src/Navigation/Navigation';
-// import Navigator from './src/Navigation/Questionaier/Navigation';
 import { Provider as AuthProvider } from './src/Context/AuthContext';
 import { Provider as MatrixProvider } from './src/Context/Matrix';
 import Welcome from './src/ComplianceParadigm/screens/Welcome/Welcome';
