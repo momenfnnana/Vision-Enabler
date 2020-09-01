@@ -48,8 +48,9 @@ const QuestionnaireA1 = ({ navigation }) => {
     const toggleNextScreen = () => {
 
         if (index < questionsLength - 1) {
-
-            _data[index].answers[0].value = slideValue;
+            console.log("index", index);
+            console.log("_data", _data)
+            _data[index].answers[questionIndex].value = slideValue;
             QuestionsAnswers({
                 id: index + 1,
                 answers: _data[index].answers,
@@ -58,12 +59,16 @@ const QuestionnaireA1 = ({ navigation }) => {
 
             setIndex(index + 1);
             setQuestionIndex(0);
-            // setSlideValue(0)
+            setSlideValue(0)
         } else if (index == questionsLength - 1) {
+            _data[index].answers[questionIndex].value = slideValue;
+            QuestionsAnswers({
+                id: index + 1,
+                answers: _data[index].answers,
+                sectionIndex: index
+            });
             console.log("iam here");
             sendData()
-            postQuestionnaierAnswers(_data)
-            navigation.navigate('PerceptionReport');
         }
     }
 
@@ -73,8 +78,9 @@ const QuestionnaireA1 = ({ navigation }) => {
             const response = await postQuestionnaierAnswers(_data);
             if (response.status == true) {
                 alert("Saved");
+                navigation.navigate('PerceptionReport');
             } else {
-                alert("go back to fill all answers please");
+                alert("something went wrong");
             }
             setIsLoading(false);
         } catch (e) {
@@ -159,7 +165,7 @@ const QuestionnaireA1 = ({ navigation }) => {
                                             }}
                                             thumbStyle={{}}
                                             value={slideValue}
-                                            onValueChange={setSlideValue}
+                                            onValueChange={(val) => setSlideValue(val)}
                                             step={1}
                                         />
                                     </View>

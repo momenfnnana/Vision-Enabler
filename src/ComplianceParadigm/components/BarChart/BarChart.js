@@ -55,6 +55,7 @@ const data = {
         },
     ]
 }
+
 const Gradient = () => (
     <Defs key={'gradient'}>
         <LinearGradient id={'gradient'} x1={'0'} y={'0%'} x2={'100%'} y2={'0%'}>
@@ -65,13 +66,11 @@ const Gradient = () => (
 )
 
 const BarChartShape = () => {
-    
+
     const [ChartData, setChartData] = useState([{}]);
     const [isLoading, setIsLoading] = useState(false);
-    
-    const [result, setResult] = useState([
 
-    ]);
+    const [result, setResult] = useState([]);
 
     useEffect(() => {
         (async function () {
@@ -89,15 +88,16 @@ const BarChartShape = () => {
         })();
     }, []);
 
+    const graphData = [{}];
     for (var key in ChartData) {
         if (ChartData.hasOwnProperty(key)) {
-            result[key] = ChartData[key];
-            console.log("result", ChartData[key]);
+            graphData[key] = ChartData[key];
         }
     }
-
-    console.log("result state", result);
-
+    console.log("graphData", graphData);
+    const newData = []
+    graphData.map(i => newData.push(i))
+    console.log("newData", newData);
     return (
         <View style={styles.container}>
             <View style={styles.avarageRangesContainer}>

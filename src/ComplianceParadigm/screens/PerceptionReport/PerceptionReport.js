@@ -25,6 +25,7 @@ import { VictoryBar, VictoryChart, VictoryTheme } from "victory-native";
 const PerceptionReport = ({ navigation }) => {
     const { state: { MatrixAnswersArray } } = useContext(AuthContext);
     console.log("MatrixAnswersArray", MatrixAnswersArray);
+    
     const data = [
         { quarter: 1, earnings: 13000 },
         { quarter: 2, earnings: 16500 },
@@ -32,40 +33,6 @@ const PerceptionReport = ({ navigation }) => {
         { quarter: 4, earnings: 19000 },
         { quarter: 5, earnings: 1000 }
     ];
-    // const data = [
-    //     {
-    //         id: 1,
-    //         value: 32,
-    //         color: Color.lowRate,
-    //         title: "Working Environment"
-    //     },
-    //     {
-    //         id: 2,
-    //         value: 10,
-    //         color: Color.midRate,
-    //         title: "Diversity Policy"
-    //     },
-    //     {
-    //         id: 3,
-    //         value: 40,
-    //         color: Color.highRate,
-    //         title: "Employees"
-    //     },
-    //     {
-    //         id: 4,
-    //         value: 95,
-    //         color: Color.highRate,
-    //         title: "Complaints Handling"
-    //     }
-    // ]
-    // const Gradient = () => (
-    //     <Defs key={'gradient'}>
-    //         <LinearGradient id={'gradient'} x1={'0'} y={'0%'} x2={'100%'} y2={'0%'}>
-    //             <Stop offset={'0%'} stopColor={'rgb(134, 65, 244)'} />
-    //             <Stop offset={'100%'} stopColor={'rgb(66, 194, 244)'} />
-    //         </LinearGradient>
-    //     </Defs>
-    // )
 
     const handleSelect = (event) => {
         let entry = event.nativeEvent
@@ -77,6 +44,7 @@ const PerceptionReport = ({ navigation }) => {
 
         console.log(event.nativeEvent)
     }
+
     return (
         <View style={{ flex: 1, backgroundColor: Color.primary }}>
             <ScrollView style={styles.container}>

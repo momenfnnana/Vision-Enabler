@@ -50,11 +50,9 @@ export default function App() {
     );
   }
   return (
-    <MatrixProvider>
-      <AuthProvider>
-        <Navigator />
-        {/* <QuestionnaireA1/> */}
-      </AuthProvider>
-    </MatrixProvider>
+    <AuthProvider>
+      {/* <Navigator /> */}
+      <PerceptionReport />
+    </AuthProvider>
   );
 }

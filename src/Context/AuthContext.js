@@ -131,7 +131,7 @@ const authReducer = (state = inialState, action) => {
 
             let sectionIndex = action.payload.sectionIndex;
 
-            QuestionsAnswersArray[sectionIndex].answers = action.payload.answers[sectionIndex];
+            QuestionsAnswersArray[sectionIndex].answers = action.payload.answers;
 
             var answers = {
                 ...state,
