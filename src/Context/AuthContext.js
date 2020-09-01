@@ -69,7 +69,34 @@ let inialState = {
                     value: null
                 }
             ]
-        }
+        },
+        {
+            id: 6,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 7,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 8,
+            answers: [
+                {
+                    id: 1,
+                    value: null
+                }
+            ]
+        },
     ],
     QuestionsFlow: null,
     PaymentFlow: null,
@@ -102,14 +129,14 @@ const authReducer = (state = inialState, action) => {
         case "questions_answers":
             var QuestionsAnswersArray = state.QuestionsAnswersArray;
 
-            let questionIndex = action.payload.questionIndex;
+            let sectionIndex = action.payload.sectionIndex;
             // let answersIndex = action.payload.answerIndex;
 
-            QuestionsAnswersArray[questionIndex].answers[questionIndex].value = action.payload.answers[questionIndex];
+            QuestionsAnswersArray[sectionIndex].answers = action.payload.answers[sectionIndex];
 
             var answers = {
                 ...state,
-                QuestionsAnswersArray: MatrixAnswersArray
+                QuestionsAnswersArray: QuestionsAnswersArray
             }
 
             return answers;

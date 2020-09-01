@@ -8,11 +8,10 @@ import { ProgressBar } from 'react-native-paper';
 import styles from './Questionnaire.style';
 import Footer from '@ParadigmComponents/Footer/Footer';
 // import QuestionnaireA1Data from '@ParadigmFakeData/QuestionnaireA1';
-import { getQuestions } from "@Services/Questionnaier/Questionnaier";
+import { getQuestions, postQuestionnaierAnswers } from "@Services/Questionnaier/Questionnaier";
 import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
 import { Context as AuthContext } from '@Context/AuthContext';
-import { postQuestionnaierAnswers } from '@Services/Questionnaier/Questionnaier';
-
+import Pups from './Pups';
 const QuestionnaireA1 = ({ navigation }) => {
 
     const { state: { QuestionsAnswersArray }, QuestionsAnswers, ResetQuestionsAnswers } = useContext(AuthContext);
@@ -26,15 +25,15 @@ const QuestionnaireA1 = ({ navigation }) => {
     const [QuestionnaireA1Data, setQuestions] = useState([{}]);
     const questionsLength = QuestionnaireA1Data.length;
     const [isLoading, setIsLoading] = useState(false);
-
+    console.log("questionsLength", questionsLength);
     useEffect(() => {
         (async function () {
             ResetQuestionsAnswers()
             try {
                 setIsLoading(true);
                 const Questions = await getQuestions();
-                console.log("ahasda", Questions.data);
-                setQuestions(Questions.data);
+                console.log("data", Questions.data.Sections);
+                setQuestions(Questions.data.Sections);
                 setIsLoading(false);
             } catch (e) {
                 console.log(e);
@@ -81,7 +80,44 @@ const QuestionnaireA1 = ({ navigation }) => {
                 }
             ]
         },
+        {
+            id: 5,
+            answers: [
+                {
+                    id: "1",
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 6,
+            answers: [
+                {
+                    id: "1",
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 7,
+            answers: [
+                {
+                    id: "1",
+                    value: null
+                }
+            ]
+        },
+        {
+            id: 8,
+            answers: [
+                {
+                    id: "1",
+                    value: null
+                }
+            ]
+        },
     ]
+
     let _data = QuestionsAnswersArray;
 
     const toggleNextScreen = () => {
@@ -94,25 +130,29 @@ const QuestionnaireA1 = ({ navigation }) => {
                 }
             ]
         };
+
         if (index < questionsLength - 1) {
-            // if (questionIndex < QuestionnaireA1Data[index].questions.length - 1) {
-            //     setQuestionIndex(questionIndex + 1);
-            // } else {
-                setIndex(index + 1);
-                setQuestionIndex(0);
-                QuestionsAnswers({
-                    id: index + 1, answers: _data[index].answers,
-                    questionIndex: index
-                });
+
+            _data[index].answers[questionIndex].value = slideValue;
+            // console.log("asdasd", _data[index].answers[questionIndex].id);
+            QuestionsAnswers({
+                id: index + 1,
+                answers: _data[index].answers[questionIndex].value,
+                sectionIndex: index
+            });
+
+            setIndex(index + 1);
+            setQuestionIndex(0);
+            setSlideValue(0)
             // }
         } else if (index == questionsLength - 1) {
             // if (questionIndex < QuestionnaireA1Data[index].questions.length - 1) {
             //     setQuestionIndex(questionIndex + 1);
             // } else {
-                console.log("iam here");
-                sendData()
-                postQuestionnaierAnswers(_data)
-                navigation.navigate('PerceptionReport');
+            console.log("iam here");
+            sendData()
+            postQuestionnaierAnswers(_data)
+            navigation.navigate('PerceptionReport');
             // }
         }
     }
@@ -153,6 +193,8 @@ const QuestionnaireA1 = ({ navigation }) => {
         }
     }
 
+    const selectQuestion = index => setIndex(index);
+
     return (
         <>
             {isLoading === true ? <LoadingDialog /> : (
@@ -166,23 +208,24 @@ const QuestionnaireA1 = ({ navigation }) => {
                     <Text style={styles.headerTitle}>{QuestionnaireA1Data[index] ? QuestionnaireA1Data[index].name : ''}</Text>
                     <View style={styles.modalContainer}>
                         <View style={styles.questionsNumber}>
-                            {/* <View style={[styles.backgroundLine, { width: "90%" }]} />
-                            <View style={QuestionnaireA1Data[index].id === 1 ? styles.questionNumberContainer : styles.secondaryQuestionsContainer} >
-                                <Text style={QuestionnaireA1Data[index].id === 1 ? styles.PrimaryquestionNumberStyle : styles.SecondayquestionNumberStyle}>1</Text>
-                            </View>
-                            <View style={QuestionnaireA1Data[index].id === 2 ? styles.questionNumberContainer : styles.secondaryQuestionsContainer}>
-                                <Text style={QuestionnaireA1Data[index].id === 2 ? styles.PrimaryquestionNumberStyle : styles.SecondayquestionNumberStyle}>2</Text>
-                            </View>
-                            <View style={QuestionnaireA1Data[index].id === 3 ? styles.questionNumberContainer : styles.secondaryQuestionsContainer}>
-                                <Text style={QuestionnaireA1Data[index].id === 3 ? styles.PrimaryquestionNumberStyle : styles.SecondayquestionNumberStyle}>3</Text>
-                            </View>
-                            <View style={QuestionnaireA1Data[index].id === 4 ? styles.questionNumberContainer : styles.secondaryQuestionsContainer}>
-                                <Text style={QuestionnaireA1Data[index].id === 4 ? styles.PrimaryquestionNumberStyle : styles.SecondayquestionNumberStyle}>4</Text>
-                            </View> */}
+                            <View style={[styles.backgroundLine, { width: "90%" }]} />
+                            {
+                                QuestionnaireA1Data.map((i, myindex) => {
+                                    return (
+                                        <Pups
+                                            key={myindex.toString()}
+                                            data={i}
+                                            index={myindex}
+                                            isActive={myindex === index}
+                                            onPress={() => selectQuestion(myindex)}
+                                        />
+                                    )
+                                })
+                            }
                         </View>
-                        {/* <Text style={styles.mainTitle}>{QuestionnaireA1Data[index].title ?? ''}</Text> */}
+                        <Text style={styles.mainTitle}>{QuestionnaireA1Data[index].title ? QuestionnaireA1Data[index].title : "asdasd"}</Text>
                         <View style={styles.progressBarContainer}>
-                            {/* <ProgressBar progress={QuestionnaireA1Data[index].id === 1 ? 0.25 : QuestionnaireA1Data[index].id === 2 ? 0.50 : QuestionnaireA1Data[index].id === 3 ? 0.75 : 1} color={Color.secondary} style={{ width: "100%" }} /> */}
+                            <ProgressBar progress={QuestionnaireA1Data[index].id === 5 ? 0.125 : QuestionnaireA1Data[index].id === 6 ? 0.25 : QuestionnaireA1Data[index].id === 7 ? 0.375 : QuestionnaireA1Data[index].id === 30 ? 0.5 : QuestionnaireA1Data[index].id === 31 ? 0.625 : QuestionnaireA1Data[index].id === 32 ? 0.75 : QuestionnaireA1Data[index].id === 33 ? 0.875 : QuestionnaireA1Data[index].id === 37 && 1} color={Color.secondary} style={{ width: "100%" }} />
                         </View>
                         <View style={[styles.firstModal, { height: `${height}%`, justifyContent: justifyContent }]}>
                             <View style={styles.firstModalContainer}>

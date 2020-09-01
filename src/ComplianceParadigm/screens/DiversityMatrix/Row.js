@@ -12,24 +12,7 @@ const Row = ({ data , qIndex, onPress, isActive}) => {
     const [subCircleBackground, setSubCircleBackground] = useState(Color.secondary);
     const { MatrixAnswers } = useContext(AuthContext);
     const {  state: {MatrixAnswersArray} } = useContext(AuthContext);
-    const sendData = async () => {
-        setIsLoading(true);
-        try {
-            const response = await login(_data);
-            if (response.status == true) {
-                navigation.navigate('QuestionnaireA1')
-            } else {
-                alert("you should have to answer all questions");
-            }
-            setIsLoading(false);
-        } catch (e) {
-            console.log(e);
-            setIsLoading(false);
-            setTimeout(() => {
-                alert("somthingwent wrong with us");
-            }, 300);
-        }
-    };
+    
     const getColor = (matrixKey)=>{
         if(matrixKey == null){
             return Color.secondary;
