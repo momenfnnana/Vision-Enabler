@@ -130,7 +130,6 @@ const authReducer = (state = inialState, action) => {
             var QuestionsAnswersArray = state.QuestionsAnswersArray;
 
             let sectionIndex = action.payload.sectionIndex;
-            // let answersIndex = action.payload.answerIndex;
 
             QuestionsAnswersArray[sectionIndex].answers = action.payload.answers[sectionIndex];
 
@@ -169,7 +168,6 @@ const MatrixData = dispatch => async (data) => {
 
 const MatrixAnswers = dispatch => async (data) => {
     return await dispatch({ type: 'matrix_answers', payload: data });
-    console.log(data);
 }
 
 const ResetMatrixAnswers = dispatch => () => {

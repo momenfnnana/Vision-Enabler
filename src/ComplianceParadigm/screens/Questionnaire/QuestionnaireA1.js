@@ -15,7 +15,7 @@ import Pups from './Pups';
 const QuestionnaireA1 = ({ navigation }) => {
 
     const { state: { QuestionsAnswersArray }, QuestionsAnswers, ResetQuestionsAnswers } = useContext(AuthContext);
-
+    console.log("QuestionsAnswersArray", QuestionsAnswersArray);
     const [height, setHeight] = useState("90");
     const [sliderHeight, setSliderHeight] = useState("90");
     const [justifyContent, setJustifyContent] = useState("flex-end");
@@ -25,7 +25,7 @@ const QuestionnaireA1 = ({ navigation }) => {
     const [QuestionnaireA1Data, setQuestions] = useState([{}]);
     const questionsLength = QuestionnaireA1Data.length;
     const [isLoading, setIsLoading] = useState(false);
-    console.log("questionsLength", questionsLength);
+    // console.log("questionsLength", questionsLength);
     useEffect(() => {
         (async function () {
             ResetQuestionsAnswers()
@@ -43,117 +43,27 @@ const QuestionnaireA1 = ({ navigation }) => {
         })();
     }, []);
 
-    const answers = [
-        {
-            id: 1,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 2,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 3,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 4,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 5,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 6,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 7,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 8,
-            answers: [
-                {
-                    id: "1",
-                    value: null
-                }
-            ]
-        },
-    ]
-
     let _data = QuestionsAnswersArray;
 
     const toggleNextScreen = () => {
-        let a = {
-            id: 1,
-            answers: [
-                {
-                    id: 1,
-                    value: 0.5
-                }
-            ]
-        };
 
         if (index < questionsLength - 1) {
 
-            _data[index].answers[questionIndex].value = slideValue;
-            // console.log("asdasd", _data[index].answers[questionIndex].id);
+            _data[index].answers[0].value = slideValue;
             QuestionsAnswers({
                 id: index + 1,
-                answers: _data[index].answers[questionIndex].value,
+                answers: _data[index].answers,
                 sectionIndex: index
             });
 
             setIndex(index + 1);
             setQuestionIndex(0);
-            setSlideValue(0)
-            // }
+            // setSlideValue(0)
         } else if (index == questionsLength - 1) {
-            // if (questionIndex < QuestionnaireA1Data[index].questions.length - 1) {
-            //     setQuestionIndex(questionIndex + 1);
-            // } else {
             console.log("iam here");
             sendData()
             postQuestionnaierAnswers(_data)
             navigation.navigate('PerceptionReport');
-            // }
         }
     }
 
@@ -178,18 +88,10 @@ const QuestionnaireA1 = ({ navigation }) => {
 
     const toggleBackScreen = () => {
         if (index > 0) {
-            if (questionIndex > 0) {
-                setQuestionIndex(questionIndex - 1);
-            } else {
-                setIndex(index - 1);
-                setQuestionIndex(QuestionnaireA1Data[index].questions.length - 1);
-            }
+            setIndex(index - 1);
+            setSlideValue(0)
         } else if (index == 0) {
-            if (questionIndex > 0) {
-                setQuestionIndex(questionIndex - 1);
-            } else {
-                navigation.goBack()
-            }
+            navigation.goBack()
         }
     }
 
@@ -223,16 +125,16 @@ const QuestionnaireA1 = ({ navigation }) => {
                                 })
                             }
                         </View>
-                        <Text style={styles.mainTitle}>{QuestionnaireA1Data[index].title ? QuestionnaireA1Data[index].title : "asdasd"}</Text>
+                        <Text style={styles.mainTitle}>{QuestionnaireA1Data[index].title ? QuestionnaireA1Data[index].title : ""}</Text>
                         <View style={styles.progressBarContainer}>
                             <ProgressBar progress={QuestionnaireA1Data[index].id === 5 ? 0.125 : QuestionnaireA1Data[index].id === 6 ? 0.25 : QuestionnaireA1Data[index].id === 7 ? 0.375 : QuestionnaireA1Data[index].id === 30 ? 0.5 : QuestionnaireA1Data[index].id === 31 ? 0.625 : QuestionnaireA1Data[index].id === 32 ? 0.75 : QuestionnaireA1Data[index].id === 33 ? 0.875 : QuestionnaireA1Data[index].id === 37 && 1} color={Color.secondary} style={{ width: "100%" }} />
                         </View>
                         <View style={[styles.firstModal, { height: `${height}%`, justifyContent: justifyContent }]}>
                             <View style={styles.firstModalContainer}>
                                 <View style={styles.Question1Container}>
-                                    {/* <Text style={styles.modalQuestionNumber}>Questions {QuestionnaireA1Data[index].id} from {QuestionnaireA1Data[index].id}</Text> */}
+                                    <Text style={styles.modalQuestionNumber}>Questions {questionIndex + 1} from {index + 1}</Text>
                                 </View>
-                                {/* <Text style={styles.questionDescription}>{QuestionnaireA1Data[index].title}</Text> */}
+                                <Text style={styles.questionDescription}>{QuestionnaireA1Data[index].title}</Text>
                                 <View style={styles.imagesAndSliderContainer}>
                                     <View style={[styles.configuration, { height: `${sliderHeight}%`, }]}>
                                         <View style={styles.imagesContainer}>

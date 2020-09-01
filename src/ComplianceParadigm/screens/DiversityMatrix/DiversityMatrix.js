@@ -18,7 +18,6 @@ import { postMatrixAnswers1 } from '@Services/Matrix/Matrix';
 const DiversityMatrix = ({ navigation }) => {
    
     const { ResetMatrixAnswers, state: { PaymentFlow, MatrixAnswersArray } } = useContext(AuthContext);
-    console.log("MatrixAnswersArray", MatrixAnswersArray);
    
     const [matrixQuestions, setMatrixQuestions] = useState([
         {
