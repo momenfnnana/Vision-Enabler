@@ -62,9 +62,9 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         alignItems: "center"
     },
-    yAxis:{
-        color:Color.white,
-        marginLeft:20
+    yAxis: {
+        color: Color.white,
+        marginLeft: 20
     }
 })
 export default styles;

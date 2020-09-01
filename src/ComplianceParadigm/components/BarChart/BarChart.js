@@ -65,14 +65,20 @@ const Gradient = () => (
 )
 
 const BarChartShape = () => {
+    
     const [ChartData, setChartData] = useState([{}]);
     const [isLoading, setIsLoading] = useState(false);
+    
+    const [result, setResult] = useState([
+
+    ]);
+
     useEffect(() => {
         (async function () {
             try {
                 setIsLoading(true);
                 const data = await GraphData();
-                console.log("aaa", data);
+                console.log("data", data);
                 setChartData(data.data);
                 setIsLoading(false);
             } catch (e) {
@@ -82,7 +88,16 @@ const BarChartShape = () => {
             }
         })();
     }, []);
-    
+
+    for (var key in ChartData) {
+        if (ChartData.hasOwnProperty(key)) {
+            result[key] = ChartData[key];
+            console.log("result", ChartData[key]);
+        }
+    }
+
+    console.log("result state", result);
+
     return (
         <View style={styles.container}>
             <View style={styles.avarageRangesContainer}>

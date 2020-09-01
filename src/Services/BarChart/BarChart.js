@@ -1,2 +1,2 @@
 import fetching from '@Utilities/Fetching';
-export const GraphData = () => fetching('/auth/sectionReportA/1');
+export const GraphData = () => fetching('/auth/sectionReportA/1','post');
