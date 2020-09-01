@@ -55,6 +55,7 @@ const data = {
         },
     ]
 }
+var newData = data;
 
 const Gradient = () => (
     <Defs key={'gradient'}>
@@ -68,6 +69,7 @@ const Gradient = () => (
 const BarChartShape = () => {
 
     const [ChartData, setChartData] = useState([{}]);
+    const [apiData, setApiData] = useState([{}]);
     const [isLoading, setIsLoading] = useState(false);
 
     const [result, setResult] = useState([]);
@@ -76,9 +78,15 @@ const BarChartShape = () => {
         (async function () {
             try {
                 setIsLoading(true);
-                const data = await GraphData();
-                console.log("data", data);
-                setChartData(data.data);
+                const apiData = await GraphData();
+                
+                var i = 0;
+                for (var key in apiData.data) {
+                    if(newData.datasets[i] ){
+                        newData.datasets[i++].value = parseInt(key);
+                    }
+                }
+
                 setIsLoading(false);
             } catch (e) {
                 setIsLoading(false);
@@ -88,16 +96,7 @@ const BarChartShape = () => {
         })();
     }, []);
 
-    const graphData = [{}];
-    for (var key in ChartData) {
-        if (ChartData.hasOwnProperty(key)) {
-            graphData[key] = ChartData[key];
-        }
-    }
-    console.log("graphData", graphData);
-    const newData = []
-    graphData.map(i => newData.push(i))
-    console.log("newData", newData);
+    
     return (
         <View style={styles.container}>
             <View style={styles.avarageRangesContainer}>
@@ -150,7 +149,8 @@ const BarChartShape = () => {
                 <View style={{ marginRight: 100 }}>
                     <BarChart
                         style={{ height: 470, width: 330 }}
-                        data={data.datasets}
+                        data={newData.datasets}
+                        // data={data.datasets}
                         gridMin={0}
                         svg={{ fill: 'rgba(134, 65, 244, 0.8)' }}
                         yAccessor={({ item }) => item.value}
@@ -180,7 +180,7 @@ const BarChartShape = () => {
                     /> */}
                     <View style={{ flexDirection: "row", width: 350, justifyContent: "space-between" }}>
                         {
-                            data.labels.map(i => {
+                            newData.labels.map(i => {
                                 return (
                                     <Text key={i.id} style={{ marginLeft: "6.5%", color: Color.white, fontSize: 12 }}>{i.title}</Text>
                                 )
