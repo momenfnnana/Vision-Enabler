@@ -3,7 +3,8 @@ import {
     View,
     Text,
     Image,
-    AsyncStorage
+    AsyncStorage,
+    ScrollView
 } from 'react-native';
 import Form from '@Components/signupForm/SignupForm';
 import StackHeader from '@Components/Header/StackHeader/StackHeader';
@@ -26,7 +27,7 @@ const SignUp = ({ navigation }) => {
     const [itemSelected, setSelectItem] = useState(CompaniesData);
     const [PhoneNumber, setPhoneNumber] = useState("5418485552");
     // const selected = CompaniesData.filter(item => item.id === itemSelected[0]);
-    const { loginToken } = useContext(AuthContext);
+    // const { Login } = useContext(AuthContext);
     const [isLoading, setIsLoading] = useState(false);
     const [companies, setCompanies] = useState(CompaniesData);
     const [data, setData] = useState({
@@ -45,6 +46,7 @@ const SignUp = ({ navigation }) => {
                 password_confirmation: data.password
             });
             await AsyncStorage.setItem("accessToken", response.data.token);
+            // Login(response.data.token);
             console.log(response);
             if (response.data.success === true) {
                 navigation.navigate('ActiveAccount')
@@ -61,7 +63,7 @@ const SignUp = ({ navigation }) => {
         }
     };
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <StackHeader color={Color.primary} goBack={() => navigation.goBack()} />
             {isLoading && <LoadingDialog />}
             <View style={styles.headSection}>
@@ -84,9 +86,8 @@ const SignUp = ({ navigation }) => {
                     password={data.password}
                     setPassword={(name) => setData({ ...data, password: name })}
                 />
-                <Image style={styles.footer} source={require('@Assets/images/pups.png')} />
             </View>
-        </View>
+        </ScrollView>
     )
 }
 export default SignUp;

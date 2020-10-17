@@ -28,6 +28,8 @@ import PerceptionQuestionnaire from './src/ComplianceParadigm/screens/Perception
 import EditPassword from './src/QuestionnaireParadigms/screens/EditPassword/EditPassword';
 // import PerceptionReportFormScreen from '@ComplianceParadigmScreens/PerceptionReportForm/PerceptionReportFormScreen'
 import Splash from './src/screens/splash/splash';
+import Login from './src/screens/AuthFlow/login/login';
+import SignUp from './src/screens/AuthFlow/signup/signup';
 export default function App() {
   const [dataLoaded, setDataLoaded] = useState(false);
   const fetchFonts = () => {

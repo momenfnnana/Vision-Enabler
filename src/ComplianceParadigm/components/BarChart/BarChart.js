@@ -78,12 +78,13 @@ const BarChartShape = () => {
             try {
                 setIsLoading(true);
                 const apiData = await GraphData();
-                
+
                 var i = 0;
                 for (var key in apiData.data) {
-                    if(newData.datasets[i] ){
+                    if (newData.datasets[i]) {
                         newData.datasets[i++].value = parseInt(key);
                     }
+                    console.log("newData.datasets",newData.datasets);
                 }
 
                 setIsLoading(false);
@@ -95,7 +96,6 @@ const BarChartShape = () => {
         })();
     }, []);
 
-    
     return (
         <View style={styles.container}>
             <View style={styles.avarageRangesContainer}>
@@ -169,14 +169,6 @@ const BarChartShape = () => {
                         contentInset={{ left: 10, right: 10 }}
                         svg={{ fontSize: 10, fill: Color.white }}
                     />
-                    {/* <XAxis
-                        data={data.labels}
-                        yAccessor={({ index }) => index}
-                        scale={scale.scaleBand}
-                        contentInset={{ top: 10, bottom: 10 }}
-                        spacing={0.2}
-                        formatLabel={(_, index) => data[index].label}
-                    /> */}
                     <View style={{ flexDirection: "row", width: 350, justifyContent: "space-between" }}>
                         {
                             newData.labels.map(i => {
@@ -186,29 +178,6 @@ const BarChartShape = () => {
                             })
                         }
                     </View>
-                    {/* <BarChart
-                        style={{ width: "100%", height: 200 }}
-                        data={data}
-                        width={screenWidth}
-                        height={510}
-                        yAxisLabel=""
-                        chartConfig={{
-                            backgroundColor: Color.primary,
-                            backgroundGradientFrom: Color.primary,
-                            backgroundGradientTo: Color.primary,
-                            decimalPlaces: 1, // optional, defaults to 2dp
-                            color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                            labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
-                            style: {
-                                borderRadius: 16,
-                            },
-                            propsForDots: {
-                                r: "6",
-                                strokeWidth: "2",
-                                stroke: "#ffa726"
-                            }
-                        }}
-                    /> */}
                 </View>
             </ScrollView>
         </View>

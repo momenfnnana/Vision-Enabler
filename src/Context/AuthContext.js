@@ -1,4 +1,6 @@
 import createDataContext from "./createDataContext";
+import { navigate } from "../Navigation/outSideNavigation";
+import { AsyncStorage } from "react-native";
 
 let inialState = {
     MatrixQuestions: [],
@@ -60,47 +62,12 @@ let inialState = {
                     value: null
                 }
             ]
-        },
-        {
-            id: 5,
-            answers: [
-                {
-                    id: 1,
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 6,
-            answers: [
-                {
-                    id: 1,
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 7,
-            answers: [
-                {
-                    id: 1,
-                    value: null
-                }
-            ]
-        },
-        {
-            id: 8,
-            answers: [
-                {
-                    id: 1,
-                    value: null
-                }
-            ]
-        },
+        }
     ],
     QuestionsFlow: null,
     PaymentFlow: null,
-    pdf: null
+    pdf: null,
+    accessToken: null
 };
 
 const authReducer = (state = inialState, action) => {
@@ -142,10 +109,19 @@ const authReducer = (state = inialState, action) => {
 
         case "reset_questions_answers":
             return { ...state, QuestionsAnswersArray: inialState.QuestionsAnswersArray }
+        case "login":
+            return { accessToken: action.payload }
+        case "SIGN_OUT":
+            return { ...state, errorMessage: "", accessToken: null };
         default:
             return state;
     }
 };
+
+const Login = dispatch => (token) => {
+    console.log("token from Context", token);
+    return dispatch({ type: 'login', payload: token })
+}
 
 const setQuestionFlow = dispatch => (flowNumber) => {
     console.log(flowNumber);
@@ -181,7 +157,21 @@ const QuestionsAnswers = dispatch => async (data) => {
 const ResetQuestionsAnswers = dispatch => () => {
     return dispatch({ type: 'reset_questions_answers' });
 }
-
+const doSignout = (dispatch) => async () => {
+    try {
+        navigate("SignIn");
+        await AsyncStorage.removeItem("accessToken");
+        dispatch({
+            type: "SIGN_OUT",
+        });
+    } catch (err) {
+        console.log("sign_out Error: ", err);
+        dispatch({
+            type: "ADD_ERROR",
+            payload: "Something went wrong with sign out",
+        });
+    }
+};
 export const { Provider, Context } = createDataContext(
     authReducer,
     {
@@ -192,7 +182,9 @@ export const { Provider, Context } = createDataContext(
         MatrixAnswers,
         ResetMatrixAnswers,
         QuestionsAnswers,
-        ResetQuestionsAnswers
+        ResetQuestionsAnswers,
+        Login,
+        doSignout
     },
     {
         QuestionsFlow: 0,

@@ -4,7 +4,8 @@ import {
     Text,
     Image,
     KeyboardAvoidingView,
-    AsyncStorage
+    AsyncStorage,
+    ScrollView
 } from 'react-native';
 import Form from '@Components/LoginForm/Login';
 import LoadingDialog from '@Components/LoadingDialog/LoadingDialog';
@@ -13,7 +14,7 @@ import styles from './Styles';
 import { login } from "@Services/AuthServices";
 
 const Login = ({ navigation }) => {
-    const { loginToken } = useContext(AuthContext);
+    // const { Login } = useContext(AuthContext);
     const [data, setData] = useState({
         email: "",
         password: "",
@@ -27,6 +28,7 @@ const Login = ({ navigation }) => {
                 password: data.password,
             });
             await AsyncStorage.setItem("accessToken", response.data.token);
+            // Login(response.data.token);
             if (response.data.success == true) {
                 navigation.navigate('Drawer')
             } else {
@@ -42,7 +44,7 @@ const Login = ({ navigation }) => {
         }
     };
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             {isLoading && <LoadingDialog />}
             <View style={{ flex: 3 }}>
                 <View style={styles.head}>
@@ -52,27 +54,23 @@ const Login = ({ navigation }) => {
                         style={styles.logo}
                     />
                 </View>
-                <KeyboardAvoidingView behavior='height' keyboardVerticalOffset={0}>
-                    <View style={styles.title}>
+                <View style={styles.title}>
+                    <View style={{ width: "90%", alignSelf: "center" }}>
                         <Text style={styles.title1}>{'Welcome to'.toUpperCase()}</Text>
                         <Text style={styles.title2}>{'Vision Enabler'.toUpperCase()}</Text>
-                        <Form
-                            Login={() => doLogin()}
-                            SignUp={() => navigation.navigate('SignUp')}
-                            ForgotPassword={() => navigation.navigate('ResetPassword')}
-                            email={data.email}
-                            password={data.password}
-                            setEmail={(val) => setData({ ...data, email: val })}
-                            setPassword={(val) => setData({ ...data, password: val })}
-                        />
                     </View>
-                </KeyboardAvoidingView>
+                    <Form
+                        Login={() => doLogin()}
+                        SignUp={() => navigation.navigate('SignUp')}
+                        ForgotPassword={() => navigation.navigate('ResetPassword')}
+                        email={data.email}
+                        password={data.password}
+                        setEmail={(val) => setData({ ...data, email: val })}
+                        setPassword={(val) => setData({ ...data, password: val })}
+                    />
+                </View>
             </View>
-            <Image
-                style={styles.footerImage}
-                source={require('@Assets/images/pups.png')}
-            />
-        </View>
+        </ScrollView>
     )
 }
 export default Login;

@@ -13,7 +13,7 @@ const styles = {
     },
     title: {
         marginTop: "45%",
-        marginHorizontal: "12%",
+        // marginHorizontal: "12%",
     },
     logo: {
         position: "absolute",
@@ -35,7 +35,7 @@ const styles = {
     footerImage: {
         flex: 2,
         resizeMode: "contain",
-        marginBottom: "-60%",
+        // marginBottom: "-50%",
         width: "100%",
         zIndex: -1
     }

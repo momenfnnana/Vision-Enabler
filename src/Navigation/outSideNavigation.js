@@ -1,10 +1,16 @@
-import { CommonActions } from '@react-navigation/native';
+import { NavigationActions } from "@react-navigation/compat";
 
-navigation.dispatch(
-    CommonActions.navigate({
-        name: 'Profile',
-        params: {
-            user: 'jane',
-        },
-    })
-);
+let navigator;
+
+export const setNavigate = (nav) => {
+    navigator = nav;
+};
+
+export const navigate = (routeName, params) => {
+    navigator.dispatch(
+        NavigationActions.navigate({
+            routeName,
+            params,
+        })
+    );
+};
